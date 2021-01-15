@@ -1,0 +1,1298 @@
+﻿<!DOCTYPE html>
+<html lang="es-es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="En este tema, aprenderás cómo enviar tu aplicación Fire TV a la Tienda Apps de Amazon." />
+
+    <title>Enviar aplicaciones a la Tienda Apps de Amazon</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.eot" type="font/eot">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.woff" type="font/woff">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.eot" type="font/eot">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.woff" type="font/woff">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.eot" type="font/eot">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.woff" type="font/woff">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.eot" type="font/eot">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.woff" type="font/woff">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.eot" type="font/eot">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.woff" type="font/woff">
+    <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+      <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://support.brightcove.com/site-assets/css/site/prism.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://support.brightcove.com/site-assets/css/site/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://support.brightcove.com/site-assets/css/site/landing-page.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://support.brightcove.com/site-assets/css/site/tabs.css"
+    />
+    <link rel="stylesheet" href="/assets/css/local.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/381443caa8.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+    <script src="/assets/js/sajari-head.js"></script>
+  </head>
+
+  <body class="body"></body>
+</html>
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Beacon_Logo.svg" alt="logotipo del producto" style="max-height: 100px;max-width: 232px;"/></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+      <option value="">Otros documentos de Brightcove</option>
+      
+        
+          <option value="https://support.brightcove.com">Documentación Inicio</option>
+        
+      
+        
+          <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
+        
+      
+        
+          <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
+        
+      
+        
+          <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
+        
+      
+        
+          <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+        
+      
+        
+          <option value="https://live.support.brightcove.com">Brightcove Live</option>
+        
+      
+        
+          <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+        
+      
+        
+          <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+        
+      
+        
+          <option value="https://social.support.brightcove.com">Brightcove Social</option>
+        
+      
+        
+          <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+        
+      
+        
+          <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
+        
+      
+        
+          <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
+        
+      
+        
+          <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
+        
+      
+        
+          <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
+        
+      
+        
+          <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
+        
+      
+        
+          <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+        
+      
+    </select>
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+      
+      
+      
+      <li class="breadcrumb-item"><a href="/creating-your-apps/fire-tv/">Fire TV</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Enviar aplicaciones a la Tienda Apps de Amazon</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3 left-side-bar">
+      <nav class="sidenav" id="side_nav">
+        
+        
+        <h5><a href="/index.html">Inicio</a></h5>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/getting-started/index.html">Empezar <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li>Guía de aprendizaje<a href="/getting-started/learning-guide-bc-beacon.html"></a></li>
+          
+          
+          
+          <li><a href="/getting-started/implementation-phases.html">Fases de implementación</a></li>
+          
+          
+          
+          <li><a href="/getting-started/app-design-considerations.html">Consideraciones de diseño de aplicaciones</a></li>
+          
+          
+          
+          <li><a href="/getting-started/creating-your-app-design-info-architecture.html">Diseño de aplicaciones - Info Architecture</a></li>
+          
+          
+          
+          <li><a href="/getting-started/creating-your-app-design-layout-options.html">Diseño de aplicaciones - Opciones de diseño</a></li>
+          
+          
+          
+          <li><a href="/getting-started/design-best-practices.html">Prácticas recomendadas de diseño</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header">Sincronización con Video Cloud +<a href="/syncing-with-video-cloud/index.html"><strong></strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/syncing-with-video-cloud/vc-custom-fields.html">Creación de campos personalizados de Video Cloud</a></li>
+          
+          
+          
+          <li><a href="/syncing-with-video-cloud/forcing-a-sync.html">Forzar una sincronización</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header">Uso de Brightcove Beacon +<a href="/using-brightcove-beacon/index.html"><strong></strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/using-brightcove-beacon/adding-to-page.html">Agregar un carrusel a una página</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-a-channel.html">Creación de un canal</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/electronic-program-guides.html">Creación de una Guía Electrónica de Programas (EPG)</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-a-page.html">Creación de una nueva página</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-a-playlist.html">Creación de una lista de reproducción</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-subscription-package.html">Creación de un paquete de suscripción</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/promo-codes.html">Creación de Códigos Promocionales</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/series-seasons-episodes.html">Creación de serie/Temporadas/Episodios</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/configuring-server-side-ad-settings.html">Configuración de la configuración de anuncios del lado del servidor</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/implementing-authvod.html">Implementación de AuthVoD</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/live-ssai.html">Implementación de SSAI en vivo</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/vod-ssai.html">Implementación de VOD SSAI</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/including-non-configurable-pages.html">Incluyendo páginas no configurables</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/introducing-pages.html">Presentando páginas</a></li>
+          
+          
+          
+          <li>Transmisión de un evento en directo<a href="/using-brightcove-beacon/streaming-live-event.html"></a></li>
+          
+          
+          
+          <li>Transmisión de VOD a un canal<a href="/using-brightcove-beacon/streaming-vods-to-a-channel.html"></a></li>
+          
+          
+          
+          <li>Descripción de las opciones de monetización<a href="/using-brightcove-beacon/monetization-options.html"></a></li>
+          
+          
+          
+          <li>Uso de un paquete de suscripción<a href="/using-brightcove-beacon/using-subscription-package.html"></a></li>
+          
+          
+          
+          <li>Uso de las herramientas<a href="/using-brightcove-beacon/tools.html"></a></li>
+          
+          
+          
+          <li>Visualización de datos de análisis<a href="/using-brightcove-beacon/viewing-analytics-data.html"></a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/creating-your-apps/index.html">Creación de aplicaciones <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/android/index.html"> <strong>Android+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li>Envío de nuevas aplicaciones a la Tienda Android<a href="/creating-your-apps/android/submitting-to-android.html"></a></li>
+              
+              <li>Actualización de aplicaciones de Android a Brightcove Beacon<a href="/creating-your-apps/android/updating-android-apps-to-bcb.html"></a></li>
+              
+              <li><a href="/creating-your-apps/android/adding-subscriptions-in-android.html">Agregar suscripciones a Android</a></li>
+              
+              <li><a href="/creating-your-apps/android/improving-relevance-android.html">Mejorar la relevancia de la búsqueda en Android Play Store</a></li>
+              
+              <li><a href="/creating-your-apps/android/installing-android-test-build.html">Instalación de una compilación de prueba de Android</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/fire-tv/index.html">Fire TV <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/fire-tv/installing-fire-tv-test-build.html">Instalación de una compilación de prueba de Fire TV</a></li>
+              
+              <li>Enviar a la Tienda Amazon<a href="/creating-your-apps/fire-tv/submitting-to-amazon.html"></a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/ios-tvos/index.html">IOS/tvOS <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/ios-tvos/installing-ios-test-build.html">Instalación de una compilación de pruebas de iOS/tvOS</a></li>
+              
+              <li>Enviar a la Apple Store<a href="/creating-your-apps/ios-tvos/submitting-to-apple.html"></a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            Panasonic +<a href="/creating-your-apps/panasonic/index.html"><strong></strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li>Envío a la Tienda Panasonic<a href="/creating-your-apps/panasonic/submitting-to-panasonic.html"></a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            Roku +<a href="/creating-your-apps/roku/index.html"><strong></strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/roku/configuring-inchannel-products.html">Configuración de Productos In-Channel en Roku</a></li>
+              
+              <li><a href="/creating-your-apps/roku/installing-roku-test-build.html">Instalación de una compilación de prueba de Roku</a></li>
+              
+              <li>Envío a la tienda Roku<a href="/creating-your-apps/roku/submitting-to-roku.html"></a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            Samsung +<a href="/creating-your-apps/samsung/index.html"><strong></strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/samsung/samsung-partner.html">Convertirse en un socio de Samsung</a></li>
+              
+              <li>Envío a la Tienda Samsung<a href="/creating-your-apps/samsung/submitting-to-samsung.html"></a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li><a href="/creating-your-apps/common-required-info.html">Información común requerida</a></li>
+          
+          
+          
+          <li><a href="/creating-your-apps/device-apps-validation-guide.html">Guía de validación de aplicaciones de dispositivo</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header">Referencias +<a href="/references/index.html"><strong></strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/references/common-configuration-settings.html">Parámetros de configuración comunes</a></li>
+          
+          
+          
+          <li><a href="/references/creating-stripe-account.html">Creación de una cuenta de Stripe</a></li>
+          
+          
+          
+          <li><a href="/references/glossary.html">Glosario</a></li>
+          
+          
+          
+          <li><a href="/references/image-requirements.html">Imágenes y sus especificaciones</a></li>
+          
+          
+          
+          <li>Problemas conocidos<a href="/references/known-issues.html"></a></li>
+          
+          
+          
+          <li>Actualizaciones de productos<a href="/references/product-updates.html"></a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header">Entrenamiento +<a href="/training/index.html"><strong></strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li>Uso de vídeos de Video Cloud o Campos personalizados<a href="/training/training-demand-custom-fields.html"></a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-design-layout.html">Diseño del diseño de la aplicación</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-playlists.html">Creación y uso de listas de reproducción</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-series-seasons-episodes.html">Creación de series, temporadas y episodios</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-vod-ssai.html">Implementación de anuncios VOD del lado del servidor</a></li>
+          
+          
+          
+          <li>Publicación de la aplicación Android en Play Store<a href="/training/training-demand-publish-android-app.html"></a></li>
+          
+          
+          
+          <li>Visualización de datos de análisis<a href="/training/training-demand-viewing-analytics.html"></a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/support/brightcove-answer.html">Respuestas de Brightcove</a></li>
+          
+          
+          
+          <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
+          
+          
+          
+          <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
+          
+          
+          
+          <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
+          
+          
+        </ul>
+        
+        
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+      <!-- bootstrap layout -->
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Contenido de la página</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
+
+
+<h1>Enviar aplicaciones a la Tienda Apps de Amazon</h1>
+<article class="bcls-article">
+  <summary>En este tema, aprenderás cómo enviar tu aplicación Fire TV a la Tienda Apps de Amazon.</summary>
+  <section class="bcls-section">
+    <h2 id="overview">Resumen</h2>
+    <p>
+      Este documento le ayudará a enviar su aplicación Brightcove Beacon a la Tienda Apps de Amazon.
+    </p>
+    <p>Una visión de alto nivel del proceso es:</p>
+    <ol>
+      <li>Añade una nueva aplicación para Android en la consola de desarrolladores de Amazon.</li>
+      <li>Establece la disponibilidad y los precios de tu nueva aplicación Fire TV.</li>
+      <li>
+        Añade descripciones de texto para tu aplicación Fire TV en la Tienda Apps de Amazon.
+      </li>
+      <li>Añade los iconos e imágenes de tu aplicación Fire TV.</li>
+      <li>Selecciona una clasificación de contenido para tu aplicación Fire TV.</li>
+      <li>Cargue el archivo APK proporcionado por Brightcove.</li>
+    </ol>
+    <p>
+      El resto de este documento proporcionará detalles para cada uno de los pasos anteriores.
+    </p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Amazon">Recursos de Amazon</h2>
+    <ul>
+      <li>
+        Detalles de la Tienda Apps: <a href="https://developer.amazon.com/home.html"> https://developer.amazon.com/home.html </a> (requiere cuenta de desarrollador de Amazon - sin cargo)
+      </li>
+      <li>
+        Guía de envío de aplicaciones de Fire TV: <a href="https://developer.amazon.com/docs/fire-tv/submitting-your-app-to-the-amazon-appstore.html"> https://developer.amazon.com/docs/fire-tv/submitting-your-app-to-the-amazon-appstore.html y, </a> más generalmente: <a href="https://developer.amazon.com/apps-and-games/app-submission"> https://developer.amazon.com/apps-and-games/app-submission </a>
+      </li>
+      <li>Tiempo de entrega sugerido para la aprobación: Tres semanas</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="information_amazon">Información requerida para Amazon</h2>
+    <ul>
+      <li>Icono de la aplicación Fire TV (1280 x 720px PNG (sin transparencia)).</li>
+      <li>
+        Entre tres y diez capturas de pantalla (1920 x 1080px JPG o PNG (horizontal, sin transparencia).
+        <ul>
+          <li>
+            Estas imágenes no deben aparecer distorsionadas, estiradas o pixeladas cuando se visualizan en la interfaz de usuario.
+          </li>
+          <li>
+            Proporciona capturas de pantalla de Fire TV cuando envíes tu aplicación o usa capturas de pantalla que puedan representar tu aplicación genéricamente en todos los dispositivos.
+          </li>
+          <li>
+            Ten en cuenta que si no proporcionas capturas de pantalla específicas de Amazon Fire TV para tu aplicación durante el proceso de envío, las capturas de pantalla del teléfono o tablet que hayas proporcionado se utilizarán para representar tu aplicación en la App Store de Fire TV.
+          </li>
+        </ul>
+      </li>
+      <li>
+        Imagen de fondo 1920 x 1080px JPG o PNG (horizontal, sin transparencia).
+      </li>
+      <li>Paquete APK proporcionado por Brightcove.</li>
+      <li>Mostrar título.</li>
+      <li>Breve descripción.</li>
+      <li>Descripción larga.</li>
+      <li>
+        Viñetas de características del producto (hasta 10 funciones clave de tu aplicación Fire TV).
+      </li>
+      <li>
+        Palabras clave (términos de búsqueda utilizados para aumentar la capacidad de detección de la aplicación).
+      </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Submitting_your_first_FireTV">
+      Envío de su aplicación FireTV a la Tienda Apps de Amazon
+    </h2>
+    <p>
+      Sigue estos pasos para enviar tu aplicación FireTV a la Tienda Apps de Amazon.
+    </p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Ingresa a la <a href="https://developer.amazon.com/settings/console/home" target="_blank">consola de desarrolladores de Amazon</a>. Tendrás que <a href="https://www.amazon.com/ap/register?clientContext=134-1654773-5582608&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;siteState=clientContext%3D131-8250356-2896517%2CsourceUrl%3Dhttps%253A%252F%252Fdeveloper.amazon.com%252Fsettings%252Fconsole%252Fregistration%253Freturn_to%253D%252Fapps-and-games%2Csignature%3DcFhxbzDeo5JuzCUqkMHotnfOUw0j3D&amp;marketPlaceId=ATVPDKIKX0DER&amp;language=en_US&amp;pageId=amzn_developer_portal&amp;openid.return_to=https%3A%2F%2Fdeveloper.amazon.com%2Fsettings%2Fconsole%2Fregistration%3Freturn_to%3D%252Fapps-and-games&amp;prevRID=Y35GF8Q90QBTXRBDCQHV&amp;openid.assoc_handle=mas_dev_portal&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=&amp;failedSignInCount=0&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0" target="_blank">crear una cuenta de desarrollador de Amazon</a> para poder usar la consola.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/creating-your-apps/amazon/1-dev-console.png"/>
+        </figure>
+      </li>
+      <li>
+        En la sección <strong>Tienda Apps de Amazon</strong> , haz clic en el botón <strong>Añadir una nueva aplicación</strong> .
+      </li>
+      <li>
+        En el menú desplegable, selecciona <strong>Android</strong>. (Por el momento, Brightcove solo admite la versión de Android para una presentación de la aplicación Fire TV).
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="400" height="700" src="/assets/images/creating-your-apps/amazon/2-add-new-app.png"/>
+        </figure>
+      </li>
+      <li>
+        Se mostrará el formulario <strong>de envío de nueva aplicación</strong> .
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="700" src="/assets/images/creating-your-apps/amazon/3-app-sub-form.png"/>
+        </figure>
+      </li>
+      <li>Introduce el <strong>título de tu aplicación.</strong></li>
+      <li>
+        Elige un <strong>SKU de aplicación</strong>. Esta es una cadena única a su aplicación que usted define a sí mismo. El SKU (unidad de mantenimiento de existencias) se convierte en el identificador de tu aplicación para tus propios fines de seguimiento, por ejemplo: <em>com.amazon.ejemplo.myapp.v1</em>.
+      </li>
+      <li>
+        Selecciona una <strong>categoría de aplicación</strong>. Al clasificar correctamente la aplicación, los usuarios podrán encontrar su aplicación más fácilmente, lo que aumenta las descargas de la aplicación. Para obtener más información, consulta la <a href="https://developer.amazon.com/docs/app-submission/categories.html" target="_blank">documentación de la categoría de Amazon</a>.
+      </li>
+      <li>
+        Puedes marcar la casilla de verificación <strong>Usar mi información de soporte predeterminado</strong> o introducir información diferente (correo electrónico, teléfono, sitio web) para el contacto de atención al cliente de la aplicación Fire TV.
+      </li>
+      <li>Haga clic en el botón <strong>Guardar</strong> .</li>
+      <li>
+        Después de guardar, llegarás a la configuración de la aplicación Fire TV y a la pestaña <strong>Información general</strong> .
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="900" height="700" src="/assets/images/creating-your-apps/amazon/4-dashboard.png"/>
+        </figure>
+      </li>
+      <li>
+        En esta pestaña podrás ver tus <strong>claves de API de envío de aplicaciones</strong> generadas automáticamente por Amazon y toda la información proporcionada en el momento de crear tu aplicación de Fire TV.
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Availability_&_Pricing">
+      Complete la información de disponibilidad y precios
+    </h2>
+    <p>
+      En esta sección podrás establecer el precio y la disponibilidad de tu aplicación Fire TV. Recuerde que los precios que seleccione deben coincidir con los establecidos en la plataforma Brightcove Beacon.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Haga clic en la pestaña <strong>Disponibilidad y precios</strong> .
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/creating-your-apps/amazon/5-availability-pricing.png"/>
+        </figure>
+      </li>
+      <li>
+        En la primera sección podrás elegir dónde quieres que tu aplicación Fire TV esté disponible:
+        <ul>
+          <li>
+            <strong>En todos los países y regiones donde Amazon vende aplicaciones.</strong>
+          </li>
+          <li><strong>Sólo en países y regiones seleccionados.</strong></li>
+        </ul>
+      </li>
+      <li>
+        Si seleccionas <strong>Sólo en países y regiones seleccionados</strong>, esta opción te permitirá seleccionar qué países o regiones específicas podrán encontrar tu aplicación Fire TV en la tienda de Amazon. En el ejemplo que se muestra a continuación, toda <strong>Norteamérica</strong> y tres países de <strong>Europa</strong> están seleccionados para la aplicación Fire TV.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="700" src="/assets/images/creating-your-apps/amazon/6-select-regions.png"/>
+        </figure>
+      </li>
+      <li>
+        Para seleccionar un país específico de la región, haga clic en el botón <strong>+ Seleccionar países/regiones</strong> .
+      </li>
+      <li>
+        Selecciona los países en los que quieres que se publique tu aplicación Fire TV de la región que elijas.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="500" height="600" src="/assets/images/creating-your-apps/amazon/7-select-countries.png"/>
+        </figure>
+      </li>
+      <li>Haga clic en el botón <strong>Agregar</strong>.</li>
+      <li>
+        La siguiente opción te permitirá seleccionar si tu aplicación de Fire TV es <strong>gratuita</strong> o de <strong>pago</strong>. Normalmente, la aplicación predeterminada de Brightcove Beacon se establece como <strong>Libre</strong>.
+      </li>
+      <li>
+        Si selecciona <strong>Pagado</strong>, deberá <strong>establecer un precio previsto</strong> y un tipo de divisa. (Póngase en contacto con el representante de su cuenta de Brightcove Beacon en caso de que desee asignar un precio a su aplicación Fire TV).
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="400" src="/assets/images/creating-your-apps/amazon/8-price-app.png"/>
+        </figure>
+      </li>
+      <li>
+        (Opcional) Deja este campo en blanco para iniciar el proceso de publicación tan pronto como tu aplicación Fire TV haya sido aprobada. Para aplazar el inicio del proceso de publicación a una fecha y hora futuras, asigna una fecha de publicación para tu aplicación Fire TV.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="400" src="/assets/images/creating-your-apps/amazon/9-publishing-time.png"/>
+        </figure>
+      </li>
+      <li>Haga clic en el botón <strong>Guardar</strong> .</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="IAP_Subscription">
+      Creación de una Suscripción de Compras In-App (IAP)
+    </h2>
+    <p>
+      En esta sección aprenderás cómo crear una suscripción de Compras en la aplicación para tu Fire TV.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Después de guardar la configuración de <strong>Disponibilidad y precios</strong> , aparecerá un campo adicional para <strong>Agregar IAP</strong> (Compras In-App).
+      </li>
+      <li>
+        Haga clic en el botón <strong>Agregar IAP</strong> para agregar compras dentro de la aplicación como suscripciones.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="400" src="/assets/images/creating-your-apps/amazon/10-in-app-purchase.png"/>
+        </figure>
+      </li>
+      <li>
+        Verás la pestaña <strong>Elementos en la aplicación</strong> .
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="300" src="/assets/images/creating-your-apps/amazon/11-in-app-items.png"/>
+        </figure>
+      </li>
+      <li>
+        Por el momento no tendrás ningún elemento dentro de la aplicación allí. Para crear un solo clic en el botón <strong>Agregar IAP único</strong> .
+      </li>
+      <li>
+        Ten en cuenta que tienes tres tipos diferentes de compras dentro de la aplicación que seleccionar.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="200" height="200" src="/assets/images/creating-your-apps/amazon/12-add-iap.png"/>
+        </figure>
+        <ul>
+          <li>
+            <strong>Añadir un consumible:</strong> Un consumible incluye cualquier tipo de contenido que vendas dentro de la aplicación que se consume dentro de la propia aplicación. Este tipo de contenido solo está disponible en el dispositivo desde el que se compra.
+          </li>
+          <li>
+            <strong>Agregar un derecho:</strong> Un derecho incluye cualquier tipo de contenido que vendas dentro de tu aplicación y que requiera derechos de acceso. Este tipo de contenido está disponible en cualquier lugar en el que el cliente haya iniciado sesión en el cliente de Amazon Apps. El derecho al contenido no caduca.
+          </li>
+          <li>
+            <strong>Añadir una suscripción:</strong> Una suscripción incluye cualquier tipo de contenido que:
+            <ul>
+              <li>Lleva un derecho</li>
+              <li>Está vinculado por un período de tiempo</li>
+              <li>Renovación automática al final del período</li>
+              <li>
+                Está disponible en todos los dispositivos aptos registrados en la cuenta de Amazon del cliente
+              </li>
+            </ul>
+          </li>
+          Tu aplicación puede tener varias suscripciones definidas para ella, y cada suscripción tiene varios períodos.
+        </ul>
+      </li>
+      <li>
+        Seleccione el IAP que prefiera o póngase en contacto con el representante de su cuenta de Brightcove Beacon para saber más acerca de las opciones más adecuadas para su contenido.
+      </li>
+      <li>
+        En este ejemplo, se selecciona <strong>Suscripción</strong> .
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="400" src="/assets/images/creating-your-apps/amazon/13-subscription.png"/>
+        </figure>
+      </li>
+      <li>Dar un <strong>título</strong> a su nueva suscripción.</li>
+      <li>
+        Elige un <strong>SKU</strong>. El SKU (unidad de mantenimiento de existencias) se convierte en el identificador de tu suscripción para tus propios fines de seguimiento, por ejemplo, <em>suscription.gold</em>.
+      </li>
+      <li>Haga clic en el botón <strong>Guardar</strong> .</li>
+      <li>
+        Después de guardar su IAP, se le pedirá que acceda a la pestaña <strong>Período de suscripción</strong> .
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="300" src="/assets/images/creating-your-apps/amazon/14-subscription-details.png"/>
+        </figure>
+      </li>
+      <li>
+        Seleccione un <strong>periodo de suscripción</strong>. Podrás seleccionar la hora en la que se cobrará la suscripción a tus usuarios. Por ejemplo: <strong>mensual, semanal, anual</strong>, etc.
+      </li>
+      <li>
+        Elige un <strong>SKU</strong>. El SKU (unidad de mantenimiento de existencias) se convierte en el identificador de tu periodo de suscripción para tus propios fines de seguimiento, por ejemplo <em>mensualmente.subscription</em>.
+      </li>
+      <li>
+        (Opcional) Seleccione si desea dar una <strong>prueba gratuita</strong> de su suscripción. Por ejemplo: <strong>7 días, 1 mes</strong>, etc.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="500" height="300" src="/assets/images/creating-your-apps/amazon/14.5-free-trial.png"/>
+        </figure>
+      </li>
+      <li>
+        Seleccione si va a cobrar por esta suscripción. Para cargar, seleccione el <strong>precio de lista Sí, mi base es...</strong> opción.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="300" src="/assets/images/creating-your-apps/amazon/15-subscription-price.png"/>
+        </figure>
+      </li>
+      <li>Introduzca el precio de su suscripción y el tipo de divisa.</li>
+      <li>
+        Aparecerá la configuración de <strong>precios calculados</strong> , que te permitirá decidir si quieres que Amazon calcule los precios de lista por ti o si estableces los precios manualmente.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="300" src="/assets/images/creating-your-apps/amazon/16-currency-prices.png"/>
+        </figure>
+      </li>
+      <li>Haga clic en el botón <strong>Guardar</strong> .</li>
+      <li>
+        Vaya a la pestaña <strong>Descripción</strong> y agregue una descripción a su nueva suscripción.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="300" src="/assets/images/creating-your-apps/amazon/18-subscription.png"/>
+        </figure>
+      </li>
+      <li>Haga clic en el botón <strong>Guardar</strong> .</li>
+      <li>
+        Cuando se completen todos los ajustes de IAP, se activará el botón <strong>Enviar elemento en la aplicación</strong> . Haz clic en el botón para enviar tu IAP para su aprobación a Amazon.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="400" src="/assets/images/creating-your-apps/amazon/19-submit-item.png"/>
+        </figure>
+      </li>
+      <li>
+        Haga clic en el <strong>botón Enviar elemento en la aplicación</strong> y podrá ver su elemento IAP en la lista de pestañas <strong>Elementos en la aplicación</strong> .
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="300" src="/assets/images/creating-your-apps/amazon/20-subscription-approved.png"/>
+        </figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="description_information">Complete la información de la descripción</h2>
+    <p>
+      En esta sección, podrás añadir todas las descripciones de texto de la app Fire TV que serán visibles para los usuarios de la tienda de Amazon.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Haz clic en la pestaña <strong>Versión actual</strong> y selecciona la pestaña <strong>Descripción</strong> en el menú de la aplicación Fire TV.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="300" src="/assets/images/creating-your-apps/amazon/21-subscription-menu.png"/>
+        </figure>
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="300" src="/assets/images/creating-your-apps/amazon/21.5-text-descriptions.png"/>
+        </figure>
+      </li>
+      <li>
+        Complete lo siguiente en el formulario:
+        <ul>
+          <li>
+            <strong>Breve descripción</strong>: Una breve descripción de su aplicación, que se muestra en dispositivos móviles.
+          </li>
+          <li>
+            <strong>Descripción larga</strong>: Una descripción más larga de tu aplicación, para el sitio web de App Store.
+          </li>
+          <li>
+            <strong>Viñetas de características del producto</strong>: Hasta 10 funciones clave de la aplicación, una característica por línea. Estas funciones aparecerán en el sitio web de App Store, con formato de lista con viñetas.
+          </li>
+          <li>
+            (Opcional) <strong>Palabras clave</strong>: Términos de búsqueda utilizados para aumentar la capacidad de detección de su aplicación, Use una coma o un espacio en blanco para separar los términos.
+          </li>
+        </ul>
+      </li>
+      <li>
+        De forma predeterminada, la descripción se mostrará en inglés, pero puede agregar traducciones haciendo clic en el botón <strong>Agregar descripciones localizadas</strong> .
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="300" src="/assets/images/creating-your-apps/amazon/22-translations.png"/>
+        </figure>
+      </li>
+      <li>
+        Aparecerá un formulario que le permitirá seleccionar los idiomas de traducción que desea agregar.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="400" height="400" src="/assets/images/creating-your-apps/amazon/23-languages.png"/>
+        </figure>
+      </li>
+      <li>Haga clic en el botón <strong>Agregar</strong>.</li>
+      <li>
+        En la parte superior del formulario, podrá seleccionar entre los formularios de idioma y agregar cada una de las descripciones de idioma.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="400" src="/assets/images/creating-your-apps/amazon/24-spanish-description.png"/>
+        </figure>
+      </li>
+      <li>Haga clic en el botón <strong>Guardar</strong> .</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="images_information">Información completa de imágenes e información multimedia</h2>
+    <p>
+      En esta sección aprenderás a subir las imágenes de tu aplicación Fire TV.
+    </p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Haga clic en la pestaña <strong>Imágenes y multimedia</strong> .
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="400" src="/assets/images/creating-your-apps/amazon/25-images-media.png"/>
+        </figure>
+      </li>
+      <li>
+        Haga clic en la sección <strong>Activos de tabla y teléfono</strong> . Aunque tu aplicación está dirigida a Fire TV y no a tabletas y teléfonos, Amazon requiere que se proporcionen estas imágenes. Puedes usar los mismos tamaños de imagen que usarás para tu aplicación Fire TV.
+        <table class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th>Imagen</th>
+              <th>Requisitos</th>
+              <th>Obligatorio/Opcional</th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td>Iconos</td>
+              <td>
+                PNG (sin transparencia)
+                <table>
+                  <tr>
+                    <td>Ancho: 1280px</td>
+                    <td>Altura: 720 px.</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                Obligatorio
+              </td>
+            </tr>
+            <tr>
+              <td>Capturas de pantalla</td>
+              <td>
+                Entre 3 y 10 JPG o PNG (sin transparencia, paisaje)
+                <table>
+                  <tr>
+                    <td>Ancho: 1920px</td>
+                    <td>Altura: 1080 px.</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                Obligatorio
+              </td>
+            </tr>
+            <tr>
+              <td>Imagen de fondo</td>
+              <td>
+                JPG o PNG (sin transparencia, horizontal)
+
+                <table>
+                  <tr>
+                    <td>Ancho: 1920px</td>
+                    <td>Altura: 1080 px.</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                Obligatorio
+              </td>
+            </tr>
+            <tr>
+              <td>Logotipo de contenido destacado</td>
+              <td>
+                PNG (transparencia opcional)
+                <table>
+                  <tr>
+                    <td>Ancho: 640 px.</td>
+                    <td>Altura: 260 px.</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                Opcional
+              </td>
+            </tr>
+            <tr>
+              <td>Fondo de contenido destacado</td>
+              <td>
+                JPG o PNG (sin transparencia)
+                <table>
+                  <tr>
+                    <td>Ancho: 1920px</td>
+                    <td>Altura: 720 px.</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                Opcional
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        Sube una imagen para los <strong>Iconos</strong> haciendo clic en el cuadro de la derecha.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="300" src="/assets/images/creating-your-apps/amazon/26-upload-images.png"/>
+        </figure>
+      </li>
+      <li>
+        Sube una imagen para las capturas de pantalla haciendo clic en el cuadro de la derecha.<strong></strong>
+      </li>
+      <li>
+        Haz clic en la sección <strong>Recursos de Fire TV</strong> .
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="300" src="/assets/images/creating-your-apps/amazon/26.5-firetv-images.png"/>
+        </figure>
+      </li>
+      <li>
+        Sube una imagen para el <strong>icono de la aplicación</strong> haciendo clic en el cuadro de la derecha.
+      </li>
+      <li>
+        Sube una imagen para las capturas de pantalla haciendo clic en el cuadro de la derecha.<strong></strong>
+      </li>
+      <li>
+        Sube una imagen para la <strong>imagen de fondo</strong> haciendo clic en el cuadro de la derecha.
+      </li>
+      <li>
+        (Opcional) Sube una imagen para el <strong>logotipo de contenido destacado</strong> haciendo clic en el cuadro de la derecha.
+      </li>
+      <li>
+        (Opcional) Cargue una imagen para el <strong>fondo de contenido destacado</strong> haciendo clic en el cuadro de la derecha.
+      </li>
+      <li>
+        Una vez cargadas todas tus imágenes, podrás hacer clic en el botón <strong>Vista previa de imágenes en TV</strong> para ver cómo se verá tu aplicación Fire TV en la Tienda Apps.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="300" src="/assets/images/creating-your-apps/amazon/27-preview-image-button.png"/>
+        </figure>
+      </li>
+      <li>Haga clic en el botón <strong>Guardar</strong> .</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="content_rating">Información completa de clasificación de contenido</h2>
+    <p>
+      La sección de clasificación de contenido solicita que categorices los tipos de contenido que vas a presentar en tu aplicación Fire TV. La categorización de Amazon divide el contenido en estos tres tipos:
+    </p>
+    <ul>
+      <li>
+        <strong>Moderado:</strong> Ocurre una vez o raramente y no es fundamental para el propósito general y/o la intención de la aplicación.
+      </li>
+      <li>
+        <strong>Fuerte:</strong> Se produce regularmente y es fundamental para el propósito general y/o la intención de la aplicación.
+      </li>
+      <li><strong>Ninguno:</strong> No ocurre en la aplicación.</li>
+    </ul>
+
+    <p>
+      Los tipos de temas son <strong>violencia, académica, violencia de dibujos animados</strong>.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Haga clic en la ficha <strong>Clasificación de contenido</strong> .
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="300" src="/assets/images/creating-your-apps/amazon/28.5-content-rating-tab.png"/>
+        </figure>
+      </li>
+      <li>
+        Seleccione un tipo de categoría para cada una de las asignaturas. Toda esta información corresponde a los tipos de contenido de tu aplicación Fire TV. Si no está seguro de qué responder, póngase en contacto con su representante de cuenta de Brightcove Beacon.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="300" src="/assets/images/creating-your-apps/amazon/29-category-subjects.png"/>
+        </figure>
+      </li>
+      <li>
+        En la sección <strong>Información adicional</strong> , responde <strong>Sí</strong> o <strong>No</strong> dependiendo de las funciones que contenga tu aplicación Fire TV. Toda esta información corresponde a la información adicional y a las funciones que tu aplicación Fire TV puede tener o no. Si no está seguro de qué responder, póngase en contacto con su representante de cuenta de Brightcove Beacon.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="300" src="/assets/images/creating-your-apps/amazon/30-additional-info.png"/>
+        </figure>
+      </li>
+      <li>
+        Si tu aplicación Fire TV recopila información personal, debes agregar una <strong>URL de política de privacidad</strong> para revisar tus declaraciones de política de privacidad para los usuarios.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="300" src="/assets/images/creating-your-apps/amazon/31-policy-url.png"/>
+        </figure>
+      </li>
+      <li>Haga clic en el botón <strong>Guardar</strong> .</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="apk_information">
+      Información completa de los archivos del kit de paquetes de Android (APK)
+    </h2>
+    <p>
+      La sección <strong>Archivos APK</strong> es donde se debe cargar el archivo de la aplicación de Android. El APK se suministra a usted desde Brightcove.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Haga clic en la pestaña <strong>Archivos APK</strong> .
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="300" src="/assets/images/creating-your-apps/amazon/31.4-apk-tab.png"/>
+        </figure>
+      </li>
+      <li>
+        En el <strong>Apply Amazon DRM?</strong> , seleccione <strong>No</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="400" src="/assets/images/creating-your-apps/amazon/31.5-upload-apk.png"/>
+        </figure>
+      </li>
+      <li>
+        En la sección <strong>Archivo APK</strong> , haga clic en la casilla de la derecha y cargue el archivo APK que le ha proporcionado desde Brightcove.
+      </li>
+      <li>
+        Una vez cargado el archivo, podrás ver tu archivo en la pantalla. Haga clic en el botón <strong>Ver</strong> .
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="400" src="/assets/images/creating-your-apps/amazon/31.6-apk-file.png"/>
+        </figure>
+      </li>
+      <li>
+        Se abrirá la ventana <strong>Soporte de dispositivos</strong> , en la que puedes seleccionar los dispositivos en los que tu aplicación Fire TV será compatible.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="400" height="300" src="/assets/images/creating-your-apps/amazon/31.7-unabled-devices.png"/>
+        </figure>
+      </li>
+      <li>
+        Haz clic en la pestaña <strong>Amazon Fire TV</strong> y selecciona todos los dispositivos. Brightcove Beacon solo está disponible para Amazon Fire TV, así que mantén sin seleccionar las pestañas <strong>Tablets y Teléfonos de Amazon Fire</strong> y <strong>Dispositivos que no sean Amazon</strong> .
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="400" height="300" src="/assets/images/creating-your-apps/amazon/31.8-enabled-devices.png"/>
+        </figure>
+      </li>
+      <li>Cierre la ventana <strong>Soporte de dispositivos</strong> .</li>
+      <li>
+        En la sección <strong>Agregar otros detalles</strong> , seleccione al menos un soporte de idioma de la lista. Este es el idioma en el que los usuarios se comunicarán para obtener soporte técnico.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="500" src="/assets/images/creating-your-apps/amazon/32-language-support.png"/>
+        </figure>
+      </li>
+      <li>
+        En el campo <strong>Instrucciones de prueba</strong> , proporciona instrucciones especiales al equipo de pruebas de Amazon, como las credenciales de inicio de sesión necesarias para probar las secuencias de vídeo o notas que expliquen cómo utilizar diferentes niveles de suscripción.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="400" src="/assets/images/creating-your-apps/amazon/33-testing-instructions.png"/>
+        </figure>
+      </li>
+      <li>
+        Marque las casillas de verificación <strong>Cumplimiento de exportaciones</strong> y <strong>Usar redirección de Amazon Maps</strong> .
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="400" src="/assets/images/creating-your-apps/amazon/34-checkbox.png"/>
+        </figure>
+      </li>
+      <li>Haga clic en el botón <strong>Guardar</strong> .</li>
+      <li>
+        Después de guardar, aparecerá la pestaña <strong>Revisar estado</strong> en el menú.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="700" height="300" src="/assets/images/creating-your-apps/amazon/39-review-status.png"/>
+        </figure>
+      </li>
+      <li>
+        Podrás comprobar la información sobre tu aplicación Fire TV como tu última actividad e historial de envíos. Si no hay ningún error, haz clic en el botón <strong>Enviar aplicación</strong> en la esquina superior izquierda de la pantalla para enviar tu aplicación de Fire TV.
+      </li>
+    </ol>
+
+    <p>
+      Ahora solo tienes que esperar a que Amazon apruebe tu aplicación Fire TV y la publique en la Tienda Apps de Amazon.
+    </p>
+  </section>
+</article>
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Contenido de la página</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="last-updated">
+  Última actualización de la página el 12-06-2020
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Asistencia técnica de Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            Estado del sistema<a href="https://status.brightcove.com"></a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentación</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Formación</h2>
+
+        <ul class="menu">
+          <li>
+            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
+          </li>
+          <li>
+            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">BrightCove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+<div id="talla_wrapper">
+  <p style="text-align: right;position: relative;"><button style="background:rgb(2, 28, 146);color:Snow;padding:.3rem;position:fixed;right:0;bottom:1em;z-index:9999999" onclick="javascript:displayChat()">¿Tiene alguna pregunta? </button> </p>
+  <div id="talla_chat">
+</div>
+</div>
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <script src="https://assets.talla.com/latest/embeddedjs/talla.js"></script>
+  <script src="/assets/js/talla-init.js"></script>
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>
