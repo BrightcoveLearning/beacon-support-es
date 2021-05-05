@@ -1,0 +1,1357 @@
+﻿<!DOCTYPE html>
+<html lang="es-es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+
+    <title>Creación de campos personalizados de Video Cloud</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+      <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://support.brightcove.com/site-assets/css/site/prism.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://support.brightcove.com/site-assets/css/site/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://support.brightcove.com/site-assets/css/site/landing-page.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://support.brightcove.com/site-assets/css/site/tabs.css"
+    />
+    <link rel="stylesheet" href="/assets/css/local.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/381443caa8.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+    <script src="/assets/js/sajari-head.js"></script>
+  </head>
+
+  <body class="body"></body>
+</html>
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Beacon_Logo.svg" alt="logotipo del producto" style="max-height: 100px;max-width: 232px;"/></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+      
+      
+      
+      <li class="breadcrumb-item">Sincronización con Video Cloud<a href="/syncing-with-video-cloud/"></a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Creación de campos personalizados de Video Cloud</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+  <div class="row">
+          <div class="col-sm-3 left-side-bar">
+        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+          <option value="">Otros documentos de Brightcove</option>
+          
+            
+              <option value="https://support.brightcove.com">Documentación Inicio</option>
+            
+          
+            
+              <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
+            
+          
+            
+              <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
+            
+          
+            
+              <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
+            
+          
+            
+              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+            
+          
+            
+              <option value="https://live.support.brightcove.com">Brightcove Live</option>
+            
+          
+            
+              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+            
+          
+            
+              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+            
+          
+            
+              <option value="https://social.support.brightcove.com">Brightcove Social</option>
+            
+          
+            
+              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+            
+          
+            
+              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
+            
+          
+            
+              <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
+            
+          
+            
+              <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
+            
+          
+            
+              <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
+            
+          
+            
+              <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
+            
+          
+            
+              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+            
+          
+        </select>
+
+      <nav class="sidenav" id="side_nav">
+        
+        
+        <h5><a href="/index.html">Inicio</a></h5>
+        
+        
+        
+        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+					<option value="">기타 브라이트코브 문서</option>
+					
+						
+							<option value="https://support.brightcove.com">설명서 홈</option>
+						
+					
+						
+							<option value="https://audience.support.brightcove.com">브라이트코브 대상</option>
+						
+					
+						
+							<option value="https://beacon.support.brightcove.com">브라이트코브 비콘</option>
+						
+					
+						
+							<option value="https://campaign.support.brightcove.com">브라이트코브 캠페인</option>
+						
+					
+						
+							<option value="https://engage.support.brightcove.com">브라이트코브 참여</option>
+						
+					
+						
+							<option value="https://live.support.brightcove.com">Brightcove Live</option>
+						
+					
+						
+							<option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+						
+					
+						
+							<option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+						
+					
+						
+							<option value="https://social.support.brightcove.com">브라이트코브 소셜</option>
+						
+					
+						
+							<option value="https://studio.support.brightcove.com">비디오 클라우드 스튜디오</option>
+						
+					
+						
+							<option value="https://player.support.brightcove.com">브라이트코브 플레이어 개발</option>
+						
+					
+						
+							<option value="https://apis.support.brightcove.com">비디오 클라우드 플랫폼 API</option>
+						
+					
+						
+							<option value="https://sdks.support.brightcove.com">비디오 클라우드 디바이스 SDK</option>
+						
+					
+						
+							<option value="https://integrations.support.brightcove.com">통합 및 CMS 커넥터</option>
+						
+					
+						
+							<option value="https://general.support.brightcove.com">비디오 클라우드 일반 정보</option>
+						
+					
+						
+							<option value="https://zencoder.support.brightcove.com">Zencoder</option>
+						
+			<h5 class="submenu-header"><a href="/getting-started/index.html"><strong>+</strong> Empezar</a></h5>		
+				</select>
+        <nav class="sidenav" id="side_nav">
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li>Guía de aprendizaje<a href="/getting-started/learning-guide-bc-beacon.html"></a></li>
+          
+          
+          
+          <li><a href="/getting-started/implementation-phases.html">Fases de implementación</a></li>
+          
+          
+          
+          <li><a href="/getting-started/app-design-considerations.html">Consideraciones de diseño de aplicaciones</a></li>
+          
+          
+          
+          <li><a href="/getting-started/creating-your-app-design-info-architecture.html">Diseño de aplicaciones - Info Architecture</a></li>
+          
+          
+          
+          <li><a href="/getting-started/creating-your-app-design-layout-options.html">Diseño de aplicaciones - Opciones de diseño</a></li>
+          
+          
+          
+          <li><a href="/getting-started/design-best-practices.html">Prácticas recomendadas de diseño</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header">Sincronización con Video Cloud +<a href="/syncing-with-video-cloud/index.html"><strong></strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/syncing-with-video-cloud/vc-custom-fields.html">Creación de campos personalizados de Video Cloud</a></li>
+          
+          
+          
+          <li><a href="/syncing-with-video-cloud/forcing-a-sync.html">Forzar una sincronización</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header">Uso de Brightcove Beacon +<a href="/using-brightcove-beacon/index.html"><strong></strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/using-brightcove-beacon/adding-to-page.html">Agregar un carrusel a una página</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-a-channel.html">Creación de un canal</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/electronic-program-guides.html">Creación de una Guía Electrónica de Programas (EPG)</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-a-page.html">Creación de una nueva página</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-a-playlist.html">Creación de una lista de reproducción</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-subscription-package.html">Creación de un paquete de suscripción</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/promo-codes.html">Creación de Códigos Promocionales</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/series-seasons-episodes.html">Creación de serie/Temporadas/Episodios</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/configuring-server-side-ad-settings.html">Configuración de la configuración de anuncios del lado del servidor</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/implementing-authvod.html">Implementación de AuthVoD</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/live-ssai.html">Implementación de SSAI en vivo</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/vod-ssai.html">Implementación de VOD SSAI</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/including-non-configurable-pages.html">Incluyendo páginas no configurables</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/introducing-pages.html">Presentando páginas</a></li>
+          
+          
+          
+          <li>Transmisión de un evento en directo<a href="/using-brightcove-beacon/streaming-live-event.html"></a></li>
+          
+          
+          
+          <li>Transmisión de VOD a un canal<a href="/using-brightcove-beacon/streaming-vods-to-a-channel.html"></a></li>
+          
+          
+          
+          <li>Descripción de las opciones de monetización<a href="/using-brightcove-beacon/monetization-options.html"></a></li>
+          
+          
+          
+          <li>Uso de un paquete de suscripción<a href="/using-brightcove-beacon/using-subscription-package.html"></a></li>
+          
+          
+          
+          <li>Uso de las herramientas<a href="/using-brightcove-beacon/tools.html"></a></li>
+          
+          
+          
+          <li>Visualización de datos de análisis<a href="/using-brightcove-beacon/viewing-analytics-data.html"></a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/creating-your-apps/index.html">Creación de aplicaciones <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/android/index.html"> <strong>Android+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li>Envío de nuevas aplicaciones a la Tienda Android<a href="/creating-your-apps/android/submitting-to-android.html"></a></li>
+              
+              <li>Actualización de aplicaciones de Android a Brightcove Beacon<a href="/creating-your-apps/android/updating-android-apps-to-bcb.html"></a></li>
+              
+              <li><a href="/creating-your-apps/android/adding-subscriptions-in-android.html">Agregar suscripciones a Android</a></li>
+              
+              <li><a href="/creating-your-apps/android/improving-relevance-android.html">Mejorar la relevancia de la búsqueda en Android Play Store</a></li>
+              
+              <li><a href="/creating-your-apps/android/installing-android-test-build.html">Instalación de una compilación de prueba de Android</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/fire-tv/index.html">Fire TV <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/fire-tv/installing-fire-tv-test-build.html">Instalación de una compilación de prueba de Fire TV</a></li>
+              
+              <li>Enviar a la Tienda Amazon<a href="/creating-your-apps/fire-tv/submitting-to-amazon.html"></a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/ios-tvos/index.html">IOS/tvOS <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/ios-tvos/installing-ios-test-build.html">Instalación de una compilación de pruebas de iOS/tvOS</a></li>
+              
+              <li>Enviar a la Apple Store<a href="/creating-your-apps/ios-tvos/submitting-to-apple.html"></a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            Panasonic +<a href="/creating-your-apps/panasonic/index.html"><strong></strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li>Envío a la Tienda Panasonic<a href="/creating-your-apps/panasonic/submitting-to-panasonic.html"></a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            Roku +<a href="/creating-your-apps/roku/index.html"><strong></strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/roku/configuring-inchannel-products.html">Configuración de Productos In-Channel en Roku</a></li>
+              
+              <li><a href="/creating-your-apps/roku/installing-roku-test-build.html">Instalación de una compilación de prueba de Roku</a></li>
+              
+              <li>Envío a la tienda Roku<a href="/creating-your-apps/roku/submitting-to-roku.html"></a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            Samsung +<a href="/creating-your-apps/samsung/index.html"><strong></strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/samsung/samsung-partner.html">Convertirse en un socio de Samsung</a></li>
+              
+              <li>Envío a la Tienda Samsung<a href="/creating-your-apps/samsung/submitting-to-samsung.html"></a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li><a href="/creating-your-apps/common-required-info.html">Información común requerida</a></li>
+          
+          
+          
+          <li><a href="/creating-your-apps/device-apps-validation-guide.html">Guía de validación de aplicaciones de dispositivo</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header">Referencias +<a href="/references/index.html"><strong></strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/references/common-configuration-settings.html">Parámetros de configuración comunes</a></li>
+          
+          
+          
+          <li><a href="/references/creating-stripe-account.html">Creación de una cuenta de Stripe</a></li>
+          
+          
+          
+          <li><a href="/references/glossary.html">Glosario</a></li>
+          
+          
+          
+          <li><a href="/references/image-requirements.html">Imágenes y sus especificaciones</a></li>
+          
+          
+          
+          <li>Problemas conocidos<a href="/references/known-issues.html"></a></li>
+          
+          
+          
+          <li>Actualizaciones de productos<a href="/references/product-updates.html"></a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header">Entrenamiento +<a href="/training/index.html"><strong></strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li>Uso de vídeos de Video Cloud o Campos personalizados<a href="/training/training-demand-custom-fields.html"></a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-design-layout.html">Diseño del diseño de la aplicación</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-playlists.html">Creación y uso de listas de reproducción</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-series-seasons-episodes.html">Creación de series, temporadas y episodios</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-vod-ssai.html">Implementación de anuncios VOD del lado del servidor</a></li>
+          
+          
+          
+          <li>Publicación de la aplicación Android en Play Store<a href="/training/training-demand-publish-android-app.html"></a></li>
+          
+          
+          
+          <li>Visualización de datos de análisis<a href="/training/training-demand-viewing-analytics.html"></a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          
+          
+          
+          
+          <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
+          
+          
+          
+          <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
+          
+          
+          
+          <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
+          
+          
+        </ul>
+        
+        
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+      <!-- bootstrap layout -->
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Contenido de la página</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
+
+
+<article class="bcls-article">
+    <h1>Creación de campos personalizados de Video Cloud</h1>
+    <summary>
+        En este tema, verá los campos personalizados de Video Cloud necesarios para la sincronización en Brightcove Beacon.
+    </summary>
+    <section class="bcls-section">
+        <h2 id="Introduction">Introducción</h2>
+        <p>
+            Los vídeos que se importarán a Brightcove Beacon desde Video Cloud deben tener un conjunto enriquecido de metadatos definido para su uso adecuado en Brightcove Beacon. En este documento verá cómo crear nuevos campos personalizados en Studio. Además, se definen los campos necesarios para Brightcove Beacon.
+    </section>
+    <section class="bcls-section">
+        <h2 id="Creating_custom_fields">Creación de campos personalizados</h2>
+        <p>Para crear campos personalizados, siga estos pasos.</p>
+        <ol class="bcls-tasklist">
+            <li>Inicie sesión en Video Cloud Studio.</li>
+            <li>
+                En el encabezado de navegación, haga clic en <strong>ADMIN</strong> y luego <strong>Campos de vídeo</strong>. Tenga en cuenta que debe ser administrador de cuentas para acceder al menú ADMIN.
+            </li>
+            <li>
+                La página Campos de vídeo mostrará los campos personalizados y todos los campos de metadatos de vídeo estándar, como se muestra en la siguiente captura de pantalla: <figure class="bcls-figure"> <img class="bcls-image" src="https://img.brightcove.com/node1050-custom-fields-overview1.png" alt=""/> </figure>
+            </li>
+            <li>
+                Haga clic en <strong>Agregar campo personalizado</strong>.
+                <figure class="bcls-figure"> <img class="bcls-image" src="https://img.brightcove.com/node1050-new-custom-field1.png" alt=""/> </figure>
+            </li>
+            <li>
+                <p>
+                    Introduzca un <strong>nombre para mostrar</strong>. Aparecerá como la etiqueta del campo en los módulos Cargar y Media. Se creará automáticamente un<strong> nombre interno</strong> para el campo basado en el nombre para mostrar.
+                </p>
+                <aside class="bcls-aside bcls-aside--information language-editable"> Nota: Los nombres para mostrar que se utilizarán para la importación correcta en Brightcove Beacon se especifican más adelante en este documento.
+                </aside>
+            </li>
+            <li>
+                Seleccione un tipo para el campo.<strong></strong>
+                <ul>
+                    <li>
+                        Texto: el usuario puede escribir cualquier cosa en el campo hasta 1024 caracteres de un solo byte (o 512 caracteres de doble byte).<strong></strong>
+                    </li>
+                    <li>
+                        Lista - El usuario seleccionará de una lista de valores.<strong></strong> Las listas no pueden tener más de 150 valores posibles y cada valor de la lista no puede tener más de 100 caracteres.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Introduzca una <strong>descripción</strong>. El campo de descripción aparecerá como una sugerencia en la interfaz de Studio.
+            </li>
+            <li>
+                Si se requiere el campo personalizado, <strong>marque Hacer este campo obligatorio</strong>.
+            </li>
+            <li>
+                <p>
+                    Si el tipo de campo es <strong>Lista</strong>, escriba una lista de valores separados por comas y, a continuación, haga clic en <strong>Agregar a la lista</strong>, como se muestra en la siguiente captura de pantalla.
+                </p>
+                <aside class="bcls-aside bcls-aside--information"> Notas:
+                    <ol>
+                        <li>
+                            Los valores no deben contener comillas (ejemplo: Animales, Pájaros, Peces).
+                        </li>
+                        <li>
+                            Ningún valor puede contener una coma: todas las comas se tratarán como separadores de diferentes valores.
+                        </li>
+                    </ol>
+                </aside>
+                <figure class="bcls-figure"> <img class="bcls-image" src="https://img.brightcove.com/node1050-new-custom-field-added1.png" alt=""/> </figure>
+            </li>
+            <li>
+                Haga clic en <strong>Guardar campo</strong> para guardar los cambios. Haga clic en <strong>Guardar y agregar otro</strong> para guardar el campo y empezar a crear otro campo.
+            </li>
+        </ol>
+        <p>
+            Los campos personalizados que cree están disponibles inmediatamente&nbsp;y estarán visibles&nbsp;en el módulo Media.
+        </p>
+        <p>
+            Se pueden crear hasta 10 campos personalizados. Si necesita más de 10 campos, haga clic en el botón ¿Necesita más campos? en la página Campos de vídeo para ponerse en contacto con el servicio de atención al cliente de Brightcove para solicitar más información.<strong></strong> Los editores están limitados a 50 campos personalizados.
+        </p>
+        <h3 id="edit">Edición de valores de lista</h3>
+        <p>
+            Puede agregar valores adicionales a un campo personalizado de tipo Lista. Haga clic en el vínculo de nombre de campo personalizado, agregue los valores y, a continuación, haga clic en <strong>Agregar a la lista</strong>. Cuando haya terminado, haga clic en Guardar campo.<strong></strong>
+        </p>
+        <h3 id="delete">Eliminación de valores de lista</h3>
+        <p>
+            Puede agregar valores de eliminación existentes de un campo personalizado de tipo Lista. Haga clic en el vínculo de nombre de campo personalizado, haga clic en el icono de eliminación (<img alt="" src="https://img.brightcove.com/node1050-delete-icon.png"/>) asociado al valor y, a continuación, haga clic en <strong>Guardar campo</strong>.
+        </p>
+        <p>
+            Cuando se quita un valor de lista, los vídeos que se hayan asignado previamente dicho valor conservarán el valor. Sin embargo, si se edita un vídeo con el valor eliminado, el valor se borrará y tendrá que seleccionarse un nuevo valor.
+        </p>
+        <h3 id="remove">Eliminación de campos personalizados de una cuenta</h3>
+        <p>
+            Para eliminar un campo personalizado de su cuenta, debe ponerse en <a href="https://supportportal.brightcove.com/s/login/"> contacto con el Soporte técnico de Brightcove</a>. Tenga en cuenta que si permite que Brightcove Support elimine campos personalizados, la fecha de modificación cambiará para los vídeos en los que haya un valor presente.
+        </p>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Using_list_values_for_Brightcove_Beacon_metadata"> Uso de valores de lista para metadatos de Beacon Brightcove </h2>
+        <p>
+            En la siguiente tabla encontrará una serie de campos personalizados que debe crear. Como se muestra anteriormente, al crear un campo personalizado, elige el tipo de datos para ser <strong>Texto</strong> o <strong>Lista</strong>. Tenga en cuenta que TODOS los <strong>tipos</strong> son <strong>Texto</strong>. Puede aliviar la carga de los curadores de contenido de vídeo si pueden seleccionar de una lista en lugar de tener que introducir texto. Además, invariablemente ayudará a mantener la entrada de datos más consistente si se pueden seleccionar valores de una lista en lugar de escribirlos. Por lo tanto, si encuentra que una <strong>Lista</strong> funciona en algunos casos de negocio, se puede utilizar una lista.
+        </p>
+        <p>
+            Por supuesto, la elección es suya, pero puede encontrar para algunos campos personalizados una <strong>lista</strong> es una buena selección para el tipo de datos. Por ejemplo, tal vez desee considerar las siguientes listas, entre otras: </p>
+        <ul>
+            <li>beacon.género</li>
+            <li>Beacon.agerating</li>
+            <li>Beacon.ViewerScore</li>
+            <li>beacon.rights.&lt; &gt;contador.type</li>
+        </ul>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Standard_fields">Campos estándar</h2>
+        <p>
+            En la tabla siguiente se muestran los campos estándar de Video Cloud, lo que significa que existen de forma predeterminada, y Brightcove Beacon los utiliza para importar correctamente el vídeo al que están asociados los metadatos.
+        </p>
+        <p>Solo un recordatorio rápido del paso 6 anterior sobre los límites de caracteres:</p>
+        <ul>
+            <li>
+                Texto: puede contener hasta 1024 caracteres de un solo byte (o 512 caracteres de doble byte).
+            </li>
+            <li>
+                Lista: no puede tener más de 150 valores posibles y cada valor de la lista no puede tener más de 100 caracteres de longitud.
+            </li>
+        </ul>
+        <aside class="bcls-aside bcls-aside--warning language-editable"> Nota: Preste mucha atención a las definiciones de <strong>images.poster.src </strong> e <strong>images.thumbnail.src </strong> , ya que proporcionará imágenes diferentes de las solicitadas en la interfaz de usuario de Studio. Añadirá imágenes usando la interfaz de usuario que se muestra aquí, pero siguiendo las pautas de la tabla, no en la interfaz de usuario: <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/syncing-with-vc/vc-custom-fields/editing-images.png" alt=""/> </figure>
+        </aside>
+        <table class="bcls-table">
+            <thead class="bcls-table__head">
+                <tr>
+                    <th>Campo de Video Cloud</th>
+                    <th>Descripción</th>
+                    <th>
+                        Dónde/cómo<br/> poblado
+                    </th>
+                    <th>Obligatorio</th>
+                </tr>
+            </thead>
+            <tbody class="bcls-table__body">
+                <tr>
+                    <td>duration</td>
+                    <td>
+                        Utilizado por Brightcove Beacon para mostrar el porcentaje observado y la duración en las pantallas de detalles
+                    </td>
+                    <td>Rellenado automáticamente con Video Cloud</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>images.poster.src</td>
+                    <td>
+                        Imagen de paisaje (16:9):
+                        <table>
+                            <tr>
+                                <td>Mínimo</td>
+                                <td>Ancho: 1000px</td>
+                                <td>Altura: 563px</td>
+                            </tr>
+                            <tr>
+                                <td>Máximo</td>
+                                <td>Ancho: 4000px</td>
+                                <td>Altura: 2250px</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        Edite la sección <strong>IMAGES &gt; Poster</strong> de las propiedades del vídeo y busque la ubicación de la imagen guardada localmente.
+                    </td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>images.thumbnail.src</td>
+                    <td>
+                        Imagen del póster (2:3)
+                        <table>
+                            <tr>
+                                <td>Mínimo</td>
+                                <td>Ancho: 1000px</td>
+                                <td>Altura: 1500px</td>
+                            </tr>
+                            <tr>
+                                <td>Máximo</td>
+                                <td>Ancho: 2000px</td>
+                                <td>Altura: 3000px</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        Edite la sección <strong>Imágenes en &gt; miniatura</strong> de las propiedades del vídeo y busque la ubicación de la imagen guardada localmente.
+                    </td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Images.WideBanner.src</td>
+                    <td>
+                        <strong>Próximamente</strong> - Mientras tanto, por defecto <code translate="No">images.poster.src</code> </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Images.PortraitPoster.src</td>
+                    <td>
+                        <strong>Próximamente</strong> - Mientras tanto, por defecto <code translate="No">images.poster.src</code> </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Nombre</td>
+                    <td>Utilizado por Brightcove Beacon como título del activo</td>
+                    <td>
+                        Edite la sección <strong>INFORMACIÓN </strong> DE VÍDEO de las propiedades del vídeo e introduzca un <em>nombre</em> </td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Etiquetas</td>
+                    <td>
+                        No se muestra en aplicaciones, sino que Brightcove Beacon lo utiliza para crear listas de reproducción
+                    </td>
+                    <td>
+                        Edite la sección <strong>INFORMACIÓN DE VÍDEO </strong> de las propiedades del vídeo e introduzca <em>Etiquetas</em> </td>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Custom_field_names">Nombres de campo personalizados</h2>
+        <p>
+            Las tres secciones siguientes de este documento cubren campos personalizados que puede necesitar crear en función de su caso de uso de implementación particular. Cada campo personalizado tiene un <strong>nombre para mostrar</strong> y un <strong>nombre interno</strong>. Si cree que tiene un nombre más significativo para el <strong>Nombre para mostrar</strong> opción puedes usarla, pero la <strong>Nombre interno</strong> <code translate="No">MUST</code> coincidir exactamente.
+        </p>
+    </section>
+    <section class="bcls-section">
+        <h2 id="General_custom_fields">General, campos personalizados</h2>
+        <p>
+            En la tabla siguiente se muestran campos personalizados de Video Cloud que puede tener que crear en función de la implementación. Tenga en cuenta que ningún campo que cree necesitará tener activada la casilla de verificación Hacer que este campo sea obligatorio.<strong></strong>
+        </p>
+        <table class="bcls-table">
+            <thead class="bcls-table__head">
+                <tr>
+                    <th>Nombre visible</th>
+                    <th>
+                        Nombre interno
+                    </th>
+                    <th>Tipo</th>
+                    <th>Notas/Ejemplos</th>
+                </tr>
+            </thead>
+            <tbody class="bcls-table__body">
+                <tr>
+                    <td>beacon.género</td>
+                    <td>beacon_género</td>
+                    <td>Texto</td>
+                    <td>
+                        * Género para el<br/> activo* Aparece en la página de detalles y se utilizará para organizar los activos en diferentes pantallas. Si este valor no se establece, entonces <strong>Sin género</strong> se mostrará en la interfaz de usuario<br/> * No establecer este valor tendrá un impacto en <strong>contenido relacionado</strong> funcionalidad<br/> * Ejemplo: Uno de los géneros definidos en Brightcove Beacon, por ejemplo, <em>Acción</em> o <em>Aventura</em> para películas </td>
+                </tr>
+                <tr>
+                    <td>baliza.<br/>ProducciónAño</td>
+                    <td>
+                        beacon_<br/> producciónaño
+                    </td>
+                    <td>
+                        Texto
+                    </td>
+                    <td>
+                        * Año de producción del activo - aparecerá en las páginas de detalles<br/> * Un entero de cuatro dígitos
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        beacon.cast.<br/> director
+                    </td>
+                    <td>
+                        beacon_cast_<br/> director
+                    </td>
+                    <td>Texto</td>
+                    <td>* Lista separada por comas de nombres de directores<br/> * Ejemplo: Nombre (s) del director (s), por ejemplo, <em>Jane Smith, Santiago Almada</em> </td>
+                </tr>
+                <tr>
+                    <td>beacon.cast.singer</td>
+                    <td>beacon_cast_singer</td>
+                    <td>Texto</td>
+                    <td>
+                        * Lista separada por comas de nombres de<br/> cantantes* Ejemplo: Nombre (s) de la (s) cantante (s), por ejemplo, <em>Jane Smith, Santiago Almada</em> </td>
+                </tr>
+                <tr>
+                    <td>beacon.cast.actor</td>
+                    <td>beacon_cast_actor</td>
+                    <td>Texto</td>
+                    <td>
+                        * Lista separada por comas de nombres de actores<br/> * Ejemplo: Nombre (s) del actor (s), por ejemplo, <em>Jane Smith, Santiago Almada</em> </td>
+                </tr>
+                <tr>
+                    <td>
+                        beacon.cast.<br/> compositor
+                    </td>
+                    <td>
+                        beacon_cast_<br/> compositor
+                    </td>
+                    <td>Texto</td>
+                    <td>
+                        * Lista separada por comas de nombres de compositores<br/> * Ejemplo: Nombre (s) del compositor (s), por ejemplo, <em>Jane Smith, Santiago Almada</em> </td>
+                </tr>
+                <tr>
+                    <td>
+                        beacon.cast.<br/> Compositor
+                    </td>
+                    <td>
+                        beacon_cast_<br/> compositor
+                    </td>
+                    <td>Texto</td>
+                    <td>
+                        * Lista separada por comas de nombres de compositores<br/> * Ejemplo: Nombre (s) del compositor (s), por ejemplo, <em>Jane Smith, Santiago Almada</em> </td>
+                </tr>
+                <tr>
+                    <td>beacon.cast.writer</td>
+                    <td>beacon_cast_writer</td>
+                    <td>Texto</td>
+                    <td>
+                        * Lista separada por comas de nombres de escritores<br/> * Ejemplo: Nombre (s) del escritor (s), por ejemplo, <em>Jane Smith, Santiago Almada</em> </td>
+                </tr>
+                <tr>
+                    <td>Beacon.agerating</td>
+                    <td>beacon_agerating</td>
+                    <td>Texto</td>
+                    <td>
+                        * Proporciona la clasificación de edad para el activo<br/> * El valor en este campo debe ser en forma de pares <strong>clave=valor</strong> separados por comas, donde la clave es el código de país (como <strong>nosotros</strong> ) y el valor es la clasificación de edad apropiada para ese código de país admitido por Brightcove Beacon<br/> * Si no se establece este valor, se utilizará la clasificación más permisiva para el sistema predeterminado de clasificación por edad del país establecido en Brightcove Beacon<br/> * Ejemplo: clave=valor, clave=valor, p.ej. <em>US=TV-Y, US=TV-M</em>) </td>
+                </tr>
+                <tr>
+                    <td>
+                        baliza.<br/> Descripción cortoDescripción
+                    </td>
+                    <td>
+                        beacon_<br/> shortdescription
+                    </td>
+                    <td>Texto</td>
+                    <td>
+                        * Permite proporcionar una breve descripción adaptada a Brightcove Beacon<br/> * Si no se establece este valor, utiliza el texto establecido en el campo de descripción corta de<br/> vídeo* Si este campo se deja en blanco y se introduce una <strong>descripción corta</strong> para el vídeo en VIDEO <strong>INFORMATION de Video</strong> Cloud Studio, el valor de Studio se ingerirá. Tenga en cuenta que la <strong>descripción corta</strong> de Studio está limitada a 250 caracteres, mientras que este campo personalizado puede tener 1024 caracteres.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        baliza.<br/> LongDescription
+                    </td>
+                    <td>
+                        beacon_<br/> longdescription
+                    </td>
+                    <td>Texto</td>
+                    <td>
+                        * Permite proporcionar una descripción larga adaptada a Brightcove Beacon<br/> * Si no se establece este valor, utiliza el texto establecido en el campo de descripción larga de<br/> vídeo* Si este campo se deja en blanco y se introduce una <strong>descripción larga</strong> para el vídeo en Video <strong>INFORMACIÓN DE VIDEO</strong> de Cloud Studio, el valor de Studio se ingerirá. Tenga en cuenta que la <strong>descripción larga</strong> de Studio tiene 5000 caracteres, mientras que este campo personalizado sólo puede tener 1024 caracteres.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        baliza.<br/> ViewerScore
+                    </td>
+                    <td>
+                        beacon_<br/> Viewerscore
+                    </td>
+                    <td>Texto</td>
+                    <td>
+                        * Permite establecer una puntuación inicial para las calificaciones del espectador (ya sea procedente de otro sistema o para establecer el valor inicial)<br/> * Esto solo se utilizará si el activo de vídeo es nuevo en Brightcove Beacon y se ignorará para cualquier actualización posterior de este activo en Brightcove Beacon - esto para que los valores establecidos por los usuarios en Brightcove Beacon no se anulan<br/> * Los valores posibles son enteros de 0 a 100 </td>
+                </tr>
+                <tr>
+                    <td>beacon.trailer.id</td>
+                    <td>beacon_trailer_id</td>
+                    <td>Texto</td>
+                    <td>
+                        * Apunta a otro recurso de vídeo en la nube de video que se utilizará como un tráiler para el activo en el que se establece este<br/> campo* El activo al que se apunte se descartará como película o episodio<br/> * Ejemplo: Un ID de vídeo de Video Cloud, por ejemplo, <em>6140603191001</em> </td>
+                </tr>
+                <tr>
+                    <td>beacon.ingest</td>
+                    <td>beacon_ingest</td>
+                    <td>Texto</td>
+                    <td>
+                        * Si este campo no está presente, se ingiere de forma predeterminada<br/> * Si no desea que algún activo específico no se sincronice con Brightcove Beacon, debe establecerse en <strong>No</strong> </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Rights_Management_fields">Campos de Gestión de Derechos</h2>
+        <p>
+            Para admitir las restricciones de monetización y acceso de los activos, se debe utilizar un conjunto de campos personalizados. Como puede tener múltiples instancias de configuraciones de administración de derechos, el enfoque sugerido es crear varios conjuntos de campos personalizados. En el nombre de cada instancia se utiliza un contador para diferenciar entre ellos. La primera instancia debe usar el contador a 0. Aquí hay un ejemplo de estos campos agrupados usando realmente un valor de contador: <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/syncing-with-vc/vc-custom-fields/rights-management.png" alt=""/> </figure>
+            Por ejemplo, es posible que necesite un conjunto para definir su publicidad utilizada en los vídeos, y otro para definir ofertas especiales para unas vacaciones, como Año Nuevo.
+        </p>
+        <p>
+            Un ejemplo específico ayudará a aclarar el uso de estos campos. La siguiente captura de pantalla muestra la configuración de inserción de anuncios en el lado del servidor (SSAI) utilizado en un vídeo de Video Cloud.
+            <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/syncing-with-vc/vc-custom-fields/rights-mamagement-example-avod.png" alt=""/> </figure>
+            Puede aprender lo siguiente de este ejemplo: </p>
+        <ul>
+            <li>No todos los campos de administración de derechos de un grupo deben tener valores asignados. En este caso, solo el <em>beacon.rights.&lt; &gt;contador.adConfiguration</em> y <em>beacon.rights.&lt;contador &gt; .type</em> se utilizan.</li>
+            <li>Puede utilizar el identificador de configuración SSAI creado en Studio en los campos personalizados de Brightcove Beacon.</li>
+            <li>El valor del contador para un conjunto de campos de administración de derechos puede comenzar en 0 (resaltado en amarillo).</li>
+            <li>Aunque no se ve directamente en esta captura de pantalla, pero true, es que la configuración SSAI de Video Cloud se ingiere en Brightcove Beacon.</li>
+        </ul>
+        <p>Tenga en cuenta que ningún campo que cree necesitará tener activada la casilla de verificación Hacer que este campo sea obligatorio.<strong></strong></p>
+        <p>
+            En la tabla siguiente se muestran campos personalizados de Video Cloud que puede tener que crear en función de la implementación.
+        </p>
+        <table class="bcls-table">
+            <thead class="bcls-table__head">
+                <tr>
+                    <th>Nombre visible</th>
+                    <th>Nombre interno</th>
+                    <th>Tipo</th>
+                    <th>Notas/Ejemplos</th>
+                </tr>
+            </thead>
+            <tbody class="bcls-table__body">
+                <tr>
+                    <td>beacon.rights.&lt; &gt;contador.type</td>
+                    <td>beacon_rights_ <br/>&lt; contador &gt; _type</td>
+                    <td>Texto</td>
+                    <td>
+                        * Identifica si el tipo de monetización del activo<br/> * Para el valor utilice uno de: <ul>
+                            <li>LIBRE</li>
+                            <li>AVOD</li>
+                            <li>SVOD</li>
+                            <li>HEREDAR</li>
+                        </ul>
+                        * Valor predeterminado: <strong>GRATIS</strong><br/> * El valor <strong>HEREDIT</strong> solo es aplicable a los activos de <em>Episode</em>  </td>
+                </tr>
+                <tr>
+                    <td>
+                        beacon.rights.<br/> &lt;contador &gt;.<br/> Fecha de inicio
+                    </td>
+                    <td>
+                        beacon_rights_ <br/> &lt; contador &gt; _<br/> fecha de inicio
+                    </td>
+                    <td>Texto</td>
+                    <td>
+                        * Fecha en la que el activo debe ser expuesto bajo las restricciones de acceso y opciones de monetización en este conjunto<br/> particular* Formato: Fecha aaaa-mm-dd<br/> * Valor predeterminado: Si no se establece, por defecto es la fecha de inicio de disponibilidad del vídeo </td>
+                </tr>
+                <tr>
+                    <td>beacon.rights.&lt;contador &gt; .EndDate</td>
+                    <td>
+                        beacon_rights_ <br/> &lt; contador &gt; _enddate
+                    </td>
+                    <td>Texto</td>
+                    <td>
+                        * Fecha en la que el activo ya no debe estar expuesto bajo las restricciones de acceso y opciones de monetización en este conjunto<br/> particular* Formato: Fecha aaaa-mm-dd<br/> * Valor predeterminado: Si no se establece, por defecto es la fecha de finalización de disponibilidad del vídeo </td>
+                </tr>
+                <tr>
+                    <td>beacon.rights.&lt; &gt;contador.dispositivos</td>
+                    <td>
+                        beacon_rights_ <br/> &lt; contador &gt; _devices
+                    </td>
+                    <td>Texto</td>
+                    <td>
+                        * Lista separada por comas de dispositivos compatibles con Brightcove Beacon a los que el activo debe estar expuesto bajo las restricciones de acceso y las opciones de monetización de este conjunto<br/> particular* Lista separada por comas de: <ul>
+                            <li>iOS</li>
+                            <li>Android</li>
+                            <li>web</li>
+                            <li>Roku</li>
+                            <li>STV</li>
+                            <li>Firetv</li>
+                            <li>LGTV</li>
+                            <li>Samsung</li>
+                            <li>appletv</li>
+                            <li>androidtv</li>
+                            <li>Panasonic</li>
+                        </ul>
+                        * Valor predeterminado: Si no se establece, el valor predeterminado es todos los dispositivos compatibles con Brightcove Beacon </td>
+                </tr>
+                <tr>
+                    <td>
+                        beacon.rights.<br/> &lt;contador &gt;.<br/> UbicaciónSpermit
+                    </td>
+                    <td>
+                        beacon_rights_ <br/> &lt; contador &gt; _<br/> locationspermit
+                    </td>
+                    <td>Texto</td>
+                    <td>
+                        * Lista separada por comas de ubicaciones definidas en Brightcove Beacon a las que el activo debe estar expuesto bajo las restricciones de acceso y las opciones de monetización de este conjunto<br/> particular* Valor predeterminado: Si no se establece, el valor predeterminado es todas las ubicaciones admitidas en Brightcove Beacon </td>
+                </tr>
+                <tr>
+                    <td>
+                        beacon.rights.&lt;contador &gt;.<br/> UbicacionesDenegar
+                    </td>
+                    <td>
+                        beacon_rights_ <br/> &lt; contador &gt; _<br/> ubicacionesdeny
+                    </td>
+                    <td>Texto</td>
+                    <td>
+                        * Lista separada por comas de ubicaciones definidas en Brightcove Beacon a las que el activo NO debe estar expuesto bajo las restricciones de acceso y las opciones de monetización de este conjunto<br/> particular* Sin valor por defecto
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        beacon.rights.<br/> &lt;contador &gt;.<br/> PackageName
+                    </td>
+                    <td>
+                        beacon_rights_ <br/> &lt; contador &gt; _<br/> nombre de paquete
+                    </td>
+                    <td>Texto</td>
+                    <td>
+                        * Debe introducirse un valor para este campo si el <strong>beacon.rights.<counter>El valor del campo.type</strong> se establece en <strong>SVOD</strong><br/> * Una lista separada por comas de nombres de paquetes, tal como se define en Brightcove Beacon<br/> * Ejemplos: <em>Deportes premium, películas de acción, películas del Día de la Tierra</em><br/> * Sin valor predeterminado
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        beacon.rights.<br/> &lt;contador &gt;.<br/> Configuración de AD
+                    </td>
+                    <td>
+                        beacon_rights_ <br/> &lt; contador &gt; _<br/> adconfiguration
+                    </td>
+                    <td>Texto</td>
+                    <td>
+                        * Debe introducirse un valor para este campo si el <strong>beacon.rights.<counter>El valor del campo.type</strong> se establece en <strong>AVOD</strong><br/> * Identificador de una configuración de anuncio en Brightcove Beacon<br/> * No hay valor predeterminado
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Episode_fields">Campos de episo</h2>
+        <p>
+            Deberá completarse lo siguiente para los vídeos que sean episodios de una serie. El siguiente diagrama muestra la relación entre una serie y sus estaciones y episodios.
+        </p>
+        <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/syncing-with-vc/vc-custom-fields/beacon-series-season-episode.png" alt=""/> </figure>
+        <p>
+            Basado en el diagrama, los siguientes son los campos obligatorios para los seis vídeos de la serie.
+        </p>
+        <ul>
+            <li>
+                Vídeo 1
+                <ul>
+                    <li>Beacon.episode.Seriename: Aventuras en la costa de Oregón</li>
+                    <li>Beacon.episode.seasonNumber: 1</li>
+                    <li>beacon.episode.number: 1</li>
+                </ul>
+            </li>
+            <li>
+                Vídeo 2
+                <ul>
+                    <li>Beacon.episode.Seriename: Aventuras en la costa de Oregón</li>
+                    <li>Beacon.episode.seasonNumber: 1</li>
+                    <li>beacon.episode.number: 2</li>
+                </ul>
+            </li>
+            <li>
+                Vídeo 3
+                <ul>
+                    <li>Beacon.episode.Seriename: Aventuras en la costa de Oregón</li>
+                    <li>Beacon.episode.seasonNumber: 1</li>
+                    <li>beacon.episode.number: 3</li>
+                </ul>
+            </li>
+            <li>
+                Vídeo 4
+                <ul>
+                    <li>Beacon.episode.Seriename: Aventuras en la costa de Oregón</li>
+                    <li>Beacon.episode.seasonNumber: 2</li>
+                    <li>beacon.episode.number: 1</li>
+                </ul>
+            </li>
+            <li>
+                Vídeo 5
+                <ul>
+                    <li>Beacon.episode.Seriename: Aventuras en la costa de Oregón</li>
+                    <li>Beacon.episode.seasonNumber: 2</li>
+                    <li>beacon.episode.number: 2</li>
+                </ul>
+            </li>
+            <li>
+                Vídeo 6
+                <ul>
+                    <li>Beacon.episode.Seriename: Aventuras en la costa de Oregón</li>
+                    <li>Beacon.episode.seasonNumber: 2</li>
+                    <li>beacon.episode.number: 3</li>
+                </ul>
+            </li>
+        </ul>
+        <p>Aquí hay una implementación real del uso de los campos del episodio. En este caso, los campos personalizados se muestran con los valores asociados (los valores resaltados en yellos).</p>
+        <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/syncing-with-vc/vc-custom-fields/episode-example.png" alt=""/> </figure>
+        <table class="bcls-table">
+            <thead class="bcls-table__head">
+                <tr>
+                    <th>Nombre visible</th>
+                    <th>
+                        Nombre interno
+                    </th>
+                    <td>Tipo</td>
+                    <th>Notas/Ejemplos</th>
+                </tr>
+            </thead>
+            <tbody class="bcls-table__body">
+                <tr>
+                    <td>
+                        beacon.episodio. <br/> SerieName
+                    </td>
+                    <td>
+                        beacon_episode_ <br/> seriename
+                    </td>
+                    <td>Texto</td>
+                    <td>
+                        * Debe introducirse un valor para este campo si se trata de un activo de episodio; de lo contrario, no se requiere<br/> valor. El valor apunta al identificador de serie en Brightcove Beacon al que pertenece un episodio (la serie debe crearse directamente en Brightcove Beacon)<br/> * Ejemplo: Nombre de la serie, <em>Aventuras en la costa de Oregón</em> </td>
+                </tr>
+                <tr>
+                    <td>
+                        beacon.episodio. <br/> SeasonNumber
+                    </td>
+                    <td>
+                        beacon_episode_ <br/> temporadanúmero
+                    </td>
+                    <td>Prueba</td>
+                    <td>
+                        * Debe introducirse un valor para este campo si se trata de un activo de episodio; de lo contrario, no se requiere ningún<br/> valor* Identifica el número de serie en Brightcove Beacon al que pertenece un episodio (las temporadas deben crearse directamente en Brightcove Beacon)<br/> * Formato: El número entero que hace referencia al número de temporada al que pertenece el vídeo </td>
+                </tr>
+                <tr>
+                    <td>
+                        beacon.episodio. <br/> número
+                    </td>
+                    <td>
+                         <br/> número de beacon_episode_
+                    </td>
+                    <td>Texto</td>
+                    <td>* Debe introducirse un valor para este campo si se trata de un activo de episodio, de lo contrario no se requiere valor<br/> * Identifica el número de episodio dentro de la temporada<br/> * Formato: El número entero que hace referencia al número de episodio del vídeo </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</article>
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Contenido de la página</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="last-updated">
+  Última actualización de la página el 29 oct 2020
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Asistencia técnica de Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            Estado del sistema<a href="https://status.brightcove.com"></a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentación</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Formación</h2>
+
+        <ul class="menu">
+          <li>
+            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
+          </li>
+          <li>
+            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">BrightCove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+<div id="talla_wrapper">
+  <p style="text-align: right;position: relative;"><button style="background:rgb(2, 28, 146);color:Snow;padding:.3rem;position:fixed;right:0;bottom:1em;z-index:9999999" onclick="javascript:displayChat()">¿Tiene alguna pregunta? </button> </p>
+  <div id="talla_chat">
+</div>
+</div>
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <script src="https://assets.talla.com/latest/embeddedjs/talla.js"></script>
+  <script src="/assets/js/talla-init.js"></script>
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>

@@ -1,0 +1,1029 @@
+﻿<!doctype html>
+<html lang="es-es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="En este tema, aprenderá cómo enviar su aplicación de dispositivo a la tienda LG.">
+  
+  <title>Enviar aplicaciones a la tienda LG (WebOS)</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Beacon_Logo.svg" alt="logotipo del producto" style="max-height: 100px;max-width: 232px;"/></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+      
+      
+      
+      <li class="breadcrumb-item">LG<a href="/creating-your-apps/lg/"></a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Enviar aplicaciones a la tienda LG (WebOS)</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+  <div class="row">
+          <div class="col-sm-3 left-side-bar">
+        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+          <option value="">Otros documentos de Brightcove</option>
+          
+            
+              <option value="https://support.brightcove.com">Documentación Inicio</option>
+            
+          
+            
+              <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
+            
+          
+            
+              <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
+            
+          
+            
+              <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
+            
+          
+            
+              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+            
+          
+            
+              <option value="https://live.support.brightcove.com">Brightcove Live</option>
+            
+          
+            
+              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+            
+          
+            
+              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+            
+          
+            
+              <option value="https://social.support.brightcove.com">Brightcove Social</option>
+            
+          
+            
+              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+            
+          
+            
+              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
+            
+          
+            
+              <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
+            
+          
+            
+              <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
+            
+          
+            
+              <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
+            
+          
+            
+              <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
+            
+          
+            
+              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+            
+          
+        </select>
+
+      <nav class="sidenav" id="side_nav">
+        
+        
+        <h5><a href="/index.html">Inicio</a></h5>
+        
+        
+        
+        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+					<option value="">기타 브라이트코브 문서</option>
+					
+						
+							<option value="https://support.brightcove.com">설명서 홈</option>
+						
+					
+						
+							<option value="https://audience.support.brightcove.com">브라이트코브 대상</option>
+						
+					
+						
+							<option value="https://beacon.support.brightcove.com">브라이트코브 비콘</option>
+						
+					
+						
+							<option value="https://campaign.support.brightcove.com">브라이트코브 캠페인</option>
+						
+					
+						
+							<option value="https://engage.support.brightcove.com">브라이트코브 참여</option>
+						
+					
+						
+							<option value="https://live.support.brightcove.com">Brightcove Live</option>
+						
+					
+						
+							<option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+						
+					
+						
+							<option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+						
+					
+						
+							<option value="https://social.support.brightcove.com">브라이트코브 소셜</option>
+						
+					
+						
+							<option value="https://studio.support.brightcove.com">비디오 클라우드 스튜디오</option>
+						
+					
+						
+							<option value="https://player.support.brightcove.com">브라이트코브 플레이어 개발</option>
+						
+					
+						
+							<option value="https://apis.support.brightcove.com">비디오 클라우드 플랫폼 API</option>
+						
+					
+						
+							<option value="https://sdks.support.brightcove.com">비디오 클라우드 디바이스 SDK</option>
+						
+					
+						
+							<option value="https://integrations.support.brightcove.com">통합 및 CMS 커넥터</option>
+						
+					
+						
+							<option value="https://general.support.brightcove.com">비디오 클라우드 일반 정보</option>
+						
+					
+						
+							<option value="https://zencoder.support.brightcove.com">Zencoder</option>
+						
+			<h5 class="submenu-header"><a href="/getting-started/index.html"><strong>+</strong> Empezar</a></h5>		
+				</select>
+        <nav class="sidenav" id="side_nav">
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li>Guía de aprendizaje<a href="/getting-started/learning-guide-bc-beacon.html"></a></li>
+          
+          
+          
+          <li><a href="/getting-started/implementation-phases.html">Fases de implementación</a></li>
+          
+          
+          
+          <li><a href="/getting-started/app-design-considerations.html">Consideraciones de diseño de aplicaciones</a></li>
+          
+          
+          
+          <li><a href="/getting-started/creating-your-app-design-info-architecture.html">Diseño de aplicaciones - Info Architecture</a></li>
+          
+          
+          
+          <li><a href="/getting-started/creating-your-app-design-layout-options.html">Diseño de aplicaciones - Opciones de diseño</a></li>
+          
+          
+          
+          <li><a href="/getting-started/design-best-practices.html">Prácticas recomendadas de diseño</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header">Sincronización con Video Cloud +<a href="/syncing-with-video-cloud/index.html"><strong></strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/syncing-with-video-cloud/vc-custom-fields.html">Creación de campos personalizados de Video Cloud</a></li>
+          
+          
+          
+          <li><a href="/syncing-with-video-cloud/forcing-a-sync.html">Forzar una sincronización</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header">Uso de Brightcove Beacon +<a href="/using-brightcove-beacon/index.html"><strong></strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/using-brightcove-beacon/adding-to-page.html">Agregar un carrusel a una página</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-a-channel.html">Creación de un canal</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/electronic-program-guides.html">Creación de una Guía Electrónica de Programas (EPG)</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-a-page.html">Creación de una nueva página</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-a-playlist.html">Creación de una lista de reproducción</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-subscription-package.html">Creación de un paquete de suscripción</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/promo-codes.html">Creación de Códigos Promocionales</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/series-seasons-episodes.html">Creación de serie/Temporadas/Episodios</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/configuring-server-side-ad-settings.html">Configuración de la configuración de anuncios del lado del servidor</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/implementing-authvod.html">Implementación de AuthVoD</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/live-ssai.html">Implementación de SSAI en vivo</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/vod-ssai.html">Implementación de VOD SSAI</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/including-non-configurable-pages.html">Incluyendo páginas no configurables</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/introducing-pages.html">Presentando páginas</a></li>
+          
+          
+          
+          <li>Transmisión de un evento en directo<a href="/using-brightcove-beacon/streaming-live-event.html"></a></li>
+          
+          
+          
+          <li>Transmisión de VOD a un canal<a href="/using-brightcove-beacon/streaming-vods-to-a-channel.html"></a></li>
+          
+          
+          
+          <li>Descripción de las opciones de monetización<a href="/using-brightcove-beacon/monetization-options.html"></a></li>
+          
+          
+          
+          <li>Uso de un paquete de suscripción<a href="/using-brightcove-beacon/using-subscription-package.html"></a></li>
+          
+          
+          
+          <li>Uso de las herramientas<a href="/using-brightcove-beacon/tools.html"></a></li>
+          
+          
+          
+          <li>Visualización de datos de análisis<a href="/using-brightcove-beacon/viewing-analytics-data.html"></a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/creating-your-apps/index.html">Creación de aplicaciones <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/android/index.html"> <strong>Android+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li>Envío de nuevas aplicaciones a la Tienda Android<a href="/creating-your-apps/android/submitting-to-android.html"></a></li>
+              
+              <li>Actualización de aplicaciones de Android a Brightcove Beacon<a href="/creating-your-apps/android/updating-android-apps-to-bcb.html"></a></li>
+              
+              <li><a href="/creating-your-apps/android/adding-subscriptions-in-android.html">Agregar suscripciones a Android</a></li>
+              
+              <li><a href="/creating-your-apps/android/improving-relevance-android.html">Mejorar la relevancia de la búsqueda en Android Play Store</a></li>
+              
+              <li><a href="/creating-your-apps/android/installing-android-test-build.html">Instalación de una compilación de prueba de Android</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/fire-tv/index.html">Fire TV <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/fire-tv/installing-fire-tv-test-build.html">Instalación de una compilación de prueba de Fire TV</a></li>
+              
+              <li>Enviar a la Tienda Amazon<a href="/creating-your-apps/fire-tv/submitting-to-amazon.html"></a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/ios-tvos/index.html">IOS/tvOS <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/ios-tvos/installing-ios-test-build.html">Instalación de una compilación de pruebas de iOS/tvOS</a></li>
+              
+              <li>Enviar a la Apple Store<a href="/creating-your-apps/ios-tvos/submitting-to-apple.html"></a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            Panasonic +<a href="/creating-your-apps/panasonic/index.html"><strong></strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li>Envío a la Tienda Panasonic<a href="/creating-your-apps/panasonic/submitting-to-panasonic.html"></a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            Roku +<a href="/creating-your-apps/roku/index.html"><strong></strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/roku/configuring-inchannel-products.html">Configuración de Productos In-Channel en Roku</a></li>
+              
+              <li><a href="/creating-your-apps/roku/installing-roku-test-build.html">Instalación de una compilación de prueba de Roku</a></li>
+              
+              <li>Envío a la tienda Roku<a href="/creating-your-apps/roku/submitting-to-roku.html"></a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            Samsung +<a href="/creating-your-apps/samsung/index.html"><strong></strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/samsung/samsung-partner.html">Convertirse en un socio de Samsung</a></li>
+              
+              <li>Envío a la Tienda Samsung<a href="/creating-your-apps/samsung/submitting-to-samsung.html"></a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li><a href="/creating-your-apps/common-required-info.html">Información común requerida</a></li>
+          
+          
+          
+          <li><a href="/creating-your-apps/device-apps-validation-guide.html">Guía de validación de aplicaciones de dispositivo</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header">Referencias +<a href="/references/index.html"><strong></strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/references/common-configuration-settings.html">Parámetros de configuración comunes</a></li>
+          
+          
+          
+          <li><a href="/references/creating-stripe-account.html">Creación de una cuenta de Stripe</a></li>
+          
+          
+          
+          <li><a href="/references/glossary.html">Glosario</a></li>
+          
+          
+          
+          <li><a href="/references/image-requirements.html">Imágenes y sus especificaciones</a></li>
+          
+          
+          
+          <li>Problemas conocidos<a href="/references/known-issues.html"></a></li>
+          
+          
+          
+          <li>Actualizaciones de productos<a href="/references/product-updates.html"></a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header">Entrenamiento +<a href="/training/index.html"><strong></strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li>Uso de vídeos de Video Cloud o Campos personalizados<a href="/training/training-demand-custom-fields.html"></a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-design-layout.html">Diseño del diseño de la aplicación</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-playlists.html">Creación y uso de listas de reproducción</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-series-seasons-episodes.html">Creación de series, temporadas y episodios</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-vod-ssai.html">Implementación de anuncios VOD del lado del servidor</a></li>
+          
+          
+          
+          <li>Publicación de la aplicación Android en Play Store<a href="/training/training-demand-publish-android-app.html"></a></li>
+          
+          
+          
+          <li>Visualización de datos de análisis<a href="/training/training-demand-viewing-analytics.html"></a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          
+          
+          
+          
+          <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
+          
+          
+          
+          <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
+          
+          
+          
+          <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
+          
+          
+        </ul>
+        
+        
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+      <!-- bootstrap layout -->
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Contenido de la página</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
+
+
+<h1>Enviar aplicaciones a la tienda LG (WebOS)</h1>
+<article class="bcls-article">
+  <summary>En este tema, aprenderá cómo enviar su aplicación de dispositivo a la tienda LG.</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">Introducción</h2>
+    <p>
+      Este documento le ayudará a enviar su aplicación Brightcove Beacon a la LG Store. La primera sección de este documento, sin incluir este, enumera la información o los activos que necesitará cuando comience a completar el proceso de envío.
+    </p>
+    <p>
+      Seguir esa lista es una guía paso a paso en el proceso de envío. Después de crear su cuenta, procederá a proporcionar información para el envío. La sección <em>Gestión de &gt; aplicaciones</em> de <em>LG SellerLounge</em> aparece de la siguiente manera, y las áreas en las que deberá introducir información se resaltan en amarillo:
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/creating-your-apps/lg/four-tabs.png" alt="sección de gestión de aplicaciones de salón de vendedores"/>
+      </figure>
+    </p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Required_information">Información requerida</h2>
+    <p>
+      Se requerirá la siguiente información/activos cuando se envíen a la tienda LG.
+    </p>
+    <h3>Información útil</h3>
+    <ul>
+      <li>
+        Detalles de la tienda: <a href="http://seller.lgappstv.com/seller/main/Main.lge"> http://seller.lgappstv.com/seller/main/Main.lge </a>
+      </li>
+      <li>
+        Configuración de la cuenta de desarrollador: <a href="http://webostv.developer.lge.com/develop/app-test/#preparingAccount"> http://webostv.developer.lge.com/develop/app-test/#preparingAccount </a>
+      </li>
+      <li>
+        Proceso de envío: <a href="http://webostv.developer.lge.com/distribute/app-submission-process/"> http://webostv.developer.lge.com/distribute/app-submission-process/ </a>
+      </li>
+      <li>Tiempo de entrega sugerido para la aprobación: Tres semanas</li>
+    </ul>
+    <h3 id="required_images">Activos requeridos</h3>
+    <ul>
+      <li>Nombre de la aplicación</li>
+      <li>Descripción de la aplicación</li>
+      <li>IPK (suministrado por Brightcove) y URL de Deeplink</li>
+      <li>
+        URL de enlace profundo (ubicación de la aplicación durante la prueba, debe ser una ubicación de Internet bajo su control)
+      </li>
+      <li>
+        Imágenes y activos gráficos
+        <ul>
+          <li>
+            Icono de la aplicación
+            <ul>
+              <li>Recomendado: 400x400 píxeles o superior (sólo tipo cuadrado)</li>
+              <li>Archivo disponible: JPG, GIF, PNG (máx. 5MB)</li>
+            </ul>
+          </li>
+          <li>
+            Color de mosaico de
+            <ul>
+              <li>Icono para mostrar un color de fondo sólido</li>
+              <li>
+                El logotipo debe tener un color de fondo plano y el cliente debe proporcionar a Brightcove exactamente el mismo valor hexadecimal que ese color de fondo para el logotipo plano en LG WebOS TV.
+              </li>
+            </ul>
+          </li>
+          <li>
+            Captura de pantalla principal
+            <ul>
+              <li>
+                Tamaño de imagen recomendado: 960x540, 1280x720 píxeles (sólo tipo cuadrado)
+              </li>
+              <li>Archivo disponible: JPG, GIF, PNG (máx. 5MB)</li>
+            </ul>
+          </li>
+          <li>
+            Capturas de pantalla secundarias
+            <ul>
+              <li>
+                Se deben cargar al menos dos (y como máximo cinco) capturas de pantalla secundarias, con las mismas pautas que la captura de pantalla principal.
+              </li>
+            </ul>
+          </li>
+          <li>
+            Imagen de fondo del lanzador
+            <ul>
+              <li>Recomendado: 1920x1080 píxeles</li>
+              <li>Tipo de archivo: JPG, PNG (máx. 10 MB)</li>
+            </ul>
+            <figure class="bcls-figure">
+              <img class="bcls-image" src="/assets/images/creating-your-apps/lg/background-image.png" alt="imagen de fondo"/>
+            </figure>
+          </li>
+          <li>
+            Imagen de fondo de pantalla de presentación
+            <ul>
+              <li>Recomendado: 1920x1080 píxeles</li>
+              <li>Tipo de archivo: JPG, PNG (máx. 10 MB)</li>
+            </ul>
+            <figure class="bcls-figure">
+              <img class="bcls-image" src="/assets/images/creating-your-apps/lg/splash-screen.png" alt="pantalla de presentación"/>
+            </figure>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Documentación
+        <ul>
+          <li>
+            Archivo de la lista de verificación automática:<strong></strong> Esta es una hoja de cálculo con una lista de elementos de prueba con los que prueba su aplicación. Este elemento se detalla en la sección Completar la información de prueba de este documento.<a href="#Completing_the_Test_Info_section"></a>
+          </li>
+          <li>
+            Archivo de escenario UX:<strong></strong> Esta es una presentación de PowerPoint donde documentar lo que debería suceder cuando alguien usa la aplicación. Este elemento se detalla en la sección Completar la información de prueba de este documento.<a href="#Completing_the_Test_Info_section"></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Getting_started">
+      Introducción
+    </h2>
+    <ol class="bcls-tasklist">
+      <li>
+        Vaya a la <a href="https://www.lgaccount.com/join/terms">página de creación de cuenta</a>. La página aparece de la siguiente manera y deberá completar los cuatro pasos.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/lg/create-account.png" alt="crear cuenta"/>
+        </figure>
+      </li>
+      <li>
+        Una vez que hayas completado la configuración de la cuenta, navega <a href="http://seller.lgappstv.com/seller/member/register/memberMain.lge">hasta registrarte en SellerLounge</a>. Tendrás que crear otra cuenta aquí.
+      </li>
+      <li>
+        Después de completar el segundo registro de cuenta, podrá ir al <a href="http://seller.lgappstv.com/seller/main/Main.lge">SellerLounge</a> e iniciar sesión.
+      </li>
+      <li>
+        Una vez en el <em>SellerLounge</em>, haga clic en la pestaña <strong>APP MANAGEMENT</strong>. 
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/lg/app-management-tab.png" alt="pestaña de administración de aplicaciones"/>
+        </figure>
+      </li>
+      <li>
+        Para comenzar el proceso de envío de aplicaciones, haga clic en el botón <strong>Ir</strong> .
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/lg/seller-lounge-index.png" alt="botón ir"/>
+        </figure>
+      </li>
+      <li>
+        Asegúrate de ver las cuatro pestañas (resaltadas en amarillo) donde ingresarás la información de tu aplicación.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/lg/four-tabs.png" alt="cuatro pestañas"/>
+        </figure>
+      </li>
+      <li>
+        En el menú de navegación de la izquierda, haz clic en el botón de <strong>descarga de la guía del vendedor de LG</strong> . Esto descarga una excelente guía para rellenar los formularios de envío de aplicaciones. El PDF descargado será referenciado más adelante en este documento.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/lg/sellerlounge-guide-download.png" alt="descargar guía del salón del vendedor"/>
+        </figure>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Completing_the_File_Upload_section">
+      Completando la sección <em>Subir archivos</em> 
+    </h2>
+    <aside class="bcls-aside bcls-aside--tip language-editable">
+      Como se indica en la página web real, al hacer clic en el signo de interrogación blanco en el círculo negro se <img src="/assets/images/creating-your-apps/lg/question-mark.png"/> proporcionan detalles sobre la información solicitada. Es muy útil.
+    </aside>
+    <p>
+      En la sección <strong>Subir archivos</strong> , subirá el archivo <strong>ipk</strong> que Brightcove le proporcionó para la tienda LG. A continuación se detallan los detalles de este proceso:
+    </p>
+    <ol class="bcls-tasklist">
+      <li>
+        Introduzca el <strong>ID de la aplicación</strong>. Este es el nombre interno de su aplicación. Este Id. no se puede cambiar en un momento posterior.
+      </li>
+      <li>
+        Para las <strong>Plataformas de servicio</strong> , haga clic en el botón de opción para <strong>WebOS</strong>. En este punto, un formulario se expande para obtener información sobre el archivo.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/lg/file-upload.png" alt="pantalla de carga de archivos"/>
+        </figure>
+      </li>
+      <li>
+        Rellene el formulario. A continuación se detallan los detalles de cada campo:
+        <table class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th>Campo</th>
+              <th>Descripción/Instrucciones</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td>Archivo</td>
+              <td>
+                Haga clic en el botón <strong>Elegir archivo</strong> y cargue el archivo proporcionado por Brightcove
+              </td>
+            </tr>
+            <tr>
+              <td>Tipo de archivo</td>
+              <td>Rellenado automáticamente al cargar el archivo</td>
+            </tr>
+            <tr>
+              <td>Resolución de visualización gráfica</td>
+              <td>Elija <strong>1280 720: (Dispositivo FHD)</strong></td>
+            </tr>
+            <tr>
+              <td>Plataforma de servicio y SDK Ver.</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>URL de vínculo profundo</td>
+              <td>
+                En primer lugar, asegúrese de que la opción <strong>Default</strong> esté seleccionada en el menú desplegable; a continuación, proporcione una URL donde la aplicación pueda hospedarse para probarla
+              </td>
+            </tr>
+            <tr>
+              <td>Título del archivo</td>
+              <td>
+                El nombre del archivo; lo verá en el SellerLounge
+              </td>
+            </tr>
+            <tr>
+              <td>Versión del archivo</td>
+              <td>Introduzca la versión que está asignando</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>Haga clic en el botón <strong>AGREGAR ARCHIVO</strong> .</li>
+      <li>Haga clic en el botón <strong>Guardar</strong> .</li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Completing_the_Image_section">
+      Completando la sección <em>Imágenes</em> 
+    </h2>
+    <p>
+      Cargue las imágenes detalladas en la sección <a href="#required_images">Recursos necesarios</a> de este documento. Los nombres de imagen de esa sección coinciden con los nombres del formulario.
+    </p>
+    <p>
+      No olvides hacer clic en el botón <strong>Guardar</strong> cuando termines de cargar imágenes.
+    </p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Completing_the_Service_Info_section">
+      Completando la <em>información del servicio.</em> sección
+    </h2>
+    <p>
+      Para completar esta sección, consulte la Guía del SellerLounge descargada anteriormente, páginas 49-52. Tenga en cuenta que no introduce información para el campo <strong>DIAL</strong> .
+    </p>
+    <p>
+      No olvides hacer clic en el botón <strong>Guardar</strong> cuando termines de cargar imágenes.
+    </p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Completing_the_Test_Info_section">
+      Completando la <em>información de prueba.</em> sección
+    </h2>
+    <p>
+      Para completar esta sección, consulte la Guía del SellerLounge descargada anteriormente, páginas 53 a 57. El siguiente contenido aclara algunos campos que pueden causar confusión:
+    </p>
+    <ul>
+      <li>
+        Archivo de la lista de verificación automática:<strong></strong> Esta es una hoja de cálculo con una lista de elementos de prueba con los que prueba su aplicación. Para cada artículo lo marca ya sea pase o N/A.
+        <ul>
+          <li>
+            Haga clic en el botón <strong>Plantilla</strong> para descargar la plantilla.
+            <figure class="bcls-figure">
+              <img class="bcls-image" src="/assets/images/creating-your-apps/lg/self-check-list-button.png" alt="botón de lista de comprobación automática"/>
+            </figure>
+          </li>
+          <li>
+            Para obtener más información sobre este requisito, aquí está la pantalla de información del SellerLounge:
+            <figure class="bcls-figure">
+              <img class="bcls-image" src="/assets/images/creating-your-apps/lg/self-check-info.png" alt="información de autocomprobación"/>
+            </figure>
+          </li>
+          <li>
+            Simplemente para su información, aquí hay ejemplos de algunos elementos de prueba.
+            <figure class="bcls-figure">
+              <img class="bcls-image" src="/assets/images/creating-your-apps/lg/self-check-list.png" alt=""/>
+            </figure>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Archivo de escenario UX:<strong></strong> Esta es una presentación de PowerPoint en la que documente el comportamiento esperado de la aplicación.
+        <ul>
+          <li>
+            Haga clic en el botón <strong>Plantilla</strong> para descargar la plantilla.
+            <figure class="bcls-figure">
+              <img class="bcls-image" src="/assets/images/creating-your-apps/lg/scenario-button.png" alt="botón de escenario"/>
+            </figure>
+          </li>
+          <li>
+            Para obtener más información sobre este requisito, aquí está la pantalla de información del SellerLounge:
+            <figure class="bcls-figure">
+              <img class="bcls-image" src="/assets/images/creating-your-apps/lg/scenario-info.png" alt="información de autocomprobación"/>
+            </figure>
+          </li>
+          <li>
+            Aquí está la lista de áreas para las que debe documentar el comportamiento esperado.
+            <figure class="bcls-figure">
+              <img class="bcls-image" src="/assets/images/creating-your-apps/lg/ux-scenario-file.png" alt="tabla de contenido de comportamientos"/>
+            </figure>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <p>
+      No olvides hacer clic en el botón <strong>Guardar</strong> cuando termines de cargar imágenes.
+    </p>
+  </section>
+</article>
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Contenido de la página</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="last-updated">
+  Última actualización de la página el 12-06-2020
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Asistencia técnica de Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            Estado del sistema<a href="https://status.brightcove.com"></a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentación</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Formación</h2>
+
+        <ul class="menu">
+          <li>
+            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
+          </li>
+          <li>
+            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">BrightCove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+<div id="talla_wrapper">
+  <p style="text-align: right;position: relative;"><button style="background:rgb(2, 28, 146);color:Snow;padding:.3rem;position:fixed;right:0;bottom:1em;z-index:9999999" onclick="javascript:displayChat()">¿Tiene alguna pregunta? </button> </p>
+  <div id="talla_chat">
+</div>
+</div>
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <script src="https://assets.talla.com/latest/embeddedjs/talla.js"></script>
+  <script src="/assets/js/talla-init.js"></script>
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>
