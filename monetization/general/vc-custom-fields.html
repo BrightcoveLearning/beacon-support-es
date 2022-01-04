@@ -1,0 +1,259 @@
+---
+title: "Campos personalizados para monetización"
+description: "En este tema, aprenderá a crear campos personalizados necesarios para implementar estrategias de monetización".
+
+parent: "Monetization"
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <section class="bcls-section">
+    <h2 id="Introduction">Introducción</h2>
+    <p>Los videos que incluyas en estrategias de monetización, como AuthOVD y SVOD, deben tener definido un conjunto enriquecido de metadatos. En este documento, verá cómo crear nuevos campos personalizados para implementar la monetización.</p>
+    <p>Las secciones de este documento son las siguientes:</p>
+    <ol>
+      <li><strong>Campos de gestión de derechos</strong> - Especifica los nombres y la funcionalidad de los campos personalizados que pueden ser necesarios para la implementación de la monetización.</li>
+      <li><strong>Creando campos personalizados</strong> - Proporciona instrucciones paso a paso sobre cómo crear campos personalizados. En estas instrucciones, creará uno de los campos de administración de derechos de uso común.</li>
+      <li><strong>Detalles de implementación de campos personalizados</strong> - Proporciona detalles sobre la gestión de campos personalizados en los siguientes temas:
+        <ul>
+          <li>Nombres de campo personalizados</li>
+          <li>Uso de valores de lista para metadatos de Brightcove Beacon</li>
+          <li>Editar valores de lista</li>
+          <li>Eliminar valores de lista</li>
+          <li>Eliminar campos personalizados de una cuenta</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Rights_Management_fields">Campos de gestión de derechos</h2>
+    <p>
+      Para admitir las restricciones de monetización y acceso de los activos, se debe utilizar un conjunto de campos personalizados. Como puede tener múltiples instancias de configuraciones de administración de derechos, el enfoque sugerido es crear múltiples conjuntos de campos personalizados. En el nombre de cada instancia se utiliza un contador para diferenciarlas. La primera instancia debe usar el contador a 0. A continuación, se muestra un ejemplo de estos campos agrupados que utilizan realmente un valor de contador:</p>
+    <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/monetization/vc-custom-fields/rights-management.png" alt=""> </figure>
+    <p>Por ejemplo, es posible que necesite un conjunto para definir la publicidad que se utiliza en los videos y otro para definir las ofertas especiales para unas vacaciones, como Año Nuevo.</p>
+    <p>Un ejemplo específico ayudará a aclarar el uso de estos campos. La siguiente captura de pantalla muestra la configuración de la inserción de anuncios del lado del servidor (SSAI) utilizada en un video.</p>
+    <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/monetization/vc-custom-fields/rights-mamagement-example-avod.png" alt=""> </figure>
+    <p>Puede aprender lo siguiente de este ejemplo:</p>
+    <ul>
+      <li>No se deben asignar valores a todos los campos de administración de derechos de un grupo. En este caso, solo el <em>beacon.rights.&lt;counter&gt;.adConfiguration</em> y <em>beacon.rights.&lt;counter&gt;.type</em> son usados.</li>
+      <li>Puede utilizar el ID de configuración SSAI creado en Studio en los campos personalizados de Brightcove Beacon.</li>
+      <li>El valor del contador para un conjunto de campos de administración de derechos puede comenzar en 0 (resaltado en amarillo).</li>
+    </ul>
+    <p>Tenga en cuenta que ningún campo que cree necesitará tener la <strong>Hacer que este campo sea obligatorio</strong> casilla de verificación marcada.</p>
+    <p>
+      La siguiente tabla muestra campos personalizados que PUEDE tener que crear en función de su implementación.
+    </p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Nombre para mostrar</th>
+          <th>Nombre interno</th>
+          <th>Tipo</th>
+          <th>Notas / Ejemplos</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>beacon.rights.&lt;counter&gt;.type</td>
+          <td>beacon_rights_ <br />&lt;contador&gt; _tipo</td>
+          <td>Texto</td>
+          <td>
+            * Identifica si el tipo de monetización del activo<br> * Para el valor use uno de: <ul>
+              <li>LIBRE</li>
+              <li>AVOD</li>
+              <li>SVOD</li>
+              <li>HEREDAR</li>
+            </ul>
+            * Valor por defecto: <strong>GRATIS</strong><br> * Los <strong>HEREDAR</strong> el valor solo es aplicable a <em>Episodio</em> activos </td>
+        </tr>
+        <tr>
+          <td>
+            beacon.rights.<br />
+            &lt;contador&gt;.<br />
+            fecha de inicio
+          </td>
+          <td>
+            beacon_rights_ <br />
+            &lt;contador&gt; _<br />
+            fecha de inicio
+          </td>
+          <td>Texto</td>
+          <td>
+            * Fecha en la que el activo debe estar expuesto bajo las restricciones de acceso y las opciones de monetización de este conjunto en particular.<br> * Formato: Fecha aaaa-mm-dd hh: mm: ss<br> * Valor por defecto: Si no se establece, la fecha de inicio de la disponibilidad del video se establece de forma predeterminada. </td>
+        </tr>
+        <tr>
+          <td>beacon.rights.&lt;counter&gt;.endDate</td>
+          <td>
+            beacon_rights_ <br />
+            &lt;contador&gt; _fecha de finalización
+          </td>
+          <td>Texto</td>
+          <td>
+            * Fecha en la que el activo ya no debería estar expuesto bajo las restricciones de acceso y las opciones de monetización de este conjunto en particular.<br> * Formato: Fecha aaaa-mm-dd hh: mm: ss<br> * Valor por defecto: Si no se establece, se establece de forma predeterminada en la fecha de finalización de la disponibilidad del video. </td>
+        </tr>
+        <tr>
+          <td>beacon.rights.&lt;counter&gt;.devices</td>
+          <td>
+            beacon_rights_ <br />
+            &lt;contador&gt; _dispositivos
+          </td>
+          <td>Texto</td>
+          <td>
+            * Lista separada por comas de dispositivos compatibles con Brightcove Beacon a los que el activo debe estar expuesto según las restricciones de acceso y las opciones de monetización de este conjunto en particular<br> * Lista separada por comas de: <ul>
+              <li>iOS</li>
+              <li>Androide</li>
+              <li>web</li>
+              <li>Roku</li>
+              <li>STV</li>
+              <li>Firetv</li>
+              <!-- <li>LGTV</li> -->
+              <li>Samsung</li>
+              <li>appletv</li>
+              <li>androidtv</li>
+              <!-- li>panasonic</li> -->
+            </ul>
+            * Valor por defecto: Si no se configura, los valores predeterminados para todos los dispositivos admitidos en Brightcove Beacon </td>
+        </tr>
+        <tr>
+          <td>
+            beacon.rights.<br />
+            &lt;contador&gt;.<br />
+            ubicacionesPermitir
+          </td>
+          <td>
+            beacon_rights_ <br />
+            &lt;contador&gt; _<br />
+            Permitir
+          </td>
+          <td>Texto</td>
+          <td>
+            * Lista separada por comas de ubicaciones definidas en Brightcove Beacon a las que el activo debe estar expuesto según las restricciones de acceso y las opciones de monetización de este conjunto en particular<br> * Valor por defecto: Si no se establece, se establece de forma predeterminada en todas las ubicaciones admitidas en Brightcove Beacon </td>
+        </tr>
+        <tr>
+          <td>
+            beacon.rights. &lt;contador&gt;.<br /> ubicacionesDeny </td>
+          <td>
+            beacon_rights_ <br />
+            &lt;contador&gt; _<br />
+            ubicaciones denegar
+          </td>
+          <td>Texto</td>
+          <td>
+            * Lista separada por comas de ubicaciones definidas en Brightcove Beacon a las que el activo NO debe estar expuesto según las restricciones de acceso y las opciones de monetización de este conjunto en particular<br> * Sin valor predeterminado </td>
+        </tr>
+        <tr>
+          <td>
+            beacon.rights.<br />
+            &lt;contador&gt;.<br />
+            Nombre del paquete
+          </td>
+          <td>
+            beacon_rights_ <br />
+            &lt;contador&gt; _<br />
+            Nombre del paquete
+          </td>
+          <td>Texto</td>
+          <td>
+            * Se DEBE ingresar un valor para este campo si el <strong>beacon.rights. &lt;contador&gt; .tipo</strong> el valor del campo se establece en <strong>SVOD</strong><br> * Una lista de nombres de paquetes separados por comas, como se define en Brightcove Beacon<br> * Ejemplos: <em>Deportes premium, Películas de acción, Películas del Día de la Tierra</em><br> * Sin valor predeterminado </td>
+        </tr>
+        <tr>
+          <td>
+            beacon.rights.<br />
+            &lt;contador&gt;.<br />
+            adConfiguration
+          </td>
+          <td>
+            beacon_rights_ <br />
+            &lt;contador&gt; _<br />
+            adconfiguration
+          </td>
+          <td>Texto</td>
+          <td>
+            * Se DEBE ingresar un valor para este campo si el <strong>beacon.rights. &lt;contador&gt; .tipo</strong> el valor del campo se establece en <strong>AVOD</strong><br> * Identificador de una configuración de anuncios en Brightcove Beacon<br> * Sin valor predeterminado </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Creating_custom_fields">Creando campos personalizados</h2>
+    <p>Para crear campos personalizados, siga estos pasos.</p>
+    <ol class="bcls-tasklist">
+      <li>Inicie sesión en Beacon Studio.</li>
+      <li>
+        En la navegación principal, haga clic en <strong>ADMINISTRACIÓN</strong> y luego <strong>Campos de video</strong>. Tenga en cuenta que debe ser un administrador de cuenta para acceder al menú ADMIN.
+      </li>
+      <li>
+        La página Campos de video mostrará sus campos personalizados y todos los campos de metadatos de video estándar, como se muestra en la siguiente captura de pantalla (en este caso, aún no se han creado campos personalizados): <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/monetization/vc-custom-fields/custom-fields-overview1.png" alt="" /> </figure>
+      </li>
+      <li>
+        Hacer clic <strong>Agregar campo personalizado</strong>.
+        <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/monetization/vc-custom-fields/new-custom-field1.png" alt="" /> </figure>
+      </li>
+      <li>
+        Para el <strong>Nombre para mostrar</strong> , ingresar <samp>beacon.rights.0.adConfiguration</samp>. Este es un campo personalizado comúnmente necesario para su primera implementación de monetización que necesita campos personalizados. Tenga en cuenta que este valor aparecerá como la etiqueta del campo en el módulo de Medios. Un<strong> Nombre interno</strong> se creará automáticamente para el campo según el nombre para mostrar.
+      </li>
+      <li>
+        Para el <strong>Escribe</strong> Seleccione <strong>Texto</strong>. Tenga en cuenta lo siguiente para los valores de los tipos posibles:
+        <ul>
+          <li>
+            <strong>Texto</strong> - El usuario puede escribir cualquier cosa en el campo hasta 1024 caracteres de un solo byte (o 512 caracteres de doble byte).
+          </li>
+          <li>
+            <strong>Lista</strong> - El usuario seleccionará de una lista de valores. Las listas no pueden tener más de 150 valores posibles y cada valor de la lista no puede tener más de 100 caracteres.
+          </li>
+        </ul>
+      </li>
+      <li>
+        Entrar a <strong>Descripción</strong>. Para este campo, una buena descripción es <samp>Se DEBE ingresar un valor para este campo si el valor del campo beacon.rights. &lt;counter&gt; .type se establece en AVOD.</samp> El campo de descripción aparecerá como una sugerencia en la interfaz de Studio.
+      </li>
+      <li>
+        NO haga que este campo sea obligatorio.
+      </li>
+      <li>Verifique que su formulario aparezca de la siguiente manera:
+        <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/monetization/vc-custom-fields/new-custom-field-added.png" alt="" /> </figure>
+      </li>
+      <li>
+        Hacer clic <strong>Guardar campo</strong> para guardar los cambios. Hacer clic <strong>Guardar y agregar otro</strong> para guardar el campo y comenzar a crear otro campo.
+      </li>
+    </ol>
+    <p>
+      Los campos personalizados que cree están disponibles de inmediato y serán visibles en el módulo de Medios.
+    </p>
+    <p>
+      Se pueden crear hasta 10 campos personalizados. Si necesita más de 10 campos, haga clic en el <strong>¿Necesitas más campos?</strong> en la página Campos de vídeo para ponerse en contacto con el servicio de atención al cliente de Brightcove para solicitar más. Los editores están limitados a 50 campos personalizados.
+    </p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Custom_field_implementation_details">Detalles de implementación de campo personalizado</h2>
+    <h3>Nombres de campo personalizados</h3>
+    <p>
+      Las siguientes tres secciones de este documento cubren campos personalizados que es posible que deba crear en función de su caso de uso de implementación particular. Cada campo personalizado tiene un <strong>Nombre para mostrar</strong> y un <strong>Nombre interno</strong>. Si cree que tiene un nombre más significativo para el <strong>Nombre para mostrar</strong> opción puedes usarla, pero la <strong>Nombre interno</strong> DEBE coincidir exactamente.
+    </p>
+
+    <h3>Uso de valores de lista para metadatos de Brightcove Beacon </h3>
+    <p>
+      En la tabla de valores para los campos personalizados de administración de derechos que se muestran arriba, es posible que desee considerar la <strong>beacon.rights. &lt;contador&gt; .tipo</strong> ser de tipo <strong>Lista</strong>. Tenga en cuenta que TODOS los <strong>Tipos</strong> están <strong>Texto</strong>. Puede aliviar la carga de los implementadores de monetización si pueden seleccionar de una lista en lugar de tener que ingresar texto. Además, invariablemente ayudará a mantener la entrada de datos más consistente si los valores se pueden seleccionar de una lista en lugar de escribirlos. Por lo tanto, si encuentra un <strong>Lista</strong> funciona en algunos casos comerciales, se puede utilizar una lista.
+    </p>
+
+    <h3 id="edit">Editar valores de lista</h3>
+    <p>
+      Puede agregar valores adicionales a un campo personalizado de tipo Lista. Haga clic en el enlace del nombre del campo personalizado, agregue los valores y luego haga clic en <strong>Agregar a la lista</strong>. Cuando termine, haga clic en <strong>Guardar campo</strong>.
+    </p>
+
+    <h3 id="delete">Eliminar valores de lista</h3>
+    <p>
+      Puede agregar eliminar valores existentes de un campo personalizado de tipo Lista. Haga clic en el enlace del nombre del campo personalizado, haga clic en el icono de eliminar asociado con el valor y luego haga clic en <strong>Guardar campo</strong>.
+    </p>
+    <p>
+      Cuando se elimina un valor de lista, los videos a los que se les asignó previamente ese valor mantendrán el valor. Sin embargo, si se edita un video con el valor eliminado, el valor se borrará y se deberá seleccionar un nuevo valor.
+    </p>
+
+    <h3 id="remove">Eliminar campos personalizados de una cuenta</h3>
+    <p>
+      Para eliminar un campo personalizado de su cuenta, debe <a href="https://supportportal.brightcove.com/s/login/"> póngase en contacto con el soporte de Brightcove</a>. Tenga en cuenta que si Brightcove Support elimina los campos personalizados, la fecha de modificación cambiará para los videos en los que haya un valor.
+    </p>
+  </section>
+
+</article>

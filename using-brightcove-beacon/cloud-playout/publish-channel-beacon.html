@@ -1,0 +1,144 @@
+---
+title: Publicar un canal de reproducción en la nube
+description: 'En este tema, aprenderá cómo hacer que un canal de Cloud Playout forme parte de su aplicación Beacon.'
+parent:
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <aside class="bcls-aside bcls-aside--information language-editable">Algunas acciones descritas en este tema se realizan en Beacon, mientras que otras se realizan en Video Cloud.</aside>
+  <section class="bcls-section">
+    <h2 id="Introduction">Introducción</h2>
+    <p>Una vez que haya creado su canal Cloud Playout, hay tres pasos que debe realizar para que forme parte de su aplicación Beacon. Estos se detallan en las secciones siguientes.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Get_information_for_the_Beacon_Channel">Obtener información para Beacon Channel</h2>
+    <p>Antes de continuar, querrá capturar la información que necesitará para configurar su canal Beacon y su lista de reproducción.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Vaya a la página de detalles del canal haciendo clic en el canal en la lista de canales.</li>
+      <li>Si aún no lo ha hecho, haga clic en <span class="button-red-text-border"><i data-feather="play" class="button-icon"></i> Activar</span> para activar el canal. Ver <a href="/using-brightcove-beacon/cloud-playout/using-channel-actions.html">Usar acciones de canal</a> para más detalles.</li>
+      <li>Después de que el canal se haya activado, use la navegación principal para ir a Video Cloud <strong>Medios de comunicación</strong> módulo.</li>
+      <li>
+        Debería encontrar un video con el mismo nombre que su canal de Cloud Playout. Será un video en vivo sin imagen:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/cloud-playout-video.png" alt="Channel Video">
+          <figcaption class="bcls-caption--image">Video del canal</figcaption>
+        </figure>
+      </li>
+      <li>Haga clic en el nombre del video para abrir los detalles.</li>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/video-id-and-channel-id.png" alt="Video for Cloud Playout">
+          <figcaption class="bcls-caption--image">Video para Cloud Playout</figcaption>
+        </figure>
+      <li>Guarde tanto el <strong>ID de video</strong> y el <strong>Canal ID</strong> (la larga cadena alfanumérica que sigue <strong>reproducción en la nube:</strong> en las Etiquetas).</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="create_beacon_channel">Crear un canal de baliza</h2>
+    <aside class="bcls-aside bcls-aside--information language-editable">Este paso debe realizarse actualmente en <strong>Faro</strong>.</aside>
+    <p>Para crear un canal en Brightcove Beacon, siga estos pasos:</p>
+    <h3>Datos básicos</h3>
+    <ol class="bcls-tasklist">
+      <li>Inicie sesión en Beacon Classic.</li>
+      <li>En la navegación superior, seleccione <strong>Canales</strong>.</li>
+      <li>Haga clic en el <strong>Agregar nuevo canal</strong> botón.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/channels/creating-channels/1-add-new-channel.png" alt="" width="" height="" />
+        </figure>
+      </li>
+      <li>En el <strong>Datos básicos</strong> pestaña, defina una <strong>Nombre</strong> para tu canal.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/channels/creating-channels/2-basic-data.png" alt="" />
+        </figure>
+      </li>
+      <li>
+        Ingrese el ID del canal de Cloud Playout: <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/enter-cloud-playout-channel-id.png" alt="Enter Cloud Playout Channel ID">
+          <figcaption class="bcls-caption--image">Ingrese el ID del canal de Cloud Playout</figcaption>
+        </figure>
+        <p>Para encontrar el ID del canal de Cloud Playout, consulte <a href="/cloud-playout/cloud-playout-stream-vod.html#Get_information_for_the_Beacon_Channel">Obtener información para Beacon Channel</a>.</p>
+      </li>
+      <li>En el <strong>Calificación de contenido</strong> menú desplegable, seleccione la clasificación de contenido de su canal según el sistema de clasificación de contenido del país donde se transmitirá su canal. En la imagen de ejemplo, es para EE. UU. <strong>TV-Y</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/channels/creating-channels/2.2-basic-data-options.png" alt="Channel Data Options" />
+        </figure>
+      </li>
+      <li>En el <strong>Detalles de géneros</strong> sección, haga clic en el <strong>Géneros</strong> menú desplegable para seleccionar un género para tu canal. (Ejemplo: Horror, Drama, etc.)</li>
+      <li>Si no encuentra el género correcto para su canal, puede crear otros adicionales haciendo clic en el <strong>Crear género</strong> botón.</li>
+      <aside class="bcls-aside bcls-aside--information">los <strong>Sub géneros</strong> El menú desplegable no funciona en este momento.</aside>
+    </ol>
+    <h3 id="textual-data">Datos textuales</h3>
+    <p>La <strong>Datos textuales</strong> La sección te permite agregar texto visualizable para tu canal.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Selecciona el <strong>Datos textuales</strong> pestaña.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/channels/creating-channels/3-textual-data.png" alt="" width="" height="" />
+        </figure>
+      </li>
+      <li>En el <strong>Título</strong> campo, define un título para tu canal.</li>
+      <li>En el <strong>Descripción</strong> campo, define una descripción para tu canal.</li>
+      <li>En el <strong>Sinopsis</strong> campo, defina una sinopsis para su canal.
+      </li>
+      <aside class="bcls-aside bcls-aside--information">Puede agregar un <strong>Datos textuales</strong> sección para cada idioma diferente que usarás en tu canal. </aside>
+    </ol>
+    <h3>Corrientes</h3>
+    <p>En la sección Streams, configurará la información de streaming para su canal.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        En la sección Streams, seleccione <strong>Brightcove</strong> como el <strong>Proveedor</strong> y haga clic en <strong>Agregar nueva transmisión</strong>:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/publish-add-new-stream.png" alt="Add New Stream">
+          <figcaption class="bcls-caption--image">Agregar nueva transmisión</figcaption>
+        </figure>
+      </li>
+      <li>
+        Agrega la información de Steams:
+        <ul>
+          <li><strong>Transmisión de ID de video:</strong> ingrese la identificación de video para la transmisión en vivo del canal</li>
+          <li><strong>Dispositivos para publicar:</strong> haga clic en Seleccionar / Deseleccionar todos los dispositivos y luego elimine los que no desee publicar</li>
+          <li><strong>Tipo de corriente:</strong> Seleccione <strong>Vivir</strong></li>
+          <li><strong>Tipo de DRM:</strong> seleccione el tipo de DRM que está utilizando o <strong>Abierto</strong></li>
+          <li><strong>Formato de transmisión:</strong> seleccione HLS</li>
+        </ul>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/publish-stream-settings.png" alt="Streams Settings">
+          <figcaption class="bcls-caption--image">Configuración de transmisiones</figcaption>
+        </figure>
+      </li>
+    </ol>
+    <h3>Derechos y programación</h3>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        En el <strong>Derechos y programación</strong> sección, agregue la siguiente información:
+        <ul>
+          <li><strong>Estado:</strong> seleccione Publicado</li>
+          <li><strong>Permitir descargas:</strong> elegir si permitir que los espectadores descarguen contenido (en la mayoría de los casos, la respuesta será no)</li>
+          <li><strong>Tipo de derechos:</strong> seleccione Gratis o lo que sea apropiado para su contenido</li>
+          <li><strong>Hora de inicio:</strong> el tiempo para que el canal esté disponible (elija una fecha en el pasado para que esté disponible de inmediato)</li>
+          <li><strong>Hora de finalización:</strong> la hora en que el canal dejará de estar disponible (puede configurarlo en el futuro si desea que se ejecute indefinidamente)</li>
+          <li><strong>Corrientes máximas:</strong> No es necesario que ingreses nada, déjalo en 0</li>
+          <li><strong>Dispositivos para publicar:</strong> haga clic en Seleccionar / Deseleccionar todos los dispositivos y luego elimine los que no desee publicar</li>
+          <li><strong>Ubicaciones permitidas:</strong> ingresar <strong>Mundo</strong> o las áreas que permite ver</li>
+          <li><strong>Ubicaciones denegadas:</strong> dejar en blanco o ingresar a áreas donde no se permite la visualización</li>
+        </ul>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/publish-rights-scheduling.png" alt="Rights & Scheduling Settings">
+          <figcaption class="bcls-caption--image">Configuración de derechos y programación</figcaption>
+        </figure>
+      </li>
+    </ol>
+    <h3>Crea el canal</h3>
+    <ol class="bcls-tasklist-restart">
+      <li>Una vez que haya introducido todos los ajustes necesarios, haga clic en <strong>Crear nuevo canal</strong></li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Add_channel_to_playlist">Agregar el canal a una lista de reproducción</h2>
+    <p>Porque las páginas de Beacon usan <strong>listas de reproducción</strong> para el contenido, debe agregar su canal de Cloud Playout a una lista de reproducción. La lista de reproducción puede contener otros videos, pero por lo general solo contendrá el canal para que incluya el contenido de la página. Ver <a href="/using-brightcove-beacon/creating-a-playlist.html">Crear una lista de reproducción</a> para detalles.</p>
+    
+  </section>
+  <section class="bcls-section">
+    <h2 id="Add_channel_to_page">Agregar canal a una página de baliza</h2>
+    <p>El último paso para poner su canal Cloud Playout en su aplicación Beacon es el más simple: todo lo que necesita hacer es agregar su lista de reproducción que contiene el video del canal a la página. Ver <a href="/using-brightcove-beacon/creating-a-page.html">Crear una página</a> para detalles.</p>
+  </section>
+</article>

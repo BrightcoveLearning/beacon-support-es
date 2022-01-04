@@ -1,0 +1,173 @@
+---
+title: 'Guía de validación de aplicaciones de dispositivo'
+description: 'En este tema, aprenderá información para validar el comportamiento o las aplicaciones de su dispositivo para que pueda enviarlas a las tiendas correspondientes.'
+
+parent: 'General'
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Overview">Descripción general</h2>
+    <p>
+      En algún momento del desarrollo de sus aplicaciones desde Brightcove Beacon Experience, se le proporcionarán compilaciones de prueba para asegurarse de que las aplicaciones se comporten como desea. Este documento proporcionará información sobre cada uno de los siguientes:
+    </p>
+    <ul>
+      <li><em>Categorías de prueba</em>: Defina amplias áreas de prueba.</li>
+      <li>
+        <em>Consejos</em>: Sugerencias y conocimientos a seguir al realizar la prueba.
+      </li>
+      <li>
+        <em>Reportando</em>: El procedimiento a seguir si encuentra problemas en sus pruebas.
+      </li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Before_you_start">Antes de que empieces</h2>
+    <p>Asegúrese de estar configurado para realizar las pruebas adecuadas. Asegúrese de lo siguiente:</p>
+    <ul>
+      <li>Los probadores tienen a mano todos los dispositivos de prueba necesarios.</li>
+      <li>En aras de la compatibilidad, los dispositivos utilizados para las pruebas no deben tener más de tres años. Más adelante en este documento, se especificarán las versiones mínimas requeridas específicas para cada plataforma.</li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Testing_categories">Categorías de prueba</h2>
+    <p>
+      Brightcove recomienda que se prueben las siguientes áreas y se respondan las preguntas:
+    </p>
+    <ul>
+      <li>
+        Diseño y características:
+        <ul>
+          <li>¿La experiencia coincide con las maquetas acordadas?</li>
+          <li>¿Están disponibles todas las funciones solicitadas?</li>
+        </ul>
+      </li>
+      <li>
+        Diseño y contenido de la página:
+        <ul>
+          <li>¿Están configuradas las páginas como se esperaba?</li>
+          <li>¿Aparece el contenido esperado en cada una de las páginas?</li>
+        </ul>
+      </li>
+      <li>
+        Configuración de monetización:
+        <ul>
+          <li>¿Los anuncios aparecen como se esperaba?</li>
+          <li>
+            ¿Se muestran las suscripciones para los activos correspondientes?
+          </li>
+          <li>
+            ¿Pueden los usuarios comprar y tener derecho al contenido como se esperaba?
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Supported_platforms_and_versions">Plataformas y versiones compatibles</h2>
+    <p>A continuación, se enumeran las plataformas y versiones compatibles que deben usarse para guiar sus pruebas.</p>
+    <ul>
+      <li>Web
+        <ul>
+          <li>Chrome: versión actual y versión actual-1</li>
+          <li>Safari: versión actual y versión actual-1</li>
+          <li>Edge: versión actual y versión actual-1</li>
+          <li>Firefox: versión actual y versión actual-1</li>
+        </ul>
+      </li>
+      <li>Apple iOS (móvil / tableta)
+        <ul>
+          <li>Apple iOS 13 y superior</li>
+          <li>Para obtener información adicional, consulte el <a href="/creating-your-apps/ios-tvos/installing-ios-test-build.html">Instalación de una compilación de prueba de iOS / tvOS</a> documento</li>
+        </ul>
+      </li>
+      <li>Apple tvOS
+        <ul>
+          <li>tvOS 12 y superior</li>
+          <li>Para obtener información adicional, consulte el <a href="/creating-your-apps/ios-tvos/installing-ios-test-build.html">Instalación de una compilación de prueba de iOS / tvOS</a> documento</li>
+        </ul>
+      </li>
+      <li>Google Android
+        <ul>
+          <li>Android 5 y superior</li>
+          <li>Para obtener información adicional, consulte el <a href="/creating-your-apps/android/installing-android-test-build.html">Instalación de una compilación de prueba de Android</a> documento</li>
+        </ul>
+      </li>
+      <li>Google Android TV
+        <ul>
+          <li>Android 5 y superior</li>
+          <li>Para obtener información adicional, consulte el <a href="/creating-your-apps/android/installing-android-test-build.html">Instalación de una compilación de prueba de Android</a> documento</li>
+        </ul>
+      </li>
+      <li>Roku
+        <ul>
+          <li>Roku OS 9.1 y superior</li>
+          <li>Para obtener información adicional, consulte el <a href="/creating-your-apps/roku/installing-roku-test-build.html">Instalación de una compilación de prueba de Roku</a> documento</li>
+        </ul>
+      </li>
+      <li>Amazon Fire TV
+        <ul>
+          <li>Fire OS 5.0 y superior</li>
+          <li>Para obtener información adicional, consulte el <a href="/creating-your-apps/fire-tv/installing-fire-tv-test-build.html">Instalación de una compilación de prueba de Fire TV</a> documento</li>
+        </ul>
+      </li>
+      <li>Samsung Smart TV
+        <ul>
+          <li>Tizen 2018, 2019, 2020</li>
+        </ul>
+      </li>
+      <li>Sony Bravia Smart TV
+        <ul>
+          <li>Android TV 5.0+ y superior</li>
+        </ul>
+      </li>
+      <li>Toshiba Smart TV
+        <ul>
+          <li>Android TV 5.0+ y superior y / o Fire OS 5.0 y superior</li>
+          <li>Para obtener información adicional, consulte el <a href="/creating-your-apps/android/installing-android-test-build.html">Instalación de una compilación de prueba de Android</a> documento</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Tips">Consejos</h2>
+    <p>Tenga en cuenta los siguientes consejos al realizar su validación:</p>
+    <ul>
+      <li>
+        <strong>Primer pase</strong>: Elija UNA de las plataformas y recorra las diferentes áreas de prueba en esa plataforma. Empezar con <em>Diseño y características</em>, luego pasa a <em>Diseño y contenido de la página</em> y por ultimo a <em>Configuración de monetización</em> pruebas.
+      </li>
+      <li>
+        <strong>Rondas adicionales de pruebas</strong>: Cuando termine el primer pase para cada área, pase a otras plataformas que estén disponibles. Si un problema es aplicable a varias plataformas, tenga en cuenta que en los tickets informados anteriormente.
+      </li>
+      <li>
+        <strong>Prueba de correcciones</strong>: Las correcciones de los problemas notificados se realizarán en una de estas tres áreas:
+        <ul>
+          <li>La experiencia Brightcove Beacon (no se necesitan actualizaciones de la aplicación)</li>
+          <li>En las aplicaciones</li>
+          <li>El backend de Brightcove Beacon</li>
+        </ul>
+        <p>
+          Si la solución está en la aplicación, se proporcionará una nueva compilación con detalles de lo que se corrigió. Para otras áreas, Brightcove proporcionaría detalles en el ticket sobre lo que se solucionó. Para acelerar la reparación y la repetición de la prueba, es muy importante que los tickets proporcionen detalles sobre el problema y pasos para ayudar con la repetición de la prueba.
+        </p>
+      </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Reporting">Reportando</h2>
+    <p>
+      Brightcove recomienda que informe los problemas a medida que los encuentre para que los comentarios sigan fluyendo hacia Brightcove y que los problemas se solucionen y se devuelvan para su validación lo más rápido posible. Informe un problema / ticket por problema y proporcione la siguiente información en cada problema / ticket:
+    </p>
+    <ul>
+      <li>Plataforma probada</li>
+      <li>La versión de la aplicación en la que se encontró el problema.</li>
+      <li>pasos para reproducir</li>
+      <li>
+        Incluya capturas de pantalla o películas en pantalla para ayudar a acelerar la identificación del problema y proporcionar una resolución. </li>
+    </ul>
+  </section>
+</article>

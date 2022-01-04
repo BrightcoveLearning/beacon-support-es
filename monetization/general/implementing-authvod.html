@@ -1,0 +1,106 @@
+---
+title: "Implementación de AuthVOD"
+description: "En este tema, aprenderá a crear un paquete de monetización de AuthVOD".
+
+parent: "Monetization"
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+  <section class="bcls-section">
+    <h2 id="section-name">Entendiendo AuthVOD</h2>
+    <p>AuthVOD (AUTHenticated Video On Demand) es un paquete de monetización en el que los espectadores deben autenticarse, es decir, ingresar un nombre de usuario y contraseña, en la aplicación Brightcove Beacon para ver los videos incluidos en el paquete. Los videos pueden o no mostrar anuncios, dependiendo de cómo configure ese paquete.</p>
+    <p>Ver el <a href="/monetization/monetization-options.html">Comprensión de las opciones de monetización</a> documento para obtener más información sobre AuthVOD, así como todos los paquetes de monetización que puede utilizar con Brightcove Beacon.</p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="section-name">Configuración de una descripción general del paquete AuthVOD</h2>
+    <p>Estos son los pasos de alto nivel para configurar un paquete AuthVOD:</p>
+    <ol>
+      <li>En Brightcove Beacon, cree un <strong>inédito</strong> , paquete gratuito.</li>
+      <li>Si desea anuncios, proporcione un proveedor de anuncios al crear el paquete.</li>
+      <li>En Video Cloud Studio, agregue datos a los videos' campos personalizados para asignarlos al paquete AuthVOD.</li>
+      <li>En Brightcove Beacon, ingiera los videos y borre el caché.</li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="section-name">Creación de un paquete en Brightcove Beacon</h2>
+    <p>Estos son los pasos detallados a seguir en Brightcove Beacon para crear un paquete AuthVOD:</p>
+    <ol class="bcls-tasklist">
+      <li>Haga clic en el <strong>Comercio</strong> pestaña en la parte superior de Brightcove Beacon.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/implementing-authvod/navigation-to-add.png" alt="get to add new package button">
+        </figure>
+      </li>
+      <li>Seleccione <strong>Paquetes</strong> desde la navegación de la izquierda.</li>
+      <li>Haga clic en el <strong>Agregar nuevo paquete</strong> botón.</li>
+      <li>Sobre el <strong>Paquete</strong> pestaña proporcione el nombre interno y asegúrese de dejar el <strong>Estado</strong> como <strong>Inédito</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/implementing-authvod/package-tab.png" alt="package tab">
+        </figure>
+      </li>
+      <li>Si desea utilizar publicidad, puede hacer clic en el <strong>sí</strong> botón de radio para <strong>Anuncio publicitario</strong> luego elige un <strong>Proveedor de anuncios</strong> desde el menú desplegable.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/implementing-authvod/package-tab-ads.png" alt="package tab">
+        </figure>
+      </li>
+      <li>Sobre el <strong>Datos textuales</strong> pestaña ingrese el nombre visible para los espectadores y un título sobre el paquete.</li>
+      <li>Si lo desea, proporcione una imagen que se mostrará con la información del paquete.</li>
+      <li>Sobre el <strong>Corrientes</strong> , ingrese valores para la cantidad máxima de dispositivos que pueden transmitir al mismo tiempo y la cantidad máxima de dispositivos que pueden tener una conexión activa.</li>
+      <li>Si desea un control más preciso de la disponibilidad del paquete, haga clic en el <strong>sí</strong> botón de radio para <strong>¿Secuencias avanzadas?</strong> , luego complete el formulario con opciones de disponibilidad más precisas.</li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="section-name">Agregar videos al paquete en Studio</h2>
+    <p>Para agregar contenido al paquete, debe utilizar Video Cloud Studio para asignar valores a los campos personalizados. Los dos campos personalizados a los que debe asignar valores para un paquete AuthVOD son:</p>
+    <ul>
+      <li>beacon.rights.&lt;counter&gt;.packageName</li>
+      <li>beacon.rights.&lt;counter&gt;.type</li>
+    </ul>
+    <p>Los pasos siguientes detallan el proceso de asignación de valores a esos campos personalizados.</p>
+    <aside class="bcls-aside bcls-aside--tip">Para obtener más información sobre el uso de los campos personalizados de Video Cloud con Brightcove Beacon, consulte la <a href="/syncing-with-video-cloud/vc-custom-fields.html">Creación de campos personalizados de Video Cloud</a> documento.</aside>
+    <p>Para cada video que desee incluir en el paquete, complete los siguientes pasos:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Iniciar sesión en Estudio de Video Cloud.</li>
+      <li>En el Módulo de medios, haga clic en el nombre del video para ver las propiedades de ese video.</li>
+      <li>Haga clic en el <strong>CAMPOS PERSONALIZADOS</strong>' <strong>Editar</strong> botón.</li>
+      <li>Para el <strong>beacon.rights.&lt;counter&gt;.packageName</strong> , ingrese el nombre de su paquete AuthVOD creado anteriormente.</li>
+      <li>Para el <strong>beacon.rights.&lt;counter&gt;.tipo</strong> , ingresar <strong>SVOD</strong>.</li>
+    </ol>
+    <p>La siguiente captura de pantalla muestra un ejemplo de los valores reales utilizados en los campos personalizados. En este caso, el <strong>encimera</strong> es cero (resaltado en rojo) y el nombre del paquete es <strong>Prueba de AuthVOD</strong> (resaltado en amarillo). Recuerde que al implementar AuthVOD, el <strong>beacon.rights.&lt;counter&gt;.tipo</strong> siempre está configurado en <strong>SVOD</strong>.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/using-bcb/implementing-authvod/values-in-custom-fields.png" alt="custom field values">
+    </figure>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="section-name">Ingesta videos en Brightcove Beacon</h2>
+    <p>Los cambios que se realizan en los videos en Video Cloud Studio deben incorporarse a Brightcove Beacon. Esto se hace automáticamente cada hora, pero también puede ingerir manualmente bajo demanda. Los pasos generales se detallarán a continuación.</p>
+    <aside class="bcls-aside bcls-aside--tip">Para obtener detalles completos sobre la ingesta de videos, consulte el <a href="/syncing-with-video-cloud/forcing-a-sync.html">Forzar una sincronización</a> documento.</aside>
+    <ol class="bcls-tasklist-restart">
+      <li>En Brightcove Beacon, en el menú superior, haga clic en la pestaña Herramientas (icono de llave inglesa).</li>
+      <li>En la barra de navegación de la izquierda, asegúrese de <strong>Ingestión</strong> está seleccionada la opción (es la opción predeterminada).</li>
+      <li>Haga clic en el <strong>Actualizar vídeos de Brightcove</strong> botón.</li>
+      <li>Una vez finalizada la ingestión, puede verificar que sus videos hayan sido asignados a su paquete AuthVOD haciendo clic primero en el menú superior <strong>Comercio</strong> pestaña.</li>
+      <li>En la barra de navegación de la izquierda, asegúrese de <strong>Paquetes</strong> está seleccionada la opción (es la opción predeterminada).</li>
+      <li>Haga clic en el nombre de su paquete AuthVOD.</li>
+      <li>Haga clic en el <strong>Contenido</strong> pestaña para ver los activos asignados a este paquete AuthVOD. Aquí se muestra un ejemplo de esta pestaña:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/implementing-authvod/content.png" alt="content">
+        </figure>
+      </li>
+      <li>Para comenzar a borrar la memoria caché, en el menú superior, haga clic en la pestaña Herramientas (icono de llave inglesa).</li>
+      <li>En la barra de navegación izquierda, haga clic en el <strong>Cache</strong> opción.</li>
+      <li>Haga clic en el <strong>Purga de caché</strong> botón.</li>
+    </ol>
+    <p>Ahora, cualquier espectador que esté autenticado en la aplicación Brightcove Beacon tendrá acceso al contenido de AuthVOD. Si un espectador intenta reproducir un video sin estar autenticado, aparece un mensaje en la parte inferior izquierda del video solicitándole que inicie sesión, como se muestra aquí:
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/using-bcb/implementing-authvod/sign-in.png" alt="sign in prompt">
+    </figure>
+    </p>
+  </section>
+
+</article>

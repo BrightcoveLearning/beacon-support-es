@@ -1,0 +1,311 @@
+---
+title: la orientación de anuncios de Beacon Apps
+description: La orientación de anuncios de Beacon Apps permite a los clientes de Beacon enviar información importante a nivel de dispositivo y específica del usuario desde las aplicaciones de Beacon del cliente a su servidor de anuncios o proveedor de anuncios.
+parent: SSAI 
+grandparent: Monetization
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="introduction">Introducción</h2>
+    <p>La información del lado del cliente se pasa de las aplicaciones a SSAI, y luego SSAI incluye estos datos en la etiqueta VAST del cliente, que luego permite a los clientes orientar anuncios en función de estos datos. El propósito de esto es aumentar el valor del inventario de anuncios de los clientes y, por lo tanto, aumentar los ingresos publicitarios para su negocio.</p>
+    <p>Dentro de Studio y Beacon CMS, puede configurar cómo se transmiten estos datos a su servidor de anuncios o proveedor de anuncios.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="key_benefits">Beneficios</h2>
+    <h3>Orientación de anuncios mejorada</h3>
+    <ul>
+      <li><strong>ID de sesión de usuario:</strong> Brightcove genera un ID de sesión en cada dispositivo cuando un usuario abre la aplicación. Esto le permite limitar la frecuencia de los anuncios a esa sesión, excluir anuncios de la competencia para que no se publiquen juntos y rotar los anuncios secuencialmente en esa sesión. Estas capacidades de orientación son necesarias para los anuncios programáticos y de venta directa.</li>
+      <li><strong>Más datos para anuncios programáticos:</strong> Las aplicaciones móviles y las aplicaciones CTV no admiten cookies, que es el método dominante para la segmentación de anuncios basada en usuarios / dispositivos en la web. Al incluir parámetros como Device ID, puede transmitir esta valiosa información a los compradores de anuncios programáticos, que luego mejorarán sus capacidades de orientación de anuncios, lo que generará mayores CPM.</li>
+    </ul>
+    <h3>Compatibilidad con la división del inventario de anuncios</h3>
+    <p>Para las aplicaciones que se ejecutan en Amazon, Roku y Samsung (en los EE. UU.), Debe realizar una división 70/30 de inventario / ingresos de anuncios con la plataforma. Esto significa que los clientes de Brightcove Beacon monetizan el 70% del inventario de anuncios y la plataforma obtiene el 30% restante del inventario de anuncios. Con esta orientación publicitaria mejorada, puede usar una etiqueta publicitaria en todas sus aplicaciones y pasar los parámetros del dispositivo a su servidor de anuncios. Dentro de su servidor de anuncios, implementará la lógica empresarial que divide el inventario de anuncios por dispositivo. Las plataformas también requieren pasar LAT (orientación limitada de anuncios) para la división del inventario de anuncios, que es un parámetro que ahora enviamos a su servidor de anuncios.</p>
+    <h3>Mejoras en la privacidad del usuario</h3>
+    <ul>
+      <li>LAT "Orientación de anuncios limitada": permite a los usuarios de las aplicaciones Beacon optar por no recibir orientación de anuncios según el comportamiento del usuario.</li>
+      <li>Los usuarios tienen la capacidad de restablecer la ID de dispositivo única que asignamos al dispositivo en cualquier momento.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="targeting_information">Información de orientación</h2>
+    <p>Puede orientar anuncios según la información de la tabla siguiente.</p>
+    <table class="bcls-table">
+      <caption class="bcls-caption--table">Información de orientación</caption>
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Tipo de informacion</th>
+          <th>Nombre de la variable</th>
+          <th>Macro de valor</th>
+          <th>Valores</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>Plataforma</td>
+          <td><code translate="no">plataforma</code></td>
+          <td><strong>PLATAFORMA</strong></td>
+          <td><code translate="No">iOS</code>, <code translate="No">Android</code> , <code translate="No">Roku</code> , <code translate="No">AppleTV</code> , <code translate="No">Web</code> , <code translate="No">STV</code></td>
+        </tr>
+        <tr>
+          <td>versión del sistema operativo</td>
+          <td>os<code translate="no"></code></td>
+          <td><strong>SO</strong></td>
+          <td>versión del sistema operativo del dispositivo (por ejemplo, <code translate="No">iOS 14</code>)</td>
+        </tr>
+        <tr>
+          <td>Modelo de dispositivo</td>
+          <td><code translate="no">modelo</code></td>
+          <td><strong>MODELO</strong></td>
+          <td>modelo de dispositivo. Versión del navegador utilizada para aplicaciones web</td>
+        </tr>
+        <tr>
+          <td>Fabricante</td>
+          <td>mfgr<code translate="no"></code></td>
+          <td>MFGR<strong></strong></td>
+          <td>fabricante del dispositivo; nombre del navegador utilizado para aplicaciones web</td>
+        </tr>
+        <tr>
+          <td>Idioma</td>
+          <td>lang<code translate="no"></code></td>
+          <td><strong>LUGAR</strong></td>
+          <td>Código de idioma configurado en la aplicación (que proviene de CMS)</td>
+        </tr>
+        <tr>
+          <td>Sesión de usuario</td>
+          <td><code translate="no">Sid</code></td>
+          <td>SID<strong></strong></td>
+          <td>Cada vez que se inicia esa aplicación, queremos tener un entero único creado que se almacena en la memoria y no persiste.</td>
+        </tr>
+        <tr>
+          <td>ID de dispositivo único</td>
+          <td>rdid<code translate="no"></code></td>
+          <td>RDID<strong></strong></td>
+          <td>ID de dispositivo reiniciable (TIFA = Samsung, rida = Roku, adid = Android, etc.): si se establece una segmentación de anuncios limitada en la aplicación, entonces la identificación debe ser todo ceros (no es posible identificar al usuario / dispositivo). Este artículo no es aplicable a la web.</td>
+        </tr>
+        <tr>
+          <td>¿El usuario permite el seguimiento</td>
+          <td>is_lat<code translate="no"></code></td>
+          <td>IS_LAT<strong></strong></td>
+          <td>0 si el usuario no ha optado por limitar la segmentación, 1 si limita la segmentación de anuncios. Este artículo no es aplicable a la web.</td>
+        </tr>
+        <tr>
+          <td>tipo de dispositivo</td>
+          <td><code translate="no">tipo de identificación</code></td>
+          <td><strong>TIPO DE IDENTIFICACIÓN</strong></td>
+          <td>
+            <ul>
+              <li>adid: Androide</li>
+              <li>afai: Amazonas</li>
+              <li>tvOS: AppleTV (tvOS)</li>
+              <li>idfa: Teléfonos Apple (iOS)</li>
+              <li>rida: Roku</li>
+              <li>tifa: Samsung</li>
+              <li>vida: Vizio</li>
+              <li>msai: Xbox</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Identificador de la aplicación</td>
+          <td>app_id<code translate="no"></code></td>
+          <td>APP_ID<strong></strong></td>
+          <td>Este debería ser el nombre del paquete de la aplicación</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Notas</h3>
+    <ul>
+      <li>Esta función funciona en todas las plataformas / dispositivos iOS, Apple TV, Android, Roku, Fire TV, Web y Smart TV.</li>
+      <li>La orientación de anuncios de Beacon Apps se puede utilizar tanto con VOD SSAI como con Live SSAI.</li>
+    </ul>
+  </section>
+  <!--   <section class="bcls-section">
+    <h2 id="Implementation">Implementation</h2>
+    <p>Below is a list of <strong>value macros</strong> that will be passed to the app, which will then substitute the real values before sending to the ad server. They are <strong>NOT</strong> configurable.</p>
+    <table class="bcls-table">
+      <caption class="bcls-caption--table">Value Macros</caption>
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Macro</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td translate="no" style="font-weight:bold">PLATFORM</td>
+          <td>The appropriate beacon platform: iOS, AppleTV, Android, Roku, Web, STV</td>
+        </tr>
+        <tr>
+          <td translate="no" style="font-weight:bold">OS</td>
+          <td>full qualified OS (including version) - example iOS 14</td>
+        </tr>
+        <tr>
+          <td translate="no" style="font-weight:bold">MFGR</td>
+          <td>the Manufacturer of the device; (Web - user's browser)</td>
+        </tr>
+        <tr>
+          <td translate="no" style="font-weight:bold">MODEL</td>
+          <td>Device Model; (Web - browser version)</td>
+        </tr>
+        <tr>
+          <td translate="no" style="font-weight:bold">APP_ID</td>
+          <td>Application id (for example bundle ID); Web: app domain</td>
+        </tr>
+        <tr>
+          <td translate="no" style="font-weight:bold">LOCALE</td>
+          <td>ISO 639-1 (2-letter) language code followed by an underscore and a ISO 3166-1 (2-letter) country code (example en_us) - language set in the app</td>
+        </tr>
+        <tr>
+          <td translate="no" style="font-weight:bold">RDID</td>
+          <td>Resettable device ID (<code translate="no">tifa</code>: Samsung, <code translate="no">rida</code>: Roku, <code translate="no">adid</code>: Android, etc. - see <a href="#Device_identifiers">Device identifiers</a> below for more values) - if <strong>limited ad targeting</strong> is set on the App, then the id should be all zeros (meaning not possible to identify the user/device)</td>
+        </tr>
+        <tr>
+          <td translate="no" style="font-weight:bold">IDTYPE</td>
+          <td>Type resettable ID (<code translate="no">tifa</code>: Samsung, <code translate="no">rida</code>: Roku, <code translate="no">adid</code>: Android, etc. - see <a href="#Device_identifiers">Device identifiers</a> below for more values)</td>
+        </tr>
+        <tr>
+          <td translate="no" style="font-weight:bold">IS_LAT</td>
+          <td>Flag that tells if limited ad targeting is selected by user: <code translate="no">0</code> if user has not opted to limit targeting, <code translate="no">1</code> if limiting ad targeting</td>
+        </tr>
+        <tr>
+          <td translate="no" style="font-weight:bold">SID</td>
+          <td>Unique session identifier (reset every time the app starts). Not dependent on user sign in / Sign up. Switching from foreground to background status does not change this ID.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4 id="Device_identifiers">Device identifiers</h4>
+    <ul>
+      <li>adid: Android</li>
+      <li>afai: Amazon</li>
+      <li>tvOS: AppleTV (tvOS)</li>
+      <li>idfa: Apple phones (iOS)</li>
+      <li>rida: Roku</li>
+      <li>tifa: Samsung</li>
+      <li>vida: Vizio</li>
+      <li>msai: Xbox</li>
+    </ul>
+  </section>
+ -->
+  {% raw %}
+  <section class="bcls-section">
+    <h2 id="Implement_the_client_side_params">Implementar los parámetros del lado del cliente</h2>
+    <p>Ya sea que esté utilizando la orientación de anuncios con VOD o Live, debe crear la cadena de consulta que se usará con ambos. Utilice las siguientes pautas al crear su cadena de consulta:</p>
+    <ul>
+      <li>Los parámetros del lado del cliente se pasarán al servidor de anuncios cuando solicite anuncios.</li>
+      <li>Los parámetros del lado del cliente se pueden pasar en las API de reproducción (proporcionadas en el punto de entrada VMAP / Manifest). Aquellos estarán disponibles para la infraestructura SSAI en forma de <code translate="no">{{url.xxx}}</code> macros donde el <code>xxx</code> corresponde a la tecla de parámetro.</li>
+      <li>Pegue su etiqueta de anuncio, <strong>agregando su cadena de consulta de parámetros de orientación de anuncios</strong>:
+        <pre class="line-numbers"><code class="language-html" translate="No">variablename1={VALUEMACRO1}&variablename2={VALUEMACRO2}& ...</code></pre>
+      </li>
+      <li>Ejemplo:
+        <pre class="line-numbers"><code class="language-html" translate="No">plarform={PLATFORM}&os={OS}&appid={APP_ID}&did={RDID}&dt={IDTYPE}&lat={IS_LAT}&sid={SID}</code></pre>
+      </li>
+      <!-- <li></li> -->
+    </ul>
+    <p>Asegúrese de crear la cadena de consulta de orientación de anuncios deseada, ya que la necesitará en los pasos de implementación a continuación.</p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="VOD_steps">Pasos de VOD</h2>
+    <h3>Pasos de Video Cloud - VOD</h3>
+    <ol class="bcls-tasklist-restart">
+      <li>En Video Cloud Studio, navegue hasta <strong>Admin → Configuración de anuncios del lado del servidor</strong>. (Para obtener detalles completos, consulte el <a href="/monetization/ssai/vod-ssai.html">Implementación de VOD SSAI</a> documento.)</li>
+      <li>
+        Desde el <span class="blue-button">Crear configuración de anuncios</span> desplegable, seleccione <strong>VOD</strong>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/ad-targeting/create-vod-ad-config.png" alt="Create VOD Ad Config">
+          <figcaption class="bcls-caption--image">Crear configuración de anuncios VOD</figcaption>
+        </figure>
+      </li>
+      <li>Agregue un nombre para la configuración de anuncios.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/ad-targeting/ssai-config-vod.png" alt="SSAI Configuration VOD">
+          <figcaption class="bcls-caption--image">Configuración SSAI VOD</figcaption>
+        </figure>
+      </li>
+      <li>Seleccione la respuesta de su anuncio: se recomienda VMAP o VAST. Si usa VAST, deberá agregar puntos de referencia a los videos para especificar dónde deben aparecer las pausas publicitarias.</li>
+      <li>Pegue su etiqueta de anuncio, <strong>agregando su cadena de consulta de parámetros de orientación de anuncios</strong>.</li>
+      <li>Haz clic en<strong> Guardar</strong>.</li>
+      <li>Busque su nueva configuración de anuncios en la tabla y copie su ID de configuración de anuncios. Necesitará este valor para la configuración de publicidad de Beacon.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/ad-targeting/copy-ad-config-id.png" alt="copy ad config ID">
+          <figcaption class="bcls-caption--image">Copiar ID de configuración de anuncio</figcaption>
+        </figure>
+      </li>
+    </ol>
+
+    <h3>Pasos de baliza - VOD</h3>
+    <ol class="bcls-tasklist">
+      <li>Abra la interfaz de usuario de Beacon Classic y navegue hasta la <strong>Anuncio publicitario</strong> pestaña.</li>
+      <li>
+        Hacer clic <span class="button-teal">Agregar nueva configuración</span>.
+      </li>
+      <li>Nombre la configuración de anuncios.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/ad-targeting/advertising-config-vod.png" alt="Beacon Ad Configuration">
+          <figcaption class="bcls-caption--image">VOD de configuración de anuncios de baliza</figcaption>
+        </figure>
+      </li>
+      <li>Para el <strong>Proveedor</strong> Seleccione <strong>Brightcove SSAI</strong>.</li>
+      <li>Pegue la URL de orientación del anuncio creada a partir de la sección anterior.</li>
+      <li>Pegar en el <strong>ID de configuración de anuncio SSAI</strong> copiado en los pasos anteriores en <strong>ID de configuración de anuncios de VOD</strong>.</li>
+      <li>Hacer clic <span class="button-teal">Crear nuevo anuncio</span>.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Live_steps">Pasos en vivo</h2>
+    <h3>Pasos de Video Cloud - En vivo</h3>
+    <ol class="bcls-tasklist-restart">
+      <li>En Video Cloud Studio, navegue hasta <strong>Admin → Configuración de anuncios del lado del servidor</strong>. (Para obtener detalles completos, consulte el <a href="/monetization/ssai/vod-ssai.html">Implementación de VOD SSAI</a> documento.)</li>
+      <li>
+        Desde el <span class="blue-button">Crear configuración de anuncios</span> desplegable, seleccione <strong>Vivir</strong>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/ad-targeting/create-live-ad-config.png" alt="Create Live Ad Config">
+          <figcaption class="bcls-caption--image">Crear configuración de anuncios en vivo</figcaption>
+        </figure>
+      </li>
+      <li>Agregue un nombre para la configuración de anuncios</li>
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/using-bcb/ad-targeting/ssai-config-live.png" alt="SSAI Configuration Live">
+        <figcaption class="bcls-caption--image">Configuración SSAI en vivo</figcaption>
+      </figure>
+      <li>Seleccione <strong>VASTO</strong> su respuesta al anuncio</li>
+      <li>
+        Pegue su etiqueta de anuncio, <strong>agregando su cadena de consulta de parámetros de orientación de anuncios</strong>.
+      </li>
+      <li>Haz clic en<strong> Guardar</strong>.</li>
+      <li>Busque su nueva configuración de anuncios en la tabla y copie su ID de configuración de anuncios. Necesitará este valor para la configuración de publicidad de Beacon.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/ad-targeting/copy-ad-config-id.png" alt="copy ad config ID">
+          <figcaption class="bcls-caption--image">Copiar ID de configuración de anuncio</figcaption>
+        </figure>
+      </li>
+    </ol>
+    <h3>Pasos de baliza - En vivo</h3>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Abra la interfaz de usuario de Beacon Classic y vaya al <strong>Anuncio publicitario</strong> pestaña.
+      </li>
+      <li>
+        Hacer clic <span class="button-teal">Agregar nueva configuración</span>.
+      </li>
+      <li>Nombre la configuración de anuncios.</li>
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/using-bcb/ad-targeting/advertising-config-live.png" alt="Beacon Ad Configuration Live">
+        <figcaption class="bcls-caption--image">Configuración de anuncios de baliza en vivo</figcaption>
+      </figure>
+      <li>Para el <strong>Proveedor</strong> Seleccione <strong>Brightcove SSAI</strong></li>
+      <li>Pegue la URL de orientación del anuncio creada a partir de la sección anterior.</li>
+      <li>Pegar en el <strong>ID de configuración de anuncio SSAI</strong> copiado en los pasos anteriores en <strong>ID de configuración de anuncios de VOD</strong>.</li>
+      <li>Hacer clic <span class="button-teal">Crear nuevo anuncio</span>.</li>
+    </ol>
+  </section>
+  <!-- <section class="bcls-section">
+    <h2 id="Limitations">Limitations</h2>
+    <ul>
+      <li>There currently isn’t a way to handle Device ID on the web so we are not passing that information to SSAI. We are still defining how we will handle it, and the doc will be updated once Device ID for the web is implemented.</li>
+    </ul>
+  </section> -->
+  {% endraw %}
+</article>

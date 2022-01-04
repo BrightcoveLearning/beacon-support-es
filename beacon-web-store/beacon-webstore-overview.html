@@ -1,0 +1,259 @@
+---
+title: 'Visión general: Tienda web Brightcove Beacon'
+description: Este tema proporciona una descripción general del servicio Brightcove Beacon Web Store.
+parent: Beacon Web Store
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">Introducción</h2>
+    <p>Beacon Web Store es una configuración, funciones e integración de API que permite a los licenciatarios de Beacon implementar suscripciones en tiendas web Bring Your Own (BYO). Los propietarios del contenido implementan el escaparate y la lógica comercial para el alquiler y la venta y la integración del sistema de pago en la tienda web. Una API de Beacon proporciona la interfaz para que la tienda agregue, elimine y edite los cambios de derechos resultantes dentro de Beacon CMS. La lógica que define el acceso y la visualización de los títulos de contenido en las aplicaciones Beacon no ha cambiado.</p>
+    <p>La implementación de todos los informes financieros, paneles de control y pago de impuestos no se administran ni se rastrean en Beacon y son responsabilidad del propietario del contenido.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="glossary_of_terms">Glosario de términos</h2>
+    <p>La siguiente tabla explica los términos utilizados en este tema.</p>
+    <table class="bcls-table">
+      <caption class="bcls-caption--table">Glosario de términos</caption>
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Término</th>
+          <th>Explicación</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>Tienda virtual</td>
+          <td>Un sitio web de comercio BYO para vender, alquilar y vender suscripciones</td>
+        </tr>
+        <tr>
+          <td>Procesador de pagos</td>
+          <td>Un sistema utilizado por la tienda web para procesar transacciones y depositar ingresos en una cuenta.</td>
+        </tr>
+        <tr>
+          <td>SKU</td>
+          <td>Identificador de activos de baliza</td>
+        </tr>
+        <tr>
+          <td>SVOD</td>
+          <td>VOD de suscripción, modelo de pago recurrente</td>
+        </tr>
+        <!-- <tr>
+          <td>TVOD</td>
+          <td>One time purchase or rental payment model</td>
+        </tr> -->
+        <tr>
+          <td>Plan</td>
+          <td>Una definición de oferta de SVOD</td>
+        </tr>
+        <tr>
+          <td>UMS</td>
+          <td>Sistema de gestión de usuarios</td>
+        </tr>
+        <tr>
+          <td>Proxy UMS</td>
+          <td>Copias proxy de usuarios que se asignan a copias maestras en BYO UMS. Los derechos de baliza se gestionan en el sistema Proxy UMS.</td>
+        </tr>
+        <tr>
+          <td>OIDC</td>
+          <td>Open ID Connect, un protocolo para la autorización de comunicación durante la autenticación</td>
+        </tr>
+        <tr>
+          <td>Autenticación</td>
+          <td>Identificación de usuarios específicos con el fin de otorgar acceso </td>
+        </tr>
+        <tr>
+          <td>Autorización</td>
+          <td>Comunicar los derechos de los usuarios a través de tokens al iniciar sesión</td>
+        </tr>
+        <tr>
+          <td>Compra en la aplicación (disponible en el segundo trimestre de 2021)</td>
+          <td>Para los casos en los que los clientes agregan aplicaciones Beacon a las ofertas de productos de su tienda web y desean vender las nuevas configuraciones de productos a través de las tiendas de aplicaciones, Beacon Stores se puede configurar para la compra de aplicaciones. </td>
+        </tr>
+        <tr>
+          <td>Derechos</td>
+          <td>Acceso al contenido o las funciones de Beacon</td>
+        </tr>
+        <tr>
+          <td>Notificaciones de compra</td>
+          <td>Un mensaje, enviado desde una tienda Beacon a Beacon CMS que indica un cambio en el estado de compra (compra, cancelación) de una suscripción o derechos de activos.</td>
+        </tr>
+        <tr>
+          <td>Televisores conectados</td>
+          <td>Dispositivos externos conectados por HDMI que brindan soporte de administración de aplicaciones a televisores: STB de Apple TV, FireTV, Roku y Android TV</td>
+        </tr>
+        <tr>
+          <td>Televisión inteligente</td>
+          <td>Televisores con soporte integrado para la gestión de aplicaciones</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Beacon_Store_Components">Componentes de Beacon Store</h2>
+    <p>Todas las compras de Beacon Store se realizan a través de tiendas web. El modelo de venta requiere que los espectadores visiten la tienda web del cliente, compren contenido y luego abran las aplicaciones Beacon en sus dispositivos compatibles como una acción separada.</p>
+    <p>Los componentes requeridos son:</p>
+    <table class="bcls-table">
+      <caption class="bcls-caption--table">Componentes de la tienda Beacon</caption>
+      <thead class="bcls-table__head">
+          <tr>
+              <th>Componente</th>
+              <th>Responsabilidad</th>
+              <th>Descripción</th>
+          </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+          <tr>
+              <td>Tienda virtual</td>
+              <td>Propietario del contenido</td>
+              <td>Una tienda web proporcionada por el usuario que implementa la lógica y el proceso para vender y alquilar acceso a títulos de contenido individual y suscripciones renovables.</td>
+          </tr>
+          <tr>
+              <td>Procesador de pagos</td>
+              <td>Propietario del contenido</td>
+              <td>Un sistema para procesar pagos por artículos vendidos a través de la tienda web. Este servicio realizará transacciones con tarjeta de crédito, tarjeta de débito, billetera electrónica y pagos con código QR en moneda local y se liquidará con el banco del propietario del contenido.</td>
+          </tr>
+          <tr>
+              <td>Sistema de gestión de usuarios</td>
+              <td>Propietario del contenido</td>
+              <td>Se debe proporcionar un sistema de gestión de usuarios para almacenar registros de usuarios registrados. Los propietarios de tiendas web existentes querrán mantener su UMS existente, ya que contiene toda la información histórica sobre sus clientes.</td>
+          </tr>
+          <tr>
+              <td>Baliza Brightcove</td>
+              <td>Brightcove</td>
+              <td>Brightcove Beacon proporciona la configuración y el empaquetado de contenido en SKU con nombre que se venden en la tienda web y la API de derechos de Beacon, donde la tienda web registra derechos para derechos de acceso a contenido específico en los registros de los espectadores.</td>
+          </tr>
+          <tr>
+              <td>Notificaciones de derechos</td>
+              <td>Brightcove y propietario del contenido</td>
+              <td>
+                La tienda web envía notificaciones de eventos comerciales, como la compra o cancelación de una suscripción, a Beacon y Beacon actualiza los derechos del usuario sobre los activos de Beacon en Beacon UMS.
+                <!-- <p>(Coming in Q2 2021) In cases where Beacon Store In App Purchases are required, the web store will maintain a separate entitlements database that must be updated.  Beacon will send notifications to an end point defined by the customer and their system is responsible for maintaining the matching entitlements. </p> -->
+              </td>
+          </tr>
+      </tbody>
+  </table>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Beacon_Store_Workflows_and_Configurations">Configuraciones y flujos de trabajo de Beacon Store</h2>
+    <p>Es posible que ya haya tenido sitios web comerciales como un componente integral de sus negocios antes de presentar Beacon y desee agregar suscripciones a Beacon a los productos de su tienda web. Las tiendas web constan de tres componentes:</p>
+    <ol>
+      <li><strong>tienda virtual</strong> - La tienda web es el sitio comercial de su organización. Presenta los productos, precios y modelos de compra. </li>
+      <li><strong>Procesador de pagos</strong> - El procesador de pagos es un sistema que procesa transacciones, acepta pagos de tarjetas de crédito, tarjetas de débito y monederos electrónicos, deposita los pagos en la cuenta bancaria de la organización y envía los recibos al comprador.</li>
+      <li><strong>Sistema de gestión de usuarios</strong> - Su organización mantiene una lista de sus usuarios registrados en su UMS.</li>
+    </ol>
+
+    <p>La integración de Beacon Store tiene dos actividades de desarrollo</p>
+    <ol>
+      <li><strong>Beacon recibe notificaciones de transacciones financieras de la tienda web</strong> - Las ventas y cancelaciones de suscripciones a Beacon de la tienda web se informan a una API de Beacon. Beacon agrega o elimina derechos basados en estas notificaciones.</li>
+      <li><strong>Conectar y sincronizar los sistemas de gestión de usuarios de Beacon y Web Store</strong> - El registro de usuario de Webstore UMS contiene el registro maestro y el usuario y es la fuente de los datos de usuario almacenados. Los usuarios apoderados se crean en Beacon UMS para cada uno de los usuarios registrados. Beacon asigna derechos al registro de usuario proxy al recibir notificaciones de transacciones. Los cambios en el UMS de la tienda, como agregar y eliminar usuarios, se aplican a los registros de usuarios coincidentes en el Beacon UMS.
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Beacon_Store_Configurations">Configuraciones de Beacon Store</h2>
+    <p>Las tiendas Beacon son tiendas web BYO preexistentes, propiedad del cliente y operadas por ellos, que están integradas con Beacon con el fin de agregar suscripciones a Beacon a la lista de productos vendidos en la tienda web. Las organizaciones artísticas ofrecen un ejemplo que ilustra los dos modelos de venta principales para respaldar este objetivo.</p>
+    <p>Actualmente, las organizaciones artísticas venden suscripciones, entradas y mercadería física relacionada con actuaciones a través de sus tiendas web. Por lo tanto, existen tiendas web, gestión de usuarios, procesamiento de pagos y sistemas de seguimiento de derechos para administrar ese comercio.</p>
+    <p>Algunas organizaciones han decidido ampliar su audiencia al incluir acceso virtual a estos mismos eventos, así como contenido grabado. Además, quieren consolidar todo el proceso de gestión del comercio dentro de sus tiendas web.</p>
+    <p>Un subconjunto de organizaciones quiere lograr el mismo resultado con sus tiendas web y quiere vender esos mismos productos que en las compras de aplicaciones en las tiendas de aplicaciones (Apple Store, Google Play, Amazon, Roku y la integración de Stripe con la aplicación Beacon Web). .</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Web_Store_Only_Purchases">Compras solo en la tienda web</h2>
+    <p>El flujo de trabajo exclusivo de la tienda web se implementa como se muestra en la Figura 1. El cliente trae su propia tienda web, procesador de pagos y UMS. Los puntos de integración son:</p>
+    <ul>
+      <li>
+        <strong>Usuarios de proxy UMS</strong> - Los registros completos de los usuarios registrados se mantienen en el BYO UMS del cliente y esa es la fuente de verdad para la cuenta de usuario y la gestión de la cuenta del usuario. La autenticación de usuario al iniciar sesión se produce en BYO UMS. Los usuarios proxy se crean en Beacon UMS tras la autenticación o suscripción. Cuando los usuarios se eliminan del UMS, los usuarios proxy también se eliminan de Beacon.
+        <p>La sincronización para la autenticación y la gestión de cuentas se realiza mediante OIDC (<a href="https://openid.net/developers/specs/">Abrir ID Connect</a> ), una extensión de OAuth 2.0. Debe proporcionar un sistema con compatibilidad nativa con OIDC o actualizar su interfaz UMS para que admita OIDC.</p>
+      </li>
+      <li><strong>Notificación de compra</strong> - La tienda web es modificada por usted para enviar notificaciones de eventos comerciales a la API de Beacon Entitlements. La notificación incluye el ID DE USUARIO y el SKU DEL PRODUCTO. Cuando Beacon recibe la notificación, la actualización apropiada de la titularidad en el registro de Usuario se registra en Beacon UMS. Otorgando o revocando así el derecho que permite al usuario ver contenido en las aplicaciones Beacon. La interfaz API de derechos técnicos se define en <a href="/beacon-web-store/integration-details.html">Detalles de integración de balizas</a></li>
+    </ul>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/beacon-web-store/beacon-store.png" alt="Beacon Store">
+      <figcaption class="bcls-caption--image">Tienda Beacon</figcaption>
+    </figure>
+    <p>Detalles de configuración:</p>
+    <ul>
+      <li>Las definiciones de suscripción en la tienda web y Beacon <strong>DEBER</strong> configurarse con los nombres de SKU IDÉNTICOS.</li>
+      <li>Las notificaciones de la tienda web se envían a una URL de enlace web que se presenta desde Beacon CMS.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Beacon_Store_with_In_App_Purchases">Beacon Store con compras integradas en la aplicación</h2>
+    <p>La tienda web dentro del flujo de trabajo de compra de la aplicación se implementa como se muestra en la Figura 2. En este modelo, las compras dentro de la aplicación se pueden realizar en las tiendas Amazon, Apple, Google y Roku y en su tienda web. Usted es responsable de:</p>
+    <ul>
+      <li>Tu propia tienda web</li>
+      <li>El procesador de pagos</li>
+      <li>El UMS</li>
+      <li>Cuentas comerciales en las tiendas requeridas</li>
+    </ul>
+    <p>Brightcove Beacon proporciona integraciones de compra en la aplicación. Los puntos de integración se modifican de lo que se describe en la sección anterior para incluir la notificación de pago DESDE Beacon A la tienda web de las compras exitosas de aplicaciones que se produzcan. Los mensajes de notificación generados por Beacon siguen un esquema similar.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/beacon-web-store/beacon-store-with-in-app-purchases.png" alt="Beacon Store with In-App Purchases">
+      <figcaption class="bcls-caption--image">Beacon Store con compras integradas</figcaption>
+    </figure>
+    <p>Detalles de configuración:</p>
+    <ul>
+      <li>Las definiciones de suscripción en la tienda web y Beacon <strong>DEBER</strong> configurarse con los nombres de SKU IDÉNTICOS.</li>
+      <li>Las notificaciones de la tienda web se envían a una URL de enlace web que se presenta desde Beacon CMS.</li>
+      <li>Las comunicaciones de baliza se envían a una URL de webhook que se presenta desde un servicio de su elección.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="User_Management_Systems">Sistemas de gestión de usuarios</h2>
+    <p>El caso de uso típico de las tiendas Beacon es la integración de Beacon con una tienda web preexistente y establecida. Menos común es el lanzamiento de un nuevo servicio con una nueva tienda web para administrar el comercio.</p>
+    <h3>UMS conectado externamente</h3>
+    <p>Las tiendas web preexistentes siempre están integradas con la gestión de usuarios y los sistemas de procesamiento de pagos. En este caso, su objetivo es integrar Beacon dentro de la configuración de comercio preexistente. Su UMS seguirá siendo el punto de autenticación y gestión de registros de usuarios. Por lo tanto, la integración utilizará el UMS de los clientes para autenticar y autorizar a los usuarios de Beacon. La dirección de correo electrónico del usuario se utiliza como ID de cuenta y los derechos están asociados con esa cuenta. Todos los datos de información personal del usuario se almacenan en el BYO UMS.</p>
+    <p>Los sistemas BYO UMS externos se interconectan con Beacon mediante el protocolo de interfaz OIDC. Open ID Connect es una extensión de OAuth que estandariza los esquemas de tokens de identidad.</p>
+    <h3>Configuración de UMS móvil y web</h3>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/beacon-web-store/mobile-web-ums.png" alt="Mobile and Web UMS">
+      <figcaption class="bcls-caption--image">UMS móvil y web</figcaption>
+    </figure>
+    <ol>
+      <li>El usuario selecciona iniciar sesión en la aplicación Beacon</li>
+      <li>La aplicación interactúa con el proveedor de OIDC para guiar a los usuarios a través del flujo de inicio de sesión. En caso de éxito, se proporcionan tokens de acceso, actualización e identidad a la aplicación.</li>
+      <li>La aplicación utiliza un token de acceso para conectarse al backend de Beacon</li>
+      <li>Beacon backend valida el token de acceso</li>
+    </ol>
+    <h3>Configuración de UMS conectado y SmartTV</h3>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/beacon-web-store/tv-ums.png" alt="Connected and SmartTV UMS">
+      <figcaption class="bcls-caption--image">Conectado y SmartTV UMS</figcaption>
+    </figure>
+    <ol>
+      <li>El usuario selecciona iniciar sesión en la aplicación Beacon</li>
+      <li>La aplicación solicita un código de dispositivo</li>
+      <li>El usuario va al dispositivo móvil o web, ingresa la URL de autenticación y el código del dispositivo</li>
+      <li>El dispositivo interactúa con el proveedor de OIDC para autenticar al usuario</li>
+      <li>Connected o Smart TV sondea continuamente al proveedor de OIDC para averiguar si el usuario está autenticado, cuando se autentica, se proporcionan tokens de acceso, actualización e identidad a la aplicación.</li>
+      <li>La aplicación utiliza un token de acceso para conectarse al backend de Beacon</li>
+      <li>Beacon backend valida el token de acceso</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Beacon_User_Management_Autosync">Sincronización automática de gestión de usuarios de balizas</h2>
+    <p>Al integrar un UMS existente con Beacon, los usuarios proxy deben crearse en Beacon UMS para que los derechos creados por las notificaciones de ventas de Beacon Store puedan asignarse al usuario adecuado.</p>
+    <p>Los usuarios se mantienen en Beacon como resultado de eventos en el UMS del cliente. A través de la interfaz OIDC, los usuarios se crean en Beacon cuando se autentican en el UMS externo o si se envía un derecho a Beacon. No se requiere sincronización manual.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Beacon_Store_Monetization_Models">Modelos de monetización de Beacon Store</h2>
+    <p>Beacon Stores se pueden configurar para admitir transacciones SVOD. Detalles de configuración:</p>
+    <h3>Configuración de SVOD</h3>
+    <h4>Configuración de baliza</h4>
+    <ol class="bcls-tasklist-restart">
+      <li>Cree un plan SVOD en Beacon</li>
+      <li>Establezca el estado en NO PUBLICADO en Beacon</li>
+      <li>Definir un SKU para el plan en Beacon</li>
+      <li>Asignar contenido al plan</li>
+    </ol>
+    <h4>Configuración de la tienda web</h4>
+    <ol class="bcls-tasklist-restart">
+      <li>Cree un plan / producto SVOD en la tienda web y el sistema de pago de la tienda web</li>
+      <li>Dale la jugada <strong>el mismo nombre que se usa en Beacon</strong></li>
+      <li>Copie el SKU de Beacon en el ID de SKU en el sistema de pago de la tienda web</li>
+    </ol>
+    <!-- <h3>TVOD configuration</h3>
+    <p>(TBD)</p> -->
+  </section>
+</article>

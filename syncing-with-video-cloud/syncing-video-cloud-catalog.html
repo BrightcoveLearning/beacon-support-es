@@ -1,0 +1,69 @@
+---
+title: "Sincronización con el catálogo de Video Cloud"
+description: "En este tema, aprenderá cómo Brightcove Beacon se sincroniza con el catálogo de Video Cloud".
+
+parent: "syncing-with-video-cloud"
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+  <aside class="bcls-aside bcls-aside--information language-editable">En el pasado, la sincronización entre Brightcove Beacon y Video Cloud era un proceso programado o manual. Este documento describe el proceso automatizado actual. En lugar de esperar la ingesta programada (cada hora, cada dos horas, etc.) de todo el catálogo, las actualizaciones ahora ocurren de forma incremental a medida que ocurren los cambios. La latencia de las actualizaciones se reduce en órdenes de magnitud para cualquier activo individual con esta mejora.</aside>
+  <section class="bcls-section">
+    <h2 id="Syncing_options">Opciones de sincronización</h2>
+    <p>En el <strong>Herramientas</strong> sección de Brightcove Beacon tiene dos opciones para sincronizar Brightcove Beacon con el catálogo de Video Cloud. Para acceder a las herramientas, haga clic en el <strong>llave inglesa</strong> en el menú superior, luego el <strong>Ingestión</strong> opción en el menú de la izquierda:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/syncing-with-vc/force-sync.png" alt="force-sync">
+    </figure>
+    <p>Aquí tiene dos herramientas relativas a la sincronización con Video Cloud. Ellos son:</p>
+    <ul>
+      <li><strong>Actualizar vídeos de Brightcove</strong>: Esto proporciona una forma de ver los resultados de las sincronizaciones automáticas que se han realizado entre Brightcove Beacon y el catálogo de Video Cloud.</li>
+      <li><strong>Actualizar listas de reproducción de Brightcove</strong>: Si ha agregado listas de reproducción a su catálogo de Video Cloud o ha modificado las listas de reproducción existentes, este botón sincroniza las listas de reproducción recién agregadas o actualizadas con Brightcove Beacon.</li>
+    </ul>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/syncing-with-vc/sync-vc-catalog/buttons.png" alt="sync-buttons">
+    </figure>
+    <aside class="bcls-aside bcls-aside--warning">Nota: Asegúrese de que se hayan sincronizado los videos que están en sus listas de reproducción <strong>ANTES DE</strong> sincronizar las listas de reproducción.</aside>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Viewing_sync_data">Ver datos de sincronización</h2>
+    <p>El proceso de sincronización de video se realiza en función de las notificaciones de Video Cloud cuando se realizan cambios en el catálogo de videos. Nuevos activos, activos eliminados, actualizaciones de metadatos e imágenes, etc., activarán una sincronización entre Brightcove Beacon y el catálogo de Video Cloud. Puede realizar un seguimiento de los cambios haciendo clic en la flecha en el <strong>Actualizar videos de Brightcove</strong> botón.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/syncing-with-vc/sync-vc-catalog/arrow-on-button.png" alt="arrow on button">
+    </figure>
+    <p>Una vez que haga eso, verá lo siguiente que muestra los videos que se han sincronizado. Tenga en cuenta la siguiente funcionalidad (flechas rojas) y filtrado (resaltado en amarillo y detallado debajo de la captura de pantalla).</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/syncing-with-vc/sync-vc-catalog/sync-details.png" alt="sync details">
+    </figure>
+    <h3>Filtración</h3>
+    <p>Puede filtrar por lo siguiente:</p>
+    <ul>
+      <li>Errores
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/syncing-with-vc/sync-vc-catalog/filter-errors.png" alt="filter errors">
+        </figure>
+      </li>
+      <li>Advertencias
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/syncing-with-vc/sync-vc-catalog/filter-warnings.png" alt="filter warnings">
+        </figure>
+      </li>
+      <li>Fecha de actualización única
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/syncing-with-vc/sync-vc-catalog/filter-date.png" alt="filter date">
+        </figure>
+      </li>
+    </ul>
+    <h3>Detalles de errores y advertencias</h3>
+    <p>Haga clic en la flecha junto a la cantidad de errores o advertencias (encuadrada en rojo) y aparecerán los detalles del error o advertencia correspondiente (resaltada en amarillo).</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/syncing-with-vc/sync-vc-catalog/warning-details.png" alt="warning details">
+    </figure>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Clearing_the_cache_after_syncing">Borrar la caché después de la sincronización</h2>
+    <p>Después de sincronizar los videos, lo más probable es que desee borrar el caché para ver los resultados de realizar una sincronización lo antes posible. Esto se puede hacer desde el <strong>Herramientas</strong> menú. Simplemente haga clic en el <strong>Cache</strong> opción de la navegación izquierda y haga clic en el <strong>Purga de caché</strong> botón. Tenga en cuenta que hacer esto con demasiada frecuencia en producción tiene un efecto adverso en la escalabilidad y el rendimiento. Para obtener más detalles, consulte la <a href="/using-brightcove-beacon/tools.html">Usando las herramientas</a> documento.</p>
+  </section>
+</article>

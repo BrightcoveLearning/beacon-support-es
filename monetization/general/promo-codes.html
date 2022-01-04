@@ -1,0 +1,54 @@
+---
+title: "Creación de cupones promocionales"
+description: En este tema, aprenderá a crear cupones / vales de Brightcove Beacon para que los usen sus clientes al pagar.
+parent: Monetization
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }} <aside class="bcls-aside bcls-aside--information">Nota: Alternativamente, puede crear los cupones directamente en Stripe.</aside>
+  </summary>
+
+  <section class="bcls-section">
+    <h2 id="overview"> Pasos para crear un nuevo cupón</h2>
+    <p>Para crear nuevos cupones / vales en Brightcove Beacon, siga estos pasos: </p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>En la interfaz de usuario de Brightcove Beacon, haga clic en el <strong>Comercio</strong> pestaña.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/promo-codes/1-beacon-ui.png" />
+        </figure>
+      </li>
+      <li>En el menú de la izquierda, seleccione <strong>Cupones de Stripe</strong>.</li>
+      <li>Haga clic en el <strong>Agregar nuevo cupón</strong> botón.</li>
+      <li>En el <strong>Identificación</strong> campo, escriba el código que utilizarán los usuarios.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/promo-codes/2-id-name.png" />
+        </figure>
+      </li>
+      <li>Para el <strong>Nombre</strong> campo, utilice un nombre fácil de usar que se pueda mostrar en las facturas.</li>
+      <li>Para el <strong>Duración</strong> campo, ingrese la duración del cupón en meses. </li>
+      <li>En el <strong>Tipo de descuento</strong> tienes la opción de especificar el descuento en moneda o porcentaje. Por ejemplo, si el descuento es de 3 meses gratis, establezca la duración en <strong>Repitiendo</strong> con 3 meses y <strong>Tipo de descuento</strong> como 100%.</li>
+      <li>En el <strong>Limitaciones</strong> sección, puede limitar el número de canjes o la fecha para utilizar el cupón. Por ejemplo, suponga que el cupón solo se puede usar hasta finales de agosto, o que solo las primeras 100 personas obtendrán el cupón.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/promo-codes/3-lmitations-packages.png" />
+        </figure>
+      </li>
+      <li>En el <strong>Paquetes / Suscripción Asociados</strong> sección, especifique las suscripciones que se pueden utilizar con el cupón. Si no selecciona una suscripción, se aplicará a todas las suscripciones de paquetes.</li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information">Tenga en cuenta lo siguiente
+      <ul>
+        <li>Una vez creado el Cupón / Cupón, cualquier usuario registrado puede aplicarlo al comprar una suscripción.
+          <figure class="bcls-figure">
+            <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/promo-codes/4-enter-voucher.png" />
+          </figure>
+        </li>
+        <li>Si se ingresa un cupón no válido, se muestra lo siguiente:
+          <figure class="bcls-figure">
+            <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/promo-codes/5-error.png" />
+          </figure>
+        </li>
+      </ul>
+    </aside>
+  </section>
+
+</article>

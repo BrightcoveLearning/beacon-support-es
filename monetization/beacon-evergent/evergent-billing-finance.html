@@ -1,0 +1,244 @@
+Evergent:---
+title: ' Facturación y Finanzas'
+description: Este tema proporciona una guía para administrar los registros financieros y de facturación para sus usuarios.
+parent: Beacon Advanced Monetization
+layout: staging
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="introduction">Introducción</h2>
+		<p>Para acceder al historial de facturación y finanzas de un usuario, deberá iniciar sesión en el sistema Evergent CRM y ubicar la cuenta en la que desea trabajar. Ver <a href="/monetization/beacon-evergent/evergent-finding-accounts.html">Ubicación de cuentas en Evergent CRM</a> para detalles.</p>
+		<p>La <strong>Facturación y Finanzas</strong> La pestaña de la información de la cuenta de usuario se utiliza para ver el historial financiero y de facturación de sus espectadores. Puede emitir Pagos, Ajustes y Reembolsos a sus clientes desde la pestaña Facturación y Finanzas.</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/beacon-evergent/billing-finance-tab.png" alt="Billing and Finance Tab">
+			<figcaption class="bcls-caption--image">Ficha Facturación y finanzas</figcaption>
+		</figure>
+		<p>Las siguientes son las funcionalidades que se pueden aprovisionar:</p>
+		<ul>
+			<li>Equilibrio de carrera</li>
+			<li>Facturas</li>
+			<li>Pagos</li>
+			<li>Ajustes</li>
+			<li>Reembolsos</li>
+		</ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Running_Balance">Equilibrio de carrera</h2>
+		<p>El saldo corriente es un saldo dinámico del libro mayor que muestra todas las transacciones de crédito y débito de esa cuenta de usuario según el rango seleccionado con el último registro.</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/beacon-evergent/running-balance.png" alt="Running Balance">
+			<figcaption class="bcls-caption--image">Equilibrio de carrera</figcaption>
+		</figure>
+		<!-- <h3>Make a payment</h3>
+		<p>This module is used to make payment for a user account by an existing payment method and a new  payment method. To make a payment, do the following:</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/beacon-evergent/make-payment.png" alt="Make a Payment">
+			<figcaption class="bcls-caption--image">Make a Payment</figcaption>
+		</figure>
+		<ol class="bcls-tasklist-restart">
+			<li>Click the <strong>Running Balance</strong> hyperlink under the Billing and Finance tab.</li>
+			<li>Click the <strong>Make a Payment</strong> button.</li>
+			<li>Select the payment mode that you want to make a payment.</li>
+			<li>Enter the card number in the <strong>Card Number</strong> field.</li>
+			<li>Enter the type of card in the <strong>Card Type</strong> field.</li>
+			<li>Enter the name of a cardholder in the <strong>Name on Card</strong> field.</li>
+			<li>Enter the card expiry date in the <strong>Expiry (MM/YYYY)</strong> field.</li>
+			<li>Enter the security code in the <strong>Security Code</strong> field.</li>
+			<li>Enter the required amount in the <strong>Amount</strong> field.</li>
+			<li>Click the <strong>Make Payment</strong> button. The payment line-item will be added to Payment History.</li>
+		</ol> -->
+
+		<h3>Ajustes</h3>
+		<p>Este módulo es una transacción que proporciona las correcciones de pago de una entrada de pago de cuenta de cliente. Para realizar los ajustes de pago en la cuenta, haga lo siguiente:</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/beacon-evergent/make-adjustment.png" alt="Make an Adjustment">
+			<figcaption class="bcls-caption--image">Hacer un ajuste</figcaption>
+		</figure>
+		<ol class="bcls-tasklist-restart">
+			<li>Haga clic en el <strong>Equilibrio de carrera</strong> hipervínculo en la pestaña Facturación y finanzas.</li>
+			<li>Haga clic en el <strong>Hacer un ajuste</strong> botón.</li>
+			<li>Selecciona el <strong>Tipo de ajuste</strong> de la lista desplegable.</li>
+			<li>Ingrese la cantidad que desea ajustar en el <strong>Monto</strong> campo.</li>
+			<li>Seleccione el motivo de los ajustes de pago en el <strong>Seleccionar motivo</strong> la lista desplegable.</li>
+			<li>Seleccione la factura del <strong>Factura dada</strong> lista desplegable para la que desea realizar los ajustes.</li>
+			<li>Selecciona el <strong>Fecha de inicio de la interrupción</strong> y <strong>Fecha de finalización de la interrupción</strong> del calendario.</li>
+			<li>Escriba los comentarios en el <strong>Comentario</strong> campo.</li>
+			<li>Haga clic en el <strong>Hecho</strong> botón. Los ajustes se agregan en la sección Lista de ajustes.</li>
+		</ol>
+		<h3>Pedir por escrito</h3>
+		<p>El botón de Cancelación en el Saldo Corriente de las cuentas respectivas se mostrará solo cuando el saldo adeudado de la cuenta sea positivo, es decir, el cliente debe pagar el monto. Al hacer clic en el botón de Cancelación, si el cliente ha pagado el monto y <strong>agregue un monto de ajuste negativo para hacer que el saldo adeuda a cero</strong>.</p>
+  </section>
+	<section class="bcls-section">
+		<h2 id="Invoices">Facturas</h2>
+		<p>La sección de facturas muestra todas las facturas generales creadas para una cuenta. Se muestra en detalle para cada factura.</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/beacon-evergent/invoices.png" alt="Invoices">
+			<figcaption class="bcls-caption--image">Facturas</figcaption>
+		</figure>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Payments">Pagos</h2>
+		<p>Vea el historial de pagos del cliente existente, que proporciona un registro de los detalles de la tarjeta de crédito, la identificación del producto pedido, la fecha de recepción del pago, el monto y el estado, junto con la opción de reembolsar el pago al cliente.</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/beacon-evergent/payments.png" alt="Payments">
+			<figcaption class="bcls-caption--image">Pagos</figcaption>
+		</figure>
+		<h3>Reembolso de la cantidad </h3>
+		<p>Para reembolsar el monto, haga lo siguiente:</p>
+		<ol class="bcls-tasklist-restart">
+			<li>Haga clic en el <strong>Pagos</strong> hipervínculo debajo del <strong>Facturación y Finanzas</strong> pestaña.</li>
+			<li>En la pantalla Historial de pagos, haga clic en el <strong>Reembolso</strong> botón en el <strong>Comportamiento</strong> encabezado de columna que desea reembolsar por la cuenta.</li>
+			<li>
+				Un cuadro de diálogo <strong>"¿Está seguro?"</strong> aparece como se muestra a continuación.
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/beacon-evergent/confirm-refund.png" alt="Confirm Refund">
+					<figcaption class="bcls-caption--image">Confirmar reembolso</figcaption>
+				</figure>
+			</li>
+			<li>Seleccione un motivo para el reembolso en el <strong>Seleccionar motivo</strong> la lista desplegable.</li>
+			<li>Escriba los comentarios para el reembolso del pago en el <strong>Comentarios</strong> caja.</li>
+			<li>Haga clic en el <strong>Si, reembolso</strong> para proporcionar un reembolso, o bien haga clic en <strong>Regresa</strong> para descartar los cambios.</li>
+		</ol>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Adjustments">Ajustes</h2>
+		<p>Este módulo es una transacción que proporciona las correcciones de pago de una entrada de pago de cuenta de cliente.</p>
+		<h3>Realizar un ajuste de pago</h3>
+		<p>Para realizar ajustes de pago, haga lo siguiente:</p>
+		<ol class="bcls-tasklist-restart">
+			<li>Haga clic en el <strong>Ajustes</strong> hipervínculo debajo del <strong>Facturación y Finanzas</strong> pestaña.</li>
+			<li>Haga clic en el <strong>Hacer un ajuste</strong> botón para ajustar pagos.</li>
+			<li>
+				La <strong>Ajustes</strong> La pantalla se muestra como se muestra a continuación.
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/beacon-evergent/adjustments.png" alt="Adjustments">
+					<figcaption class="bcls-caption--image">Ajustes</figcaption>
+				</figure>
+			</li>
+			<li>Selecciona el <strong>Tipo de ajuste</strong> de la lista desplegable disponible.</li>
+			<li>Ingrese la cantidad que desea ajustar en el <strong>Monto</strong> campo.</li>
+			<li>Seleccione <strong>Razón</strong> y <strong>Dado en factura</strong> de la lista desplegable disponible.</li>
+			<li>Seleccione <strong>Fecha de inicio de la interrupción</strong> y <strong>Fecha de finalización de la interrupción</strong>.</li>
+			<li>Ingrese los comentarios para los ajustes en el <strong>Comentario</strong> caja.</li>
+			<li>Hacer clic <strong>Hecho</strong> para proporcionar el ajuste o bien haga clic en <strong>Regresa</strong>.</li>
+	</ol>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Refunds">Reembolsos</h2>
+		<p>Los reembolsos se calculan cada vez que se elimina o desconecta un servicio. A partir de la fecha de desconexión / eliminación, reembolsará el monto por el tiempo que se facture.</p>
+		<h3>Agregar reembolsos</h3>
+		<p>Para agregar reembolsos a la cuenta de usuario, haga lo siguiente:</p>
+		<ol class="bcls-tasklist-restart">
+			<li>Haga clic en el <strong>Reembolsos</strong> hipervínculo debajo del <strong>Facturación y Finanzas</strong> pestaña.</li>
+			<li>
+				Haga clic en el ícono Reembolsos Agregar (<i data-feather="plus"></i>) para emitir un reembolso a un cliente.
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/beacon-evergent/refunds-screen.png" alt="Refunds">
+					<figcaption class="bcls-caption--image">Reembolsos</figcaption>
+				</figure>
+			</li>
+			<li>
+				Los siguientes son los tipos de reembolso en la lista Tipo de transacción:
+				<ul>
+					<li>Facturado</li>
+					<li>No facturado</li>
+					<li>Todos los pagos</li>
+					<li>Contracargo</li>
+				</ul>
+			</li>
+		</ol>
+		<h4>Reembolso de transacciones facturadas</h4>
+		<p>Al seleccionar el <strong>Tipo de transacción facturada</strong> desde el <strong>Tipo de transacción</strong> cuadro de lista desplegable:</p>
+		<ol class="bcls-tasklist-restart">
+			<li>Seleccione cualquiera de las facturas del <strong>Seleccione la factura</strong> la lista desplegable.</li>
+			<li>Seleccione cualquiera de los productos de la <strong>Seleccionar producto pedido</strong> cuadro de lista desplegable.</li>
+			<li>Ingrese el precio a cobrar en el <strong>Precio cobrado</strong> campo.</li>
+			<li>Ingrese el monto del impuesto en el <strong>Impuesto cobrado</strong> campo.</li>
+			<li>Ingrese el monto del reembolso en el <strong>Cantidad a reembolsar</strong> campo.</li>
+			<li>Seleccione el motivo del reembolso del importe en el <strong>Código de razón</strong> desplegable.</li>
+			<li>Escriba los comentarios en el <strong>Comentarios</strong> caja.</li>
+			<li>Haga clic en el <strong>Agregar</strong> para aplicar el reembolso al cliente, o bien haga clic en el <strong>Regresa</strong> para cancelar.</li>
+		</ol>
+		<h4>Reembolso de transacciones no facturadas</h4>
+		<p>Al seleccionar el <strong>Tipo de transacción no facturada</strong> desde el <strong>Tipo de transacción</strong> cuadro de lista desplegable:</p>
+		<ol class="bcls-tasklist-restart">
+			<li>Seleccione cualquiera de los <strong>Productos / Paquetes</strong> desde el <strong>Seleccionar producto pedido</strong> cuadro de lista desplegable.</li>
+			<li>Ingrese el precio a cobrar en el <strong>Precio cobrado</strong> campo.</li>
+			<li>Ingrese el monto del impuesto en el <strong>Impuesto cobrado</strong> campo.</li>
+			<li>Ingrese el monto del reembolso en el <strong>Cantidad a reembolsar</strong> campo.</li>
+			<li>De forma predeterminada, la casilla de verificación Ajuste está seleccionada, lo que indica que el ajuste de crédito se agregará al monto del reembolso que se emitirá, lo que borrará la pantalla del monto del saldo actual como cero.</li>
+			<li>Seleccione el motivo del reembolso del importe en el <strong>Código de razón</strong> desplegable.</li>
+			<li>Escriba los comentarios en el <strong>Comentarios</strong> caja.</li>
+			<li>Haga clic en el <strong>Agregar</strong> para aplicar el reembolso al cliente, o bien haga clic en el <strong>Regresa</strong> para cancelar.</li>
+		</ol>
+		<h4>Reembolso de todas las transacciones de pago</h4>
+		<p>Al seleccionar el <strong>Tipo de transacción de todos los pagos</strong> desde el <strong>Tipo de transacción</strong> cuadro de lista desplegable:</p>
+		<ol class="bcls-tasklist-restart">
+			<li>Ingrese el monto del impuesto en el <strong>Impuesto cobrado</strong> campo.</li>
+			<li>Ingrese el monto del reembolso en el <strong>Cantidad a reembolsar</strong> campo.</li>
+			<li>Ingrese el ID en el <strong>ID de conciliación</strong> campo.</li>
+			<li>Seleccione el motivo del reembolso del importe en el <strong>Código de razón</strong> desplegable.</li>
+			<li>Escriba los comentarios en el <strong>Comentarios</strong> caja.</li>
+			<li>Haga clic en el <strong>Agregar</strong> para aplicar el reembolso al cliente, o bien haga clic en el <strong>Regresa</strong> para cancelar.</li>
+		</ol>
+		<h4>Reembolso de transacciones de contracargo</h4>
+		<p>Al seleccionar el <strong>Tipo de transacción de contracargo</strong> desde el <strong>Tipo de transacción</strong> cuadro de lista desplegable:</p>
+		<ol class="bcls-tasklist-restart">
+			<li>Ingrese el monto del impuesto en el <strong>Impuesto cobrado</strong> campo.</li>
+			<li>Ingrese el monto del reembolso en el <strong>Cantidad a reembolsar</strong> campo.</li>
+			<li>Ingrese el ID en el <strong>ID de conciliación</strong> campo.</li>
+			<li>Ingrese el ID en el <strong>ID de transacción</strong> campo.</li>
+			<li>Seleccione el motivo del reembolso del importe en el <strong>Código de razón</strong> desplegable.</li>
+			<li>Escriba los comentarios en el <strong>Comentarios</strong> caja.</li>
+			<li>Haga clic en el <strong>Agregar</strong> para aplicar el reembolso al cliente, o bien haga clic en el <strong>Regresa</strong> para cancelar.</li>
+		</ol>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Credits">Créditos</h2>
+		<p>El crédito es lo que las empresas generalmente brindan a un cliente cuando el monto de una factura o compra está en disputa o es incorrecto. Esto puede deberse a un error de administrador o a que el cliente requiere un reembolso total o parcial.</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/beacon-evergent/credits-module.png" alt="Credits Module">
+			<figcaption class="bcls-caption--image">Módulo de créditos</figcaption>
+		</figure>
+		<h3>Agregar créditos de artículos de línea</h3>
+		<p>Para agregar el crédito del artículo de línea a la cuenta de usuario, haga lo siguiente:</p>
+		<ol class="bcls-tasklist-restart">
+			<li>Sobre el <strong>Créditos</strong> pantalla, haga clic en Agregar (<i data-feather="plus"></i>) para agregar un nuevo crédito de artículo de línea.</li>
+			<li>La <strong>Agregar créditos</strong> aparece la pantalla.</li>
+			<li>Haga clic en el <strong>Elija el tipo de crédito</strong> lista desplegable y seleccione el <strong>Crédito de línea de pedido</strong>.</li>
+			<li>
+				Seleccione un tipo en el <strong>Tipo de transacción</strong> la lista desplegable.
+				<ul>
+					<li>Facturado</li>
+					<li>No facturado</li>
+					<li>Contracargo</li>
+				</ul>
+			</li>
+		</ol>
+		<p>Solo los créditos de contracargo son aplicables a Beacon.</p>
+		<h4>Contracargo</h4>
+		<p>Para un crédito de artículo de línea de contracargo, haga lo siguiente:</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/beacon-evergent/chargeback-line-item-credit.png" alt="Chargeback Line-Item Credit">
+			<figcaption class="bcls-caption--image">Crédito por artículo de línea de contracargo</figcaption>
+		</figure>
+		<ol class="bcls-tasklist-restart">
+			<li>Ingrese la cantidad en el <strong>Cantidad reembolsada</strong> campo.</li>
+			<li>Ingrese la cantidad en el <strong>Monto a acreditar</strong> campo.</li>
+			<li>Seleccione un motivo en el <strong>Código de razón</strong> la lista desplegable.</li>
+			<li>Ingrese los comentarios en el <strong>Comentarios</strong> caja.</li>
+			<li>Haga clic en el <strong>Agregar</strong> para agregar el crédito de servicio, o bien haga clic en el <strong>Regresa</strong> para cancelar.</li>
+		</ol>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Related_topics">Temas relacionados</h2>
+		<ul>
+			<li><a href="/monetization/beacon-evergent/overview-beacon-evergent.html">Descripción general: Monetización avanzada de Beacon</a></li>
+			<li><a href="/monetization/beacon-evergent/evergent-finding-accounts.html">Ubicación de cuentas en Evergent CRM</a></li>
+			<li><a href="/monetization/beacon-evergent/evergent-managing-account-details.html">Evergent: Administrar los detalles de la cuenta</a></li>
+			<li><a href="/monetization/beacon-evergent/emailer-coupons.html">Evergent: Correo electrónico y cupones</a></li>
+		</ul>
+	</section>
+</article>

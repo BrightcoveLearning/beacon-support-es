@@ -1,0 +1,212 @@
+---
+title: Usar un paquete de suscripción
+parent: Monetization
+---
+
+
+<article class="bcls-article">
+  <h1>Usar un paquete de suscripción</h1>
+  <summary>En este tema, aprenderá a usar un paquete de suscripción de video que se creó con el <strong>Comercio</strong> pestaña de Brightcove Beacon. El paquete de suscripción implementa la monetización de SVOD (suscripción de video a pedido). Para obtener detalles sobre la creación de la suscripción, consulte el <a href="/monetization/creating-subscription-package.html">Creación de un paquete de suscripción</a> documento.
+  </summary>
+  <section class="bcls-section">
+    <h2 id="Overview">Descripción general</h2>
+    <p>
+      Un paquete de suscripción define cómo sus aplicaciones pueden comprar un conjunto particular de videos' clientes. El paquete de suscripción debe crearse en Brightcove Beacon y se detalla en la <a href="/monetization/creating-subscription-package.html">Creación de un paquete de suscripción</a> documento. También son cruciales en el uso del paquete de suscripción los campos personalizados de Video Cloud creados para videos en una cuenta de Video Cloud, como se detalla en la <a href="/syncing-with-video-cloud/vc-custom-fields.html"> Creación de campos personalizados de Video Cloud </a> documento. Específicamente, el <a href="/syncing-with-video-cloud/vc-custom-fields.html#Rights_Management_fields"> Campos de gestión de derechos </a> se utilizará.
+    </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Understanding_the_rights_management_custom_fields"> Comprender los campos personalizados de administración de derechos </h2>
+    <p>Los campos personalizados de gestión de derechos constan de:</p>
+    <ul>
+      <li>beacon.rights.&lt;counter&gt;.type</li>
+      <li>beacon.rights.&lt;counter&gt;.startDate</li>
+      <li>beacon.rights.&lt;counter&gt;.endDate</li>
+      <li>beacon.rights.&lt;counter&gt;.devices</li>
+      <li>beacon.rights.&lt;counter&gt;.locationsPermit</li>
+      <li>beacon.rights.&lt;counter&gt;.locationsDeny</li>
+      <li>beacon.rights.&lt;counter&gt;.packageName</li>
+      <li>beacon.rights.&lt;counter&gt;.adConfiguration</li>
+    </ul>
+    <p>
+      Primero considere el <strong>&lt;counter&gt;</strong> parte de cada nombre. Esto se incluye, ya que es posible que desee crear varios conjuntos de campos de administración de derechos, y el <strong>&lt;counter&gt;</strong> se utiliza para que pueda utilizar la sintaxis de tipo de matriz para agrupar los campos asociados.
+    </p>
+    <p>
+      Por ejemplo, supongamos que desea crear paquetes de suscripción durante las vacaciones y tener paquetes para:
+    </p>
+    <ul>
+      <li>día de la Tierra</li>
+      <li>dia del arbol</li>
+      <li>Año Nuevo</li>
+    </ul>
+    <p>
+      Debe ingresar a Video Cloud y crear tres conjuntos de campos de administración de derechos, utilizando valores de contador de 0-2 (o 1-3 si lo prefiere) que aparecerían como se muestra aquí:
+    </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/using-bcb/using-subscription-package/index-of-rights-fields.png" alt="index of rights fields" />
+    </figure>
+    <p>
+      En resumen, para cada paquete que desee utilizar, deberá crear un conjunto de campos de gestión de derechos de "contador".
+    </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Package_and_custom_field_similar_rights"> Derechos similares de paquetes y campos personalizados </h2>
+    <p>
+      Algunos campos personalizados a los que puede asignar datos y que se han aplicado a un video cuando se ingieren, pueden parecer los mismos que los campos de formulario al crear su paquete en Brightcove Beacon. Por ejemplo, el campo personalizado <em>beacon.rights.&lt;counter&gt;.locationsDeny</em> y el paquete <strong>Ubicaciones denegadas</strong> campo de formulario puede parecer que podría estar en conflicto. Recuerde, al considerar estos "conflictos", se hacen dos preguntas diferentes, que son: </p>
+    <ul>
+      <li>¿Los derechos del video permiten que se reproduzca?</li>
+      <li>¿Puede un usuario suscribirse al paquete?</li>
+    </ul>
+    <p>
+      Considere estos escenarios:
+    </p>
+    <ul>
+      <li>
+        Una fecha de finalización en el <em>beacon.rights.&lt;counter&gt;.endDate</em> El campo personalizado es posterior a la fecha de finalización del paquete. Esto significa que los derechos del video permitirían verlo hasta la fecha de finalización del campo personalizado, pero el usuario no podría suscribirse al paquete que, por ejemplo, puede haber reducido el costo de ver el video.
+      </li>
+      <li>
+        Se crea un paquete que tiene ubicaciones permitidas de EE. UU., Canadá y México, y ese paquete se asigna al video en el campo personalizado. <em>beacon.rights.&lt;counter&gt;.packageName</em>. También en los campos personalizados del video, Reino Unido se coloca en el
+        <em>beacon.rights.&lt;counter&gt;.locationsPermit</em> campo personalizado. El paquete está asignado al video, pero no se puede comprar en el Reino Unido. El video podría reproducirse en el Reino Unido, pero no podría ser parte del paquete para un cliente del Reino Unido.
+      </li>
+      <li>
+        Se crea un paquete que ha permitido ubicaciones de EE. UU., Canadá y México. En los campos personalizados, EE. UU. Y Canadá se agregan en el video <em>beacon.rights.&lt;counter&gt;.locationsDeny</em> campo personalizado. Aquí, los clientes de EE. UU., Canadá y México podrían suscribirse al paquete, pero el video específico en el que se niegan ubicaciones en EE. UU. Y Canadá significa que los clientes de esas ubicaciones no pueden ver el video a pesar de que el video está en el paquete.
+      </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Subscription_interval_support"> Soporte de intervalo de suscripción
+    </h2>
+    <p>
+      La siguiente tabla muestra los intervalos de tiempo admitidos para las suscripciones recurrentes para cada tienda: </p>
+    <table class="bcls-table">
+      <!-- <caption class="bcls-caption--table">Table Caption (optional <strong><caption class="bcls-caption--table"></strong>)</caption> -->
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Intervalo de tiempo</th>
+          <th>tienda Apple</th>
+          <th>Google Play Store</th>
+          <th>Tienda Roku</th>
+          <th>Tienda Amazon</th>
+          <th>Raya</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>1 semana</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td></td>
+          <td>Sí</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>1 mes</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>3 meses</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td></td>
+          <td>Sí</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>6 meses</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td></td>
+          <td>Sí</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>1 año</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Assigning_a_single_video_to_a_package"> Asignar un solo video a un paquete
+    </h2>
+    <p>
+      Para asignar un solo video a un paquete, debe utilizar Video Cloud Studio. Realice los siguientes pasos:
+    </p>
+    <ol class="bcls-tasklist">
+      <li>En Studio, navegue hasta el <strong>Medios de comunicación</strong> módulo.</li>
+      <li>
+        Haga clic en el título del video que está agregando al paquete para ver las propiedades de ese video.
+      </li>
+      <li>
+        Desplácese hacia abajo hasta que vea el <strong>Campos Personalizados</strong> sección en el lado derecho y haga clic en el <strong>Editar</strong> botón.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/using-subscription-package/single-video-edit-fields.png" alt="index of rights fields" />
+        </figure>
+      </li>
+      <li>
+        Coloque el nombre del paquete de suscripción creado en Brightcove Beacon en el <code translate="No">beacon.rights.&lt;counter&gt;.packageName</code> campo.
+      </li>
+      <li>
+        Dado que está utilizando un paquete, DEBE configurar el <code translate="No">beacon.rights.&lt;counter&gt;.type</code> a <strong>SVOD</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/using-subscription-package/custom-fields.png" alt="index of rights fields" />
+        </figure>
+      </li>
+      <li>
+        Desplácese hasta el final de la lista de campos personalizados y haga clic en el <strong>Ahorrar</strong> botón.
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Assigning_a_single_video_to_a_package"> Asignar varios videos a un paquete </h2>
+    <p>
+      Para asignar varios videos a un paquete, debe utilizar Video Cloud Studio. La siguiente captura de pantalla es útil al realizar los pasos:
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/using-bcb/using-subscription-package/multiple-video-edit.png" alt="index of rights fields" />
+    </figure>
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        En Studio, navegue hasta el <strong>Medios de comunicación</strong> módulo y marque la casilla de verificación frente a cada video que desee agregar al paquete.
+      </li>
+      <li>Haga clic en el <strong>Edición rapida</strong> botón.</li>
+      <li>
+        La <strong>Edición rapida</strong> aparece en el lado derecho de la pantalla, y allí puede colocar el nombre del paquete de suscripción creado en Brightcove Beacon en el <code translate="No">beacon.rights.&lt;counter&gt;.packageName</code> campo.
+      </li>
+      <li>
+        Dado que está utilizando un paquete, DEBE configurar el <code translate="No">beacon.rights.&lt;counter&gt;.type</code> a <strong>SVOD</strong>.
+      </li>
+      <li>
+        En la parte inferior de la <strong>Edición rapida</strong> sección, haga clic en el <strong>Ahorrar</strong> botón.
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Ingesting_the_videos_into_Brightcove_Beacon"> Ingestando los videos en Brightcove Beacon </h2>
+    <p>
+      Ahora ha asociado uno o videos con su paquete de suscripción. Ahora debe incorporar esas asociaciones en Brightcove Beacon. Para hacer esto, siga estos pasos:
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>Inicie sesión en Brightcove Beacon.</li>
+      <li>Haga clic en el icono de llave inglesa (Herramientas).</li>
+      <li>En el menú de navegación del lado izquierdo, haga clic en <strong>Ingestión</strong>.</li>
+      <li>Haga clic en el <strong>Actualizar vídeos de Brightcove</strong> botón.</li>
+      <li>
+        Si se informa algún error, verifíquelo para asegurarse de que ninguno esté relacionado con su paquete de suscripción.
+      </li>
+      <li>
+        Si desea que las nuevas asociaciones estén inmediatamente activas en Brightcove Beacon, debe borrar la memoria caché actual. Para hacer esto, en el menú de navegación del lado izquierdo, haga clic en <strong>Cache</strong> , luego haga clic en <strong>Purga de caché</strong>.
+      </li>
+    </ol>
+    <p>
+      Para obtener más detalles sobre las acciones tomadas en esta sección, consulte la <a href="/using-brightcove-beacon/tools.html">Usando las herramientas</a> documento.
+    </p>
+  </section>
+</article>

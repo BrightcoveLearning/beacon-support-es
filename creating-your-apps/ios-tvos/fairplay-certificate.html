@@ -1,0 +1,145 @@
+---
+title: 'Registro de certificado FairPlay'
+description: 'En este tema, aprenderá el proceso de Apple para crear un certificado DRM FairPlay Streaming (FPS).'
+
+parent: 'iOS/tvOS' 
+grandparent: 'Creating Your Apps'
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="required-information">Descripción general</h2>
+
+    <p> <a href="https://developer.apple.com/streaming/fps/" target="_blank">Transmisión de FairPlay</a> es una solución DRM de Apple para entregar de forma segura medios de transmisión mediante el protocolo HLS (HTTP Live Streaming). </p>
+    <p>Para poder utilizar Apple <strong>Transmisión de FairPlay (FPS)</strong> DRM, los usuarios deben adquirir el <strong>Paquete de implementación de FPS</strong> de Apple y proporcione a su representante de Brightcove la siguiente información:
+        <ul>
+            <li>El archivo de certificado FPS <strong>.der o .cer</strong></li>
+            <li>Archivo de clave privada <strong>.pem</strong></li>
+            <li>Cadena de contraseña de clave privada</li>
+            <li>Cadena de clave secreta de la aplicación (ASK)</li>
+
+        </ul>
+
+    </p>
+   
+
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="required-information">Paso 1: Registre una cuenta de desarrollador de Apple y solicite el paquete de implementación</h2>
+
+    <ol class="bcls-tasklist">
+        <li>Ingrese su cuenta de desarrollador de Apple para obtener el paquete de implementación de FPS. Si no tiene uno. <a href="https://developer.apple.com/support/enrollment/" target="_blank">Inscribirse</a>.</li>
+        <li>Haga clic en el enlace Solicitar paquete de implementación en la parte inferior del sitio web de FairPlay Streaming e inicie sesión con su cuenta de desarrollador de Apple.</li>
+    </ol>
+    <p>Una vez que solicite el Paquete de implementación de acuerdo con el formulario de entrada, se le emitirá un paquete que contiene el documento Guía de creación de credenciales FPS después de la confirmación de Apple.  </p>
+    <aside class="bcls-aside bcls-aside--information">Durante el proceso de solicitud, se le preguntará si ha completado la implementación y prueba del Módulo de servidor de claves (KSM). Por favor conteste: "Estoy utilizando un servicio DRM de terceros y la empresa ya ha creado y probado el módulo de servidor de claves".</aside>
+
+  </section>
+  <section class="bcls-section">
+    <h2 id="required-information">Paso 2: Cree la clave privada y la solicitud de firma de certificado (CSR) </h2>
+    <p>El siguiente paso es crear una clave privada <strong>privatekey.pem</strong> archivo y una solicitud de firma de certificado <strong>certreq.csr</strong> archivo consultando el documento de directrices en el paquete. </p>
+    <aside class="bcls-aside bcls-aside--information">OpenSSL debe instalarse en el entorno de PC o servidor donde se realiza este proceso.</aside>
+
+    <p>Los siguientes pasos describen el método OpenSSL para generar el archivo CSR:</p>
+
+    <ol class="bcls-tasklist-restart">
+        <li>Abra la herramienta de línea de comandos OpenSSL.</li>
+        <li>Generar el <strong>Archivo de clave privada: privatekey.pem</strong> escribiendo y ejecutando el siguiente comando.
+
+            <pre class="line-numbers">
+                <code class="command-line" translate="No">openssl genrsa -aes256 -out privatekey.pem 1024 </code></pre>   
+        </li>
+        <li>Ingrese una contraseña para la clave privada y guárdela para usarla más adelante. <aside class="bcls-aside bcls-aside--information">La contraseña debe tener menos de 32 caracteres y no se permiten caracteres especiales.</aside>
+        </li>
+        <li>Generar el <strong>Solicitud de firma de certificado</strong> archivo escribiendo y ejecutando el siguiente comando. <aside class="bcls-aside bcls-aside--information">El contenido del <strong>-subj</strong> El parámetro se puede modificar para adaptarse a la información de su organización.</aside>
+            <pre class="line-numbers">
+<code class="command-line" translate="No">openssl req -new -sha1 -key privatekey.pem -out certreq.csr -subj "/CN=SubjectName/OU=OrganizationalUnit/O=Organization/C=US"</code></pre>
+        </li>
+        <li>Introducir el <strong>Llave privada</strong> contraseña. </li>
+        
+    </ol>
+
+  </section>
+  <section class="bcls-section">
+    <h2 id="required-information">Paso 3: Cree un certificado de FPS en el portal de desarrolladores de Apple</h2>
+    <ol class="bcls-tasklist">
+
+    <li>Inicie sesión en <strong>Portal de desarrolladores de Apple</strong> y haga clic en <strong>Certificado, identificaciones y perfiles</strong> en el menú de la izquierda.
+        <figure class="bcls-figure">
+            <img
+              class="bcls-image--no-border"
+              alt=""
+              width="600"
+              height="1000"
+              src="/assets/images/creating-your-apps/fairplay-reg/left-menu.png"/>
+          </figure>
+    </li>
+    <li>En el <strong>Certificados</strong> subtítulo haga clic en el  
+        <img
+          class="bcls-image--no-border"
+          alt=""
+          width="20"
+          height="20"
+          src="/assets/images/creating-your-apps/fairplay-reg/blue-button.png"/> botón.
+
+          <figure class="bcls-figure">
+            <img
+              class="bcls-image--no-border"
+              alt=""
+              width="600"
+              height="600"
+              src="/assets/images/creating-your-apps/fairplay-reg/plus-button.png"/>
+          </figure>
+
+
+    </li>
+    <li>Sobre el <strong>Crear un certificado nuevo</strong> sección, seleccione la <strong>Certificado de transmisión de FairPlay</strong> opción. 
+      <figure class="bcls-figure">
+        <img
+          class="bcls-image--no-border"
+          alt=""
+          width="800"
+          height="600"
+          src="/assets/images/creating-your-apps/fairplay-reg/create-cert.png"/>
+      </figure>
+    </li>
+    <li>Hacer clic <strong>Continuar</strong>.</li>
+    <li>Hacer clic <strong>Elija el archivo</strong>. 
+      <figure class="bcls-figure">
+        <img
+          class="bcls-image--no-border"
+          alt=""
+          width="800"
+          height="600"
+          src="/assets/images/creating-your-apps/fairplay-reg/upload-file.png"/>
+      </figure>
+    </li>
+    <li>Selecciona el <strong>certreq.csr</strong> archivo creado con OpenSSL. </li>
+    <li>Hacer clic <strong>Continuar</strong>.</li>
+    <li> Copia el <strong>Clave secreta de la aplicación</strong> proporcionado por Apple y guárdelo de forma segura. Si el ASK se ve comprometido, ya no podrá proteger su contenido con FPS. 
+      <figure class="bcls-figure">
+        <img
+          class="bcls-image--no-border"
+          alt=""
+          width="800"
+          height="600"
+          src="/assets/images/creating-your-apps/fairplay-reg/ask-file.png"/>
+      </figure>
+    
+    
+    </li>
+    <li>Pegue ASK en el espacio provisto.</li>
+    <li>Hacer clic <strong>Continuar</strong></li>
+    <li>Haga clic en el <strong>Generar</strong> cuando aparezca la ventana emergente para confirmar que ha guardado la clave de seguridad de la aplicación.</li>
+    <li>Hacer clic <strong>Certificados</strong> en el menú de la izquierda para ver su Certificado de transmisión de FairPlay en la lista. </li>
+    <li>Haga clic en su certificado.</li>
+    <li>Haga clic en el <strong>Descargar</strong> para guardar el archivo de certificado FPS: <strong>fairplay.cer</strong>.</li>
+    <li>Después de descargar el <strong>Certificado FPS</strong> archivo, comuníquese con su gerente de cuenta de Brightcove para finalizar el proceso.</li>
+  
+    </ol>
+
+  </section>
+
+</article>

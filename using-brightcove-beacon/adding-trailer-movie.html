@@ -1,0 +1,43 @@
+---
+title: Agregar un tráiler a una descripción de Beacon Movie
+description: Este tema explica cómo agregar un avance de una película.
+parent: Using Brightcove Beacon
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Adding_a_trailer">Agregar un tráiler</h2>
+    <p>Agregar un avance para una película de Beacon es simple. Siga los pasos a continuación.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Cargue el video de avance a su cuenta de Video Cloud.</li>
+      <li>
+        Tú haces <strong>no</strong> Necesita agregar campos personalizados especiales de Beacon al video de avance. Todo lo que necesitas es el <strong>ID de video</strong>:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/add-trailer-movie/get-trailer-video-id.png" alt="Get Video ID">
+          <figcaption class="bcls-caption--image">Obtener ID de video</figcaption>
+        </figure>
+      </li>
+      <li>
+        Para el video que se usa para la película Beacon, <a href="/assets/images/syncing-with-vc/vc-custom-fields">agregue el siguiente campo personalizado</a>:
+        <table class="bcls-table">
+          <caption class="bcls-caption--table">Campo personalizado de tráiler</caption>
+          <thead class="bcls-table__head">
+              <tr>
+                  <th>Nombre para mostrar</th>
+                  <th>Nombre interno</th>
+                  <th>Valor</th>
+              </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+              <tr>
+                  <td translate="no">beacon.trailer.id</td>
+                  <td translate="no">beacon_trailer_id</td>
+                  <td translate="no">(ID de video para el avance)</td>
+              </tr>
+          </tbody>
+      </table>
+      </li>
+    </ol>
+  </section>
+</article>

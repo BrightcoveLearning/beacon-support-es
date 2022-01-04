@@ -1,628 +1,67 @@
-﻿<!DOCTYPE html>
-<html lang="es-es">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="En este tema, aprenderá cómo actualizar una aplicación existente a una aplicación de Brightcove Beacon mediante Google Play Consola. parent: Androide." />
-
-    <title>Actualización de aplicaciones de Android a Brightcove Beacon</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
-      <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://support.brightcove.com/site-assets/css/site/prism.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://support.brightcove.com/site-assets/css/site/styles.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://support.brightcove.com/site-assets/css/site/landing-page.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://support.brightcove.com/site-assets/css/site/tabs.css"
-    />
-    <link rel="stylesheet" href="/assets/css/local.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/381443caa8.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-    <script src="/assets/js/sajari-head.js"></script>
-  </head>
-
-  <body class="body"></body>
-</html>
-
-<header>
-  <div class="div-header">
-    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Beacon_Logo.svg" alt="logotipo del producto" style="max-height: 100px;max-width: 232px;"/></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-    
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
-    
-  </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      
-      
-      <li class="breadcrumb-item active" aria-current="page">Actualización de aplicaciones de Android a Brightcove Beacon</li>
-    </ol>
-  </nav>
-</header>
-<div class="container">
-  <div class="row">
-          <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Otros documentos de Brightcove</option>
-          
-            
-              <option value="https://support.brightcove.com">Documentación Inicio</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove Live</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove Social</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
-      <nav class="sidenav" id="side_nav">
-        
-        
-        <h5><a href="/index.html">Inicio</a></h5>
-        
-        
-        
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-					<option value="">기타 브라이트코브 문서</option>
-					
-						
-							<option value="https://support.brightcove.com">설명서 홈</option>
-						
-					
-						
-							<option value="https://audience.support.brightcove.com">브라이트코브 대상</option>
-						
-					
-						
-							<option value="https://beacon.support.brightcove.com">브라이트코브 비콘</option>
-						
-					
-						
-							<option value="https://campaign.support.brightcove.com">브라이트코브 캠페인</option>
-						
-					
-						
-							<option value="https://engage.support.brightcove.com">브라이트코브 참여</option>
-						
-					
-						
-							<option value="https://live.support.brightcove.com">Brightcove Live</option>
-						
-					
-						
-							<option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-						
-					
-						
-							<option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-						
-					
-						
-							<option value="https://social.support.brightcove.com">브라이트코브 소셜</option>
-						
-					
-						
-							<option value="https://studio.support.brightcove.com">비디오 클라우드 스튜디오</option>
-						
-					
-						
-							<option value="https://player.support.brightcove.com">브라이트코브 플레이어 개발</option>
-						
-					
-						
-							<option value="https://apis.support.brightcove.com">비디오 클라우드 플랫폼 API</option>
-						
-					
-						
-							<option value="https://sdks.support.brightcove.com">비디오 클라우드 디바이스 SDK</option>
-						
-					
-						
-							<option value="https://integrations.support.brightcove.com">통합 및 CMS 커넥터</option>
-						
-					
-						
-							<option value="https://general.support.brightcove.com">비디오 클라우드 일반 정보</option>
-						
-					
-						
-							<option value="https://zencoder.support.brightcove.com">Zencoder</option>
-						
-			<h5 class="submenu-header"><a href="/getting-started/index.html"><strong>+</strong> Empezar</a></h5>		
-				</select>
-        <nav class="sidenav" id="side_nav">
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          <li>Guía de aprendizaje<a href="/getting-started/learning-guide-bc-beacon.html"></a></li>
-          
-          
-          
-          <li><a href="/getting-started/implementation-phases.html">Fases de implementación</a></li>
-          
-          
-          
-          <li><a href="/getting-started/app-design-considerations.html">Consideraciones de diseño de aplicaciones</a></li>
-          
-          
-          
-          <li><a href="/getting-started/creating-your-app-design-info-architecture.html">Diseño de aplicaciones - Info Architecture</a></li>
-          
-          
-          
-          <li><a href="/getting-started/creating-your-app-design-layout-options.html">Diseño de aplicaciones - Opciones de diseño</a></li>
-          
-          
-          
-          <li><a href="/getting-started/design-best-practices.html">Prácticas recomendadas de diseño</a></li>
-          
-          
-        </ul>
-        
-        
-        
-        <h5 class="submenu-header">Sincronización con Video Cloud +<a href="/syncing-with-video-cloud/index.html"><strong></strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          <li><a href="/syncing-with-video-cloud/vc-custom-fields.html">Creación de campos personalizados de Video Cloud</a></li>
-          
-          
-          
-          <li><a href="/syncing-with-video-cloud/forcing-a-sync.html">Forzar una sincronización</a></li>
-          
-          
-        </ul>
-        
-        
-        
-        <h5 class="submenu-header">Uso de Brightcove Beacon +<a href="/using-brightcove-beacon/index.html"><strong></strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          <li><a href="/using-brightcove-beacon/adding-to-page.html">Agregar un carrusel a una página</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/creating-a-channel.html">Creación de un canal</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/electronic-program-guides.html">Creación de una Guía Electrónica de Programas (EPG)</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/creating-a-page.html">Creación de una nueva página</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/creating-a-playlist.html">Creación de una lista de reproducción</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/creating-subscription-package.html">Creación de un paquete de suscripción</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/promo-codes.html">Creación de Códigos Promocionales</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/series-seasons-episodes.html">Creación de serie/Temporadas/Episodios</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/configuring-server-side-ad-settings.html">Configuración de la configuración de anuncios del lado del servidor</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/implementing-authvod.html">Implementación de AuthVoD</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/live-ssai.html">Implementación de SSAI en vivo</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/vod-ssai.html">Implementación de VOD SSAI</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/including-non-configurable-pages.html">Incluyendo páginas no configurables</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/introducing-pages.html">Presentando páginas</a></li>
-          
-          
-          
-          <li>Transmisión de un evento en directo<a href="/using-brightcove-beacon/streaming-live-event.html"></a></li>
-          
-          
-          
-          <li>Transmisión de VOD a un canal<a href="/using-brightcove-beacon/streaming-vods-to-a-channel.html"></a></li>
-          
-          
-          
-          <li>Descripción de las opciones de monetización<a href="/using-brightcove-beacon/monetization-options.html"></a></li>
-          
-          
-          
-          <li>Uso de un paquete de suscripción<a href="/using-brightcove-beacon/using-subscription-package.html"></a></li>
-          
-          
-          
-          <li>Uso de las herramientas<a href="/using-brightcove-beacon/tools.html"></a></li>
-          
-          
-          
-          <li>Visualización de datos de análisis<a href="/using-brightcove-beacon/viewing-analytics-data.html"></a></li>
-          
-          
-        </ul>
-        
-        
-        
-        <h5 class="submenu-header"><a href="/creating-your-apps/index.html">Creación de aplicaciones <strong>+</strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          <li class="submenu-header">
-            <a href="/creating-your-apps/android/index.html"> <strong>Android+</strong></a>
-            <ul class="sidenav-subsubmenu" style="display:none;">
-              
-              <li>Envío de nuevas aplicaciones a la Tienda Android<a href="/creating-your-apps/android/submitting-to-android.html"></a></li>
-              
-              <li>Actualización de aplicaciones de Android a Brightcove Beacon<a href="/creating-your-apps/android/updating-android-apps-to-bcb.html"></a></li>
-              
-              <li><a href="/creating-your-apps/android/adding-subscriptions-in-android.html">Agregar suscripciones a Android</a></li>
-              
-              <li><a href="/creating-your-apps/android/improving-relevance-android.html">Mejorar la relevancia de la búsqueda en Android Play Store</a></li>
-              
-              <li><a href="/creating-your-apps/android/installing-android-test-build.html">Instalación de una compilación de prueba de Android</a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li class="submenu-header">
-            <a href="/creating-your-apps/fire-tv/index.html">Fire TV <strong>+</strong></a>
-            <ul class="sidenav-subsubmenu" style="display:none;">
-              
-              <li><a href="/creating-your-apps/fire-tv/installing-fire-tv-test-build.html">Instalación de una compilación de prueba de Fire TV</a></li>
-              
-              <li>Enviar a la Tienda Amazon<a href="/creating-your-apps/fire-tv/submitting-to-amazon.html"></a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li class="submenu-header">
-            <a href="/creating-your-apps/ios-tvos/index.html">IOS/tvOS <strong>+</strong></a>
-            <ul class="sidenav-subsubmenu" style="display:none;">
-              
-              <li><a href="/creating-your-apps/ios-tvos/installing-ios-test-build.html">Instalación de una compilación de pruebas de iOS/tvOS</a></li>
-              
-              <li>Enviar a la Apple Store<a href="/creating-your-apps/ios-tvos/submitting-to-apple.html"></a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li class="submenu-header">
-            Panasonic +<a href="/creating-your-apps/panasonic/index.html"><strong></strong></a>
-            <ul class="sidenav-subsubmenu" style="display:none;">
-              
-              <li>Envío a la Tienda Panasonic<a href="/creating-your-apps/panasonic/submitting-to-panasonic.html"></a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li class="submenu-header">
-            Roku +<a href="/creating-your-apps/roku/index.html"><strong></strong></a>
-            <ul class="sidenav-subsubmenu" style="display:none;">
-              
-              <li><a href="/creating-your-apps/roku/configuring-inchannel-products.html">Configuración de Productos In-Channel en Roku</a></li>
-              
-              <li><a href="/creating-your-apps/roku/installing-roku-test-build.html">Instalación de una compilación de prueba de Roku</a></li>
-              
-              <li>Envío a la tienda Roku<a href="/creating-your-apps/roku/submitting-to-roku.html"></a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li class="submenu-header">
-            Samsung +<a href="/creating-your-apps/samsung/index.html"><strong></strong></a>
-            <ul class="sidenav-subsubmenu" style="display:none;">
-              
-              <li><a href="/creating-your-apps/samsung/samsung-partner.html">Convertirse en un socio de Samsung</a></li>
-              
-              <li>Envío a la Tienda Samsung<a href="/creating-your-apps/samsung/submitting-to-samsung.html"></a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li><a href="/creating-your-apps/common-required-info.html">Información común requerida</a></li>
-          
-          
-          
-          <li><a href="/creating-your-apps/device-apps-validation-guide.html">Guía de validación de aplicaciones de dispositivo</a></li>
-          
-          
-        </ul>
-        
-        
-        
-        <h5 class="submenu-header">Referencias +<a href="/references/index.html"><strong></strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          <li><a href="/references/common-configuration-settings.html">Parámetros de configuración comunes</a></li>
-          
-          
-          
-          <li><a href="/references/creating-stripe-account.html">Creación de una cuenta de Stripe</a></li>
-          
-          
-          
-          <li><a href="/references/glossary.html">Glosario</a></li>
-          
-          
-          
-          <li><a href="/references/image-requirements.html">Imágenes y sus especificaciones</a></li>
-          
-          
-          
-          <li>Problemas conocidos<a href="/references/known-issues.html"></a></li>
-          
-          
-          
-          <li>Actualizaciones de productos<a href="/references/product-updates.html"></a></li>
-          
-          
-        </ul>
-        
-        
-        
-        <h5 class="submenu-header">Entrenamiento +<a href="/training/index.html"><strong></strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          <li>Uso de vídeos de Video Cloud o Campos personalizados<a href="/training/training-demand-custom-fields.html"></a></li>
-          
-          
-          
-          <li><a href="/training/training-demand-design-layout.html">Diseño del diseño de la aplicación</a></li>
-          
-          
-          
-          <li><a href="/training/training-demand-playlists.html">Creación y uso de listas de reproducción</a></li>
-          
-          
-          
-          <li><a href="/training/training-demand-series-seasons-episodes.html">Creación de series, temporadas y episodios</a></li>
-          
-          
-          
-          <li><a href="/training/training-demand-vod-ssai.html">Implementación de anuncios VOD del lado del servidor</a></li>
-          
-          
-          
-          <li>Publicación de la aplicación Android en Play Store<a href="/training/training-demand-publish-android-app.html"></a></li>
-          
-          
-          
-          <li>Visualización de datos de análisis<a href="/training/training-demand-viewing-analytics.html"></a></li>
-          
-          
-        </ul>
-        
-        
-        
-        <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          
-          
-          
-          
-          <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
-          
-          
-          
-          <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
-          
-          
-          
-          <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
-          
-          
-        </ul>
-        
-        
-      </nav>
-    </div>
-    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
-      <!-- bootstrap layout -->
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">Contenido de la página</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-<h1>Actualización de aplicaciones de Android a Brightcove Beacon</h1>
+---
+title: 'Actualización de aplicaciones de Android a Brightcove Beacon'
+description: 'En este tema, aprenderá cómo actualizar una aplicación existente a una aplicación Brightcove Beacon usando Google Play Console.
+parent: Android.' 
+grandparent: 'Creating Your Apps'
+---
+ <h1>{{ page.title }}</h1>
 <article class="bcls-article">
-  <summary>En este tema, aprenderá cómo actualizar una aplicación existente a una aplicación de Brightcove Beacon mediante Google Play Consola. parent: Androide.</summary>
+  <summary>{{ page.description }}</summary>
 
   <section class="bcls-section">
-    <aside class="bcls-aside bcls-aside--information language-editable">
-      Si estás buscando información sobre cómo enviar una nueva aplicación a Android, consulta el documento <a href="/creating-your-apps/submitting-to-android.html">Enviar nuevas aplicaciones a la Tienda Android</a> .
-    </aside>
+    <aside class="bcls-aside bcls-aside--information"> Si busca información sobre cómo enviar una nueva aplicación a Android, consulte la <a href="/creating-your-apps/submitting-to-android.html">Envío de nuevas aplicaciones a la tienda de Android</a> documento. </aside>
     <h2 id="Introduction">Introducción</h2>
     <p>
-      Es posible que tengas una aplicación Android existente, pero necesitas actualizarla para que sea parte de tu familia de aplicaciones de Brightcove Beacon. Este documento le guía a través de ese proceso. Una visión de alto nivel del proceso es:
+      Es posible que tenga una aplicación de Android existente, pero debe actualizarla para que forme parte de su familia de aplicaciones Brightcove Beacon. Este documento lo guía a través de ese proceso. Una vista de alto nivel del proceso es:
     </p>
     <ul>
       <li>
-        Activar la publicación programada (no es necesaria, pero es una práctica recomendada)
+        Active la publicación programada (no es obligatorio, pero es una práctica recomendada)
       </li>
-      <li>Actualizar la aplicación</li>
+      <li>Actualiza tu aplicación</li>
     </ul>
   </section>
 
   <section class="bcls-section">
     <h2 id="Turning_on_timed_publishing">
-      Activar la <em>publicación programada</em>
+      Encendiendo <em>publicación programada</em>
     </h2>
     <p>
-      Al actualizar una aplicación para que se convierta en una aplicación de Brightcove Beacon, es muy probable que NO desee que los cambios se pongan en marcha inmediatamente. Lo más probable es que desee realizar todos los cambios para la nueva aplicación de Beacon de Brightcove y, a continuación, en un momento específico, los cambios se activarán. Android proporciona un mecanismo para hacer esto llamado <em>publicación temporizada</em>. Los pasos que se indican a continuación le guiarán sobre cómo habilitar la publicación programada. Para obtener más información sobre la publicación programada, consulte <a href="https://support.google.com/googleplay/android-developer/answer/9543912?hl=en">Publicar una aplicación de Google con un documento de publicación programado</a> .
+      Al actualizar una aplicación para que se convierta en una aplicación de Brightcove Beacon, es muy probable que NO desee que los cambios se activen de inmediato. Lo más probable es que desee realizar todos los cambios para la nueva aplicación Brightcove Beacon, luego, en un momento específico, los cambios se publicarán. Android proporciona un mecanismo para hacer esto llamado <em>publicación programada</em>. Los pasos a continuación le guían sobre cómo habilitar la publicación programada. Para obtener detalles completos sobre la publicación programada, consulte el <a href="https://support.google.com/googleplay/android-developer/answer/9543912?hl=en">Publica una aplicación con publicación programada</a> documento.
     </p>
     <ol class="bcls-tasklist">
       <li>
-        Inicia sesión en Google Play Console.<a href="https://play.google.com/apps/publish/"></a>
+        Iniciar sesión en <a href="https://play.google.com/apps/publish/">Consola de Google Play</a>.
       </li>
-      <li>Seleccione la aplicación que está actualizando a una aplicación de Brightcove Beacon.</li>
+      <li>Seleccione la aplicación que está actualizando a una aplicación Brightcove Beacon.</li>
       <li>
-        En el menú de la izquierda, selecciona <strong>Presencia en la tienda Listing de la &gt; tienda</strong>.
-        <aside class="bcls-aside bcls-aside--tip language-editable">
-          Puedes activar la publicación programada desde varias páginas de esta sección, incluidos los <strong>listados en la tienda</strong> y <strong>los precios y la distribución</strong>
-        </aside>
+        En el menú de la izquierda, seleccione <strong>Presencia en la tienda&gt; Ficha de la tienda</strong>. <aside class="bcls-aside bcls-aside--tip"> Puede activar la publicación programada desde varias páginas de esta sección, incluidas <strong>Ficha de la tienda</strong> y <strong>Precios y distribución</strong> </aside>
       </li>
       <li>
-        En la parte inferior de la pantalla, active la publicación temporizada haciendo clic en el modificador de <strong>publicación temporizado</strong> .
+        En la parte inferior de la pantalla, active la publicación programada haciendo clic en el <strong>Publicación programada</strong> cambiar.
       </li>
       <li>
-        Revise los detalles en el cuadro de diálogo <strong>Publicación temporizada</strong> .
+        Revise los detalles en el <strong>Publicación programada</strong> diálogo.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/creating-your-apps/update-android-to-bcb/timed-publishing.png" alt="publicación programada"/>
+          <img
+            class="bcls-image"
+            src="/assets/images/creating-your-apps/update-android-to-bcb/timed-publishing.png"
+            alt="timed publishing"
+          />
         </figure>
       </li>
-      <li>Haga clic en el <strong>botón ACTIVAR</strong> .</li>
+      <li>Haga clic en el <strong>ENCENDER</strong> botón.</li>
     </ol>
     <p>
-      Ahora, a medida que realice cambios, haga clic en el botón <strong>ENVIAR ACTUALIZACIÓN</strong> y aparecerá el siguiente cuadro de diálogo:
+      Ahora, a medida que realiza los cambios, haga clic en el <strong>ENVIAR ACTUALIZACIÓN</strong> y aparecerá el siguiente cuadro de diálogo:
       <figure class="bcls-figure">
-        <img class="bcls-image" src="/assets/images/creating-your-apps/update-android-to-bcb/sumbit-update.png" alt="enviar actualización"/>
+        <img
+          class="bcls-image"
+          src="/assets/images/creating-your-apps/update-android-to-bcb/sumbit-update.png"
+          alt="submit update"
+        />
       </figure>
-      Al cerrar el cuadro de diálogo, verá una lista de actualizaciones que se han realizado con publicación programada. Cuando esté listo para publicar su aplicación actualizada de Brightcove Beacon, haga clic en el botón <strong>Ir en directo</strong> .
+      Cuando cierre el cuadro de diálogo, verá una lista de actualizaciones que se han realizado en la publicación programada. Cuando esté listo para publicar su aplicación Brightcove Beacon actualizada, haga clic en el <strong>Ir a vivir</strong> botón.
     </p>
     <p>
       Debe decidir si desea que la publicación programada esté activa o no al actualizar la aplicación, que se describe en la siguiente sección.
@@ -630,211 +69,65 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
 
   <section class="bcls-section">
-    <h2 id="Updating_the_app">Actualización de la aplicación</h2>
+    <h2 id="Updating_the_app">Actualizar la aplicación</h2>
     <p></p>
     <ol class="bcls-tasklist-restart">
       <li>
-        Inicia sesión en Google Play Console.<a href="https://play.google.com/apps/publish/"></a> Verá una página de destino con sus aplicaciones existentes mostradas. En la siguiente captura de pantalla, solo existe la aplicación <em>BCLS Test</em> .
+        Iniciar sesión en <a href="https://play.google.com/apps/publish/">Consola de Google Play</a>. Verá una página de destino con sus aplicaciones existentes mostradas. En la captura de pantalla siguiente, solo el <em>Prueba BCLS</em> la aplicación existe.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/creating-your-apps/update-android-to-bcb/landing-page.png" alt="página de destino después de iniciar sesión"/>
+          <img
+            class="bcls-image"
+            src="/assets/images/creating-your-apps/update-android-to-bcb/landing-page.png"
+            alt="landing page after login"
+          />
         </figure>
       </li>
       <li>Haga clic en la aplicación que desea actualizar.</li>
       <li>
-        Verás que tu navegación a la izquierda es diferente a la que enviaste una nueva aplicación.
+        Verá que su navegación a la izquierda es diferente a cuando envió una nueva aplicación.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/creating-your-apps/update-android-to-bcb/left-navigation.png" alt="navegación izquierda"/>
+          <img
+            class="bcls-image"
+            src="/assets/images/creating-your-apps/update-android-to-bcb/left-navigation.png"
+            alt="left navigation"
+          />
         </figure>
       </li>
       <li>
-        La sección <strong>Release Management &gt; App Release releases</strong> es donde puede gestionar la creación tanto de versiones de prueba como de producción. Para obtener más información sobre cómo completar esta sección, consulta la sección <a href="/creating-your-apps/submitting-to-android.html#Complete_App_releases_information">Información completa de lanzamientos de aplicaciones</a> del documento <em>Enviar nuevas aplicaciones a la Tienda Android</em> .
+        La <strong>Gestión de lanzamientos&gt; Lanzamientos de aplicaciones</strong> La sección es donde maneja la creación de versiones tanto de prueba como de producción. Para obtener detalles completos sobre cómo completar esta sección, consulte el <a href="/creating-your-apps/submitting-to-android.html#Complete_App_releases_information">Información completa sobre lanzamientos de aplicaciones</a> sección de la
+        <em>Envío de nuevas aplicaciones a la tienda de Android</em> documento.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/creating-your-apps/update-android-to-bcb/app-releases.png" alt="lanzamientos de aplicaciones"/>
+          <img
+            class="bcls-image"
+            src="/assets/images/creating-your-apps/update-android-to-bcb/app-releases.png"
+            alt="app releases"
+          />
         </figure>
       </li>
       <li>
-        Actualiza cualquier información en la sección <strong>Lista de &gt; tiendas presencia en la tienda</strong> . Esta sección incluye descripciones de su aplicación, así como imágenes utilizadas para representar su aplicación. Para obtener más información sobre cómo completar esta sección, consulta la sección <a href="/creating-your-apps/submitting-to-android.html#Complete_Store_listing_information">Información de listado de la tienda completa</a> del documento <em>Enviar nuevas aplicaciones a la Tienda Android</em> .
+        Actualice cualquier información en el <strong>Presencia en la tienda&gt; Ficha de la tienda</strong> sección. Esta sección incluye descripciones de su aplicación, así como imágenes utilizadas para representar su aplicación. Para obtener detalles completos sobre cómo completar esta sección, consulte el <a href="/creating-your-apps/submitting-to-android.html#Complete_Store_listing_information">Información completa de la ficha de Play Store</a> sección de la
+        <em>Envío de nuevas aplicaciones a la tienda de Android</em> documento.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/creating-your-apps/update-android-to-bcb/store-listing.png" alt="listado de la tienda"/>
+          <img
+            class="bcls-image"
+            src="/assets/images/creating-your-apps/update-android-to-bcb/store-listing.png"
+            alt="store listing"
+          />
         </figure>
       </li>
       <li>
-        Para asegurarse de que las suscripciones se actualizan para que coincidan con las suscripciones definidas en Brightcove Beacon, seleccione <strong>Productos integrados en la aplicación &gt; Suscripciones</strong>.
+        Para asegurarse de que las suscripciones se actualicen para que coincidan con las suscripciones definidas en Brightcove Beacon, seleccione <strong>Productos integrados en la aplicación&gt; Suscripciones</strong>.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/creating-your-apps/update-android-to-bcb/subscriptions.png" alt="suscripciones"/>
+          <img
+            class="bcls-image"
+            src="/assets/images/creating-your-apps/update-android-to-bcb/subscriptions.png"
+            alt="subscriptions"
+          />
         </figure>
       </li>
       <li>
-        Sigue las instrucciones detalladas en el documento <a href="/creating-your-apps/adding-subscriptions-in-android.html">Agregar suscripciones a Android</a> para actualizar las suscripciones existentes.
+        Siga los detalles de la guía en el <a href="/creating-your-apps/adding-subscriptions-in-android.html">Agregar suscripciones a Android</a> documento para actualizar las suscripciones existentes.
       </li>
     </ol>
   </section>
 </article>
-
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Contenido de la página</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
-    </div>
-  </div>
-</div>
-
-<hr>
-<div class="last-updated">
-  Última actualización de la página el 12-06-2020
-</div>
-
-
-
-<footer class="bcls-footer" role="contentinfo">
-  <div class="row">
-    <div class="region region-footer-top-center col-md-12">
-      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-
-        <h2>Asistencia técnica de Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            Estado del sistema<a href="https://status.brightcove.com"></a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
-          </li>
-          <li>
-            <a href="https://support.brightcove.com/">Documentación</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-
-        <h2>Formación</h2>
-
-        <ul class="menu">
-          <li>
-            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
-          </li>
-          <li>
-            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
-          </li>
-          <li>
-            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-
-        <h2>Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://www.brightcove.com">BrightCove.com</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="region region-footer-bottom-center col-md-12">
-      <div class="bcls-copyright footer-menu">
-        <table>
-          <tr>
-            <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
-            </td>
-            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
-            <td>
-              <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</footer>
-<div id="talla_wrapper">
-  <p style="text-align: right;position: relative;"><button style="background:rgb(2, 28, 146);color:Snow;padding:.3rem;position:fixed;right:0;bottom:1em;z-index:9999999" onclick="javascript:displayChat()">¿Tiene alguna pregunta? </button> </p>
-  <div id="talla_chat">
-</div>
-</div>
-<script>
-      
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
-  
-
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
-  <script src="/assets/js/sites_nav.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
-  <script src="/assets/js/feedback.js"></script>
-  
-  <script src="/assets/js/sajari-search-foot.js"></script>
-  
-  <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <script src="https://assets.talla.com/latest/embeddedjs/talla.js"></script>
-  <script src="/assets/js/talla-init.js"></script>
-  <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
-    </style>
-
-</body>
-
-</html>

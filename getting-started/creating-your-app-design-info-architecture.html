@@ -1,1072 +1,329 @@
-﻿<!DOCTYPE html>
-<html lang="es-es">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-
-    <title>Creación del diseño de aplicaciones - Arquitectura de la</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
-      <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://support.brightcove.com/site-assets/css/site/prism.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://support.brightcove.com/site-assets/css/site/styles.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://support.brightcove.com/site-assets/css/site/landing-page.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://support.brightcove.com/site-assets/css/site/tabs.css"
-    />
-    <link rel="stylesheet" href="/assets/css/local.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/381443caa8.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-    <script src="/assets/js/sajari-head.js"></script>
-  </head>
-
-  <body class="body"></body>
-</html>
-
-<header>
-  <div class="div-header">
-    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Beacon_Logo.svg" alt="logotipo del producto" style="max-height: 100px;max-width: 232px;"/></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-    
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
-    
-  </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
-      
-      
-      
-      <li class="breadcrumb-item"><a href="/getting-started/">Introducción</a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">Creación del diseño de aplicaciones - Arquitectura de la</li>
-    </ol>
-  </nav>
-</header>
-<div class="container">
-  <div class="row">
-          <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Otros documentos de Brightcove</option>
-          
-            
-              <option value="https://support.brightcove.com">Documentación Inicio</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove Live</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove Social</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
-      <nav class="sidenav" id="side_nav">
-        
-        
-        <h5><a href="/index.html">Inicio</a></h5>
-        
-        
-        
-        <h5 class="submenu-header"><a href="/getting-started/index.html">Empezar <strong>+</strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          <li>Guía de aprendizaje<a href="/getting-started/learning-guide-bc-beacon.html"></a></li>
-          
-          
-          
-          <li><a href="/getting-started/implementation-phases.html">Fases de implementación</a></li>
-          
-          
-          
-          <li><a href="/getting-started/app-design-considerations.html">Consideraciones de diseño de aplicaciones</a></li>
-          
-          
-          
-          <li><a href="/getting-started/creating-your-app-design-info-architecture.html">Diseño de aplicaciones - Info Architecture</a></li>
-          
-          
-          
-          <li><a href="/getting-started/creating-your-app-design-layout-options.html">Diseño de aplicaciones - Opciones de diseño</a></li>
-          
-          
-          
-          <li><a href="/getting-started/design-best-practices.html">Prácticas recomendadas de diseño</a></li>
-          
-          
-        </ul>
-        
-        
-        
-        <h5 class="submenu-header">Sincronización con Video Cloud +<a href="/syncing-with-video-cloud/index.html"><strong></strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          <li><a href="/syncing-with-video-cloud/vc-custom-fields.html">Creación de campos personalizados de Video Cloud</a></li>
-          
-          
-          
-          <li><a href="/syncing-with-video-cloud/forcing-a-sync.html">Forzar una sincronización</a></li>
-          
-          
-        </ul>
-        
-        
-        
-        <h5 class="submenu-header">Uso de Brightcove Beacon +<a href="/using-brightcove-beacon/index.html"><strong></strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          <li><a href="/using-brightcove-beacon/adding-to-page.html">Agregar un carrusel a una página</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/creating-a-channel.html">Creación de un canal</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/electronic-program-guides.html">Creación de una Guía Electrónica de Programas (EPG)</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/creating-a-page.html">Creación de una nueva página</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/creating-a-playlist.html">Creación de una lista de reproducción</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/creating-subscription-package.html">Creación de un paquete de suscripción</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/promo-codes.html">Creación de Códigos Promocionales</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/series-seasons-episodes.html">Creación de serie/Temporadas/Episodios</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/configuring-server-side-ad-settings.html">Configuración de la configuración de anuncios del lado del servidor</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/implementing-authvod.html">Implementación de AuthVoD</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/live-ssai.html">Implementación de SSAI en vivo</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/vod-ssai.html">Implementación de VOD SSAI</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/including-non-configurable-pages.html">Incluyendo páginas no configurables</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/introducing-pages.html">Presentando páginas</a></li>
-          
-          
-          
-          <li>Transmisión de un evento en directo<a href="/using-brightcove-beacon/streaming-live-event.html"></a></li>
-          
-          
-          
-          <li>Transmisión de VOD a un canal<a href="/using-brightcove-beacon/streaming-vods-to-a-channel.html"></a></li>
-          
-          
-          
-          <li>Descripción de las opciones de monetización<a href="/using-brightcove-beacon/monetization-options.html"></a></li>
-          
-          
-          
-          <li>Uso de un paquete de suscripción<a href="/using-brightcove-beacon/using-subscription-package.html"></a></li>
-          
-          
-          
-          <li>Uso de las herramientas<a href="/using-brightcove-beacon/tools.html"></a></li>
-          
-          
-          
-          <li>Visualización de datos de análisis<a href="/using-brightcove-beacon/viewing-analytics-data.html"></a></li>
-          
-          
-        </ul>
-        
-        
-        
-        <h5 class="submenu-header"><a href="/creating-your-apps/index.html">Creación de aplicaciones <strong>+</strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          <li class="submenu-header">
-            <a href="/creating-your-apps/android/index.html"> <strong>Android+</strong></a>
-            <ul class="sidenav-subsubmenu" style="display:none;">
-              
-              <li>Envío de nuevas aplicaciones a la Tienda Android<a href="/creating-your-apps/android/submitting-to-android.html"></a></li>
-              
-              <li>Actualización de aplicaciones de Android a Brightcove Beacon<a href="/creating-your-apps/android/updating-android-apps-to-bcb.html"></a></li>
-              
-              <li><a href="/creating-your-apps/android/adding-subscriptions-in-android.html">Agregar suscripciones a Android</a></li>
-              
-              <li><a href="/creating-your-apps/android/improving-relevance-android.html">Mejorar la relevancia de la búsqueda en Android Play Store</a></li>
-              
-              <li><a href="/creating-your-apps/android/installing-android-test-build.html">Instalación de una compilación de prueba de Android</a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li class="submenu-header">
-            <a href="/creating-your-apps/fire-tv/index.html">Fire TV <strong>+</strong></a>
-            <ul class="sidenav-subsubmenu" style="display:none;">
-              
-              <li><a href="/creating-your-apps/fire-tv/installing-fire-tv-test-build.html">Instalación de una compilación de prueba de Fire TV</a></li>
-              
-              <li>Enviar a la Tienda Amazon<a href="/creating-your-apps/fire-tv/submitting-to-amazon.html"></a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li class="submenu-header">
-            <a href="/creating-your-apps/ios-tvos/index.html">IOS/tvOS <strong>+</strong></a>
-            <ul class="sidenav-subsubmenu" style="display:none;">
-              
-              <li><a href="/creating-your-apps/ios-tvos/installing-ios-test-build.html">Instalación de una compilación de pruebas de iOS/tvOS</a></li>
-              
-              <li>Enviar a la Apple Store<a href="/creating-your-apps/ios-tvos/submitting-to-apple.html"></a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li class="submenu-header">
-            Panasonic +<a href="/creating-your-apps/panasonic/index.html"><strong></strong></a>
-            <ul class="sidenav-subsubmenu" style="display:none;">
-              
-              <li>Envío a la Tienda Panasonic<a href="/creating-your-apps/panasonic/submitting-to-panasonic.html"></a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li class="submenu-header">
-            Roku +<a href="/creating-your-apps/roku/index.html"><strong></strong></a>
-            <ul class="sidenav-subsubmenu" style="display:none;">
-              
-              <li><a href="/creating-your-apps/roku/configuring-inchannel-products.html">Configuración de Productos In-Channel en Roku</a></li>
-              
-              <li><a href="/creating-your-apps/roku/installing-roku-test-build.html">Instalación de una compilación de prueba de Roku</a></li>
-              
-              <li>Envío a la tienda Roku<a href="/creating-your-apps/roku/submitting-to-roku.html"></a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li class="submenu-header">
-            Samsung +<a href="/creating-your-apps/samsung/index.html"><strong></strong></a>
-            <ul class="sidenav-subsubmenu" style="display:none;">
-              
-              <li><a href="/creating-your-apps/samsung/samsung-partner.html">Convertirse en un socio de Samsung</a></li>
-              
-              <li>Envío a la Tienda Samsung<a href="/creating-your-apps/samsung/submitting-to-samsung.html"></a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li><a href="/creating-your-apps/common-required-info.html">Información común requerida</a></li>
-          
-          
-          
-          <li><a href="/creating-your-apps/device-apps-validation-guide.html">Guía de validación de aplicaciones de dispositivo</a></li>
-          
-          
-        </ul>
-        
-        
-        
-        <h5 class="submenu-header">Referencias +<a href="/references/index.html"><strong></strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          <li><a href="/references/common-configuration-settings.html">Parámetros de configuración comunes</a></li>
-          
-          
-          
-          <li><a href="/references/creating-stripe-account.html">Creación de una cuenta de Stripe</a></li>
-          
-          
-          
-          <li><a href="/references/glossary.html">Glosario</a></li>
-          
-          
-          
-          <li><a href="/references/image-requirements.html">Imágenes y sus especificaciones</a></li>
-          
-          
-          
-          <li>Problemas conocidos<a href="/references/known-issues.html"></a></li>
-          
-          
-          
-          <li>Actualizaciones de productos<a href="/references/product-updates.html"></a></li>
-          
-          
-        </ul>
-        
-        
-        
-        <h5 class="submenu-header">Entrenamiento +<a href="/training/index.html"><strong></strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          <li>Uso de vídeos de Video Cloud o Campos personalizados<a href="/training/training-demand-custom-fields.html"></a></li>
-          
-          
-          
-          <li><a href="/training/training-demand-design-layout.html">Diseño del diseño de la aplicación</a></li>
-          
-          
-          
-          <li><a href="/training/training-demand-playlists.html">Creación y uso de listas de reproducción</a></li>
-          
-          
-          
-          <li><a href="/training/training-demand-series-seasons-episodes.html">Creación de series, temporadas y episodios</a></li>
-          
-          
-          
-          <li><a href="/training/training-demand-vod-ssai.html">Implementación de anuncios VOD del lado del servidor</a></li>
-          
-          
-          
-          <li>Publicación de la aplicación Android en Play Store<a href="/training/training-demand-publish-android-app.html"></a></li>
-          
-          
-          
-          <li>Visualización de datos de análisis<a href="/training/training-demand-viewing-analytics.html"></a></li>
-          
-          
-        </ul>
-        
-        
-        
-        <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          
-          
-          
-          
-          <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
-          
-          
-          
-          <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
-          
-          
-          
-          <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
-          
-          
-        </ul>
-        
-        
-      </nav>
-    </div>
-    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
-      <!-- bootstrap layout -->
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">Contenido de la página</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
+---
+title: Creación del diseño de su aplicación: arquitectura de la información
+parent: Getting Started
+---
 
 
 <style media="screen">
-    .small_image p {
-        color: red;
-    }
+  .small_image p { color: red; }
 </style>
-
 <link href="/assets/css/splide.min.css" rel="stylesheet" />
-
 <style media="screen">
-    .splide {
-        background-color: #dcf3fb;
-        padding: 1em;
-    }
+  .splide { background-color: #dcf3fb; padding: 1em; }
 </style>
-
 <article class="bcls-article">
-    <h1>Creación del diseño de aplicaciones - Arquitectura de la</h1>
-    <summary>
-        En este tema, contestará una serie de preguntas, grabando las respuestas en una hoja de cálculo, que le ayudarán a determinar qué vídeos se muestran en su aplicación, cómo se agrupan y el orden en que se muestran los vídeos.
-    </summary>
-    <section class="bcls-section">
-        <h2 id="Introduction">Introducción</h2>
-        <p>
-            Este documento le guiará a través de una serie de preguntas sobre qué vídeos deberían aparecer y cómo se organizan esos vídeos en su Brightcove Beacon Experience. El resultado de responder a estas preguntas le ayudará a crear el diseño de su aplicación para Brightcove Beacon Experience. Un ejemplo muy simple de lo que desea definir para su aplicación se muestra aquí:
-        </p>
-        <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/top-level-example.png" alt=""/>
-        </figure>
-        <p>
-            Es posible que no tenga experiencia en el diseño de una UX para una aplicación OTT. En la última sección de este documento, <a href="#Is_guidance_available">¿está disponible orientación?</a> , se muestra una lista de consejos de los proveedores. Es posible que desee leer y considerar su orientación antes de diseñar su interfaz de usuario.
-        </p>
-    </section>
-
-    <section class="bcls-section">
-        <h2 id="Structure_of_a_page">Estructura de una página</h2>
-        <p>
-            Le resultará útil tener una comprensión de alto nivel de cómo se crean las páginas antes de seleccionar sus categorías. Las páginas de la aplicación se componen de lo siguiente:
-        </p>
-        <ul>
-            <li>
-                <strong>Listas de reproducción</strong> : Un grupo de videos relacionados. Las relaciones que unen los vídeos son definidas por usted, el creador de la aplicación.
-            </li>
-            <li>
-                <strong>Bloques</strong> : Conjunto de listas de reproducción que utilizan el mismo diseño. Puede organizar bloques en una lista, pestaña o menú desplegable.
-            </li>
-            <li>
-                <strong>Diseños</strong> : La configuración sobre cómo presentar cada lista de reproducción en un bloque. Puede establecer relaciones de aspecto de teselas, número de activos en pantalla, número de elementos, entre otras propiedades de la presentación.
-            </li>
-        </ul>
-        <p>
-            Algunos ejemplos ayudarán a aclarar esas definiciones, ahora algo abstractas. La captura de pantalla a continuación muestra tres bloques en una página. A la derecha de cada bloque se ve la configuración.
-        </p>
-        <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/page-block-playlist-web-app-labels-in.png" alt=""/>
-        </figure>
-        <!--     <p>Details for the page are in the following table:</p>
-    <table class="bcls-table">
-      <thead class="bcls-table__head">
-        <tr>
-          <th>Block Number</th>
-          <th>Block Type</th>
-          <th>Layout Type</th>
-          <th>Playlist(s)</th>
-        </tr>
-      </thead>
-      <tbody class="bcls-table__body">
-        <tr>
-          <td>1</td>
-          <td>single-block</td>
-          <td>Featured Banner Labels In</td>
-          <td>Scenic Florida Coast</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>tabbed_block</td>
-          <td>Carousel Landscape Labels In</td>
-          <td>
-            Scenic Oregon Coast
-            <br />
-            Travel Show
-            <br />
-            VC Cooking Show
-          </td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>single-block</td>
-          <td>Grid 3 Columns Landscape Labels In</td>
-          <td>Home & Garden</td>
-        </tr>
-      </tbody>
-    </table>
+  <h1>Creación del diseño de su aplicación: arquitectura de la información</h1>
+  <summary>
+    En este tema, responderá una serie de preguntas, registrando las respuestas en una hoja de cálculo, que lo ayudarán a determinar qué videos se muestran en su aplicación, cómo se agrupan y el orden en que se muestran los videos.
+  </summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">Introducción</h2>
+    <p>
+      Este documento lo guiará a través de una serie de preguntas sobre qué videos deben aparecer y cómo están organizados esos videos en su Brightcove Beacon Experience. El resultado de responder estas preguntas le ayudará a crear el diseño de su aplicación para Brightcove Beacon Experience. Aquí se muestra un ejemplo muy simple de lo que desea tener definido para su aplicación:
+    </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/top-level-example.png" alt="" />
+    </figure>
+    <p>
+      Es posible que no tenga experiencia en el diseño de una UX para una aplicación OTT. En la última sección de este documento, <a href="#Is_guidance_available">¿Hay orientación disponible?</a> , una lista de proveedores' se muestra un consejo. Es posible que desee leer y considerar su orientación antes de diseñar su interfaz de usuario.
+    </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Structure_of_a_page">Estructura de una página</h2>
+    <p>
+      Le resultará útil tener una comprensión de alto nivel de cómo se crean las páginas antes de seleccionar sus categorías. Las páginas de su aplicación se componen de lo siguiente:
+    </p>
+    <ul>
+      <li>
+        <strong>Listas de reproducción</strong> : Un grupo de videos relacionados. Las relaciones que unen los videos las define usted, el creador de la aplicación.
+      </li>
+      <li>
+        <strong>Bloques</strong> : Un conjunto de listas de reproducción que utilizan el mismo diseño. Puede organizar los bloques en una lista, pestaña o menú desplegable.
+      </li>
+      <li>
+        <strong>Diseños</strong> : La configuración sobre cómo presentar cada lista de reproducción en un bloque. Puede configurar las proporciones de los mosaicos, el número de activos en pantalla, el número de elementos, entre varias otras propiedades de la presentación.
+      </li>
+    </ul>
+    <p>
+      Algunos ejemplos ayudarán a aclarar esas definiciones, ahora algo abstractas. La siguiente captura de pantalla muestra tres bloques en una página. A la derecha de cada bloque ves la configuración.
+    </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/page-block-playlist-web-app-labels-in.png" alt="" />
+    </figure>
+    <!--     <p>Details for the page are in the following table:</p> <table class="bcls-table">
+ <thead class="bcls-table__head">
+ <tr>
+ <th>Block Number</th>
+ <th>Block Type</th>
+ <th>Layout Type</th>
+ <th>Playlist(s)</th>
+ </tr>
+ </thead>
+ <tbody class="bcls-table__body">
+ <tr>
+ <td>1</td>
+ <td>single-block</td>
+ <td>Featured Banner Labels In</td> <td>Scenic Florida Coast</td>
+ </tr>
+ <tr>
+ <td>2</td>
+ <td>tabbed_block</td>
+ <td>Carousel Landscape Labels In</td> <td>
+ Scenic Oregon Coast
+ <br />
+ Travel Show
+ <br />
+ VC Cooking Show
+ </td>
+ </tr>
+ <tr>
+ <td>3</td>
+ <td>single-block</td>
+ <td>Grid 3 Columns Landscape Labels In</td> <td>Home & Garden</td>
+ </tr>
+ </tbody>
+ </table>
  -->
-        <p>
-            La razón de mostrar las diferentes posibilidades no es tener que decidir en este punto los bloques, diseños y listas de reproducción, sino mostrar las opciones de visualización cuando decidas cómo organizar tu contenido a través de listas de reproducción.
-        </p>
-        <!--     <aside class="bcls-aside bcls-aside--information language-editable">
-      For full information on laying out your app using blocks, layouts and
-      playlists, see the
-      <a href="/using-brightcove-beacon/creating_custom_video_page.html">
-        Creating a Customized Video Display Page
-      </a>
-      document .
-    </aside> -->
-    </section>
-
-    <section class="bcls-section">
-        <h2 id="Recording_your_categories_selections">
-            Grabar sus categorías/selecciones
-        </h2>
-        <p>
-            Registrará sus decisiones a medida que trabaje en este documento en una hoja de cálculo. Para preparar la hoja de cálculo siga estos pasos:
-        </p>
-        <ol class="bcls-tasklist">
-            <li>
-                Descargue una plantilla haciendo clic en este enlace: <a href="https://solutions.brightcove.com/bcls/bcbeacon/app-design-info-architecture.xlsx"> app-design-info-architecture.xlsx </a>. Asegúrese de recordar dónde se guarda.
-            </li>
-            <li>Abre una hoja de cálculo en blanco desde la aplicación Hojas de cálculo de Google.</li>
-            <li>
-                En el menú Hojas de cálculo de Google, selecciona <strong>&gt; Importar archivos</strong> .
-            </li>
-            <li>
-                En el cuadro de diálogo que aparece, primero elija <strong>Cargar</strong> y luego haga clic en el botón <strong>Seleccionar un archivo de su dispositivo</strong> , como se muestra aquí:
-                <figure class="bcls-figure">
-                    <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/import-upload.png" alt=""/>
-                </figure>
-            </li>
-            <li>
-                Busque el archivo Excel que acaba de descargar, selecciónelo y, a continuación, haga clic en <strong>Abrir</strong> .
-            </li>
-            <li>
-                En el cuadro de diálogo <strong>Importar archivo</strong> que aparece, elija <strong>Reemplazar hoja de cálculo</strong> y, a continuación, haga clic en el botón <strong>Importar datos</strong> .
-                <figure class="bcls-figure">
-                    <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/import-file-dialog.png" alt=""/>
-                </figure>
-            </li>
-            <li>
-                Después de importar la hoja de cálculo, verá algo similar a lo siguiente:
-                <figure class="bcls-figure">
-                    <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/imported-info-architecture.png" alt=""/>
-                </figure>
-            </li>
-        </ol>
-        <p>
-            En la hoja de cálculo registrará las respuestas a las preguntas de este documento.
-        </p>
-        <p>
-            Al final de este proceso, compartirá la hoja de cálculo de Google completada con el representante de Brightcove, lo que le ayudará a configurar su experiencia.
-        </p>
-    </section>
-
-    <section class="bcls-section">
-        <h2 id="How_to_organize_your_content">
-            Cómo organizar tu contenido
-        </h2>
-        <p>
-            Para una presentación eficaz de sus activos de vídeo, debe tener en cuenta las categorías de esos activos. Las categorías son grupos de vídeos en los que se definen las reglas de agrupación para cada categoría. Estas categorías se implementarán como listas de reproducción, cuyo uso se muestra en la sección de procedimiento. La fuerza impulsora detrás de las categorías debería ser si sus clientes pueden encontrar los videos que desean de forma lógica y rápida.
-        </p>
-        <h3>Tipos de categorías</h3>
-        <p>Usted tiene dos tipos de categorías entre las que elegir, son:</p>
-        <ul>
-            <li>
-                <strong>Construido manualmente</strong> : Estas son las categorías que elija y a las que los vídeos se asignan a través de las listas de reproducción de Video Cloud Studio.
-            </li>
-            <li>
-                <strong>Brightcove Beacon Automatizado</strong> : Estas son las categorías que Brightcove Beacon crea automáticamente. Los tres son: <em>Recientemente visto</em> , <em>Más visto</em> y <em>Favoritos</em>. En la siguiente sección de este documento se proporcionan más detalles sobre estos tipos de categorías.
-            </li>
-        </ul>
-        <h3>Ejemplos</h3>
-        <p>
-            Algunos ejemplos se muestran aquí para ayudar a centrarse en lo que significa elegir categorías.
-        </p>
-        <p><strong>Primer ejemplo</strong></p>
-        <p>Aquí hay un recordatorio de cómo aparece el ejemplo en la parte superior de la página:</p>
+    <p>
+      La razón de mostrar las diferentes posibilidades no es que usted decida en este punto los bloques, diseños y listas de reproducción, sino que muestre opciones de visualización cuando esté decidiendo cómo organizar su contenido a través de listas de reproducción.
+    </p>
+    <!--     <aside class="bcls-aside bcls-aside--information"> For full information on laying out your app using blocks, layouts and playlists, see the
+ <a href="/using-brightcove-beacon/creating_custom_video_page.html"> Creating a Customized Video Display Page </a>
+ document .
+ </aside> -->
+  </section>
+  <section class="bcls-section">
+    <h2 id="Recording_your_categories_selections"> Grabación de sus categorías / selecciones </h2>
+    <p>
+      Registrará sus decisiones mientras trabaja con este documento en una hoja de cálculo. Para preparar la hoja de cálculo, siga estos pasos: </p>
+    <ol class="bcls-tasklist">
+      <li>
+        Descargue una plantilla haciendo clic en este enlace: <a href="https://solutions.brightcove.com/bcls/bcbeacon/app-design-info-architecture.xlsx"> aplicación-diseño-info-arquitectura.xlsx </a>. Asegúrese de recordar dónde se guarda.
+      </li>
+      <li>Abra una hoja de cálculo en blanco desde la aplicación Hojas de cálculo de Google.</li>
+      <li>
+        En el menú de Hojas de cálculo de Google, seleccione <strong>Archivo&gt; Importar</strong> .
+      </li>
+      <li>
+        En el cuadro de diálogo que aparece, primero elija <strong>Subir</strong> luego haga clic en el <strong>Seleccione un archivo de su dispositivo</strong> botón, como se muestra aquí:
         <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/top-level-example.png" alt=""/>
+          <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/import-upload.png" alt="" />
         </figure>
-        <p>Verá que las categorías son:</p>
-        <ul>
-            <li>Costa pintoresca de Florida</li>
-            <li>Escénica costa de Oregón</li>
-            <li>Espectáculo</li>
-            <li>VC Cooking Show</li>
-        </ul>
-        <aside class="bcls-aside bcls-aside--information language-editable">
-            Las categorías siempre aparecerán en mayúsculas en la interfaz de usuario real.
-        </aside>
-
-        <p><strong>Categorías de películas</strong></p>
-        <p>
-            A continuación se presentan algunas de las categorías, o géneros, de películas tomadas de Wikipedia:
-        </p>
-        <ul>
-            <li>Acción</li>
-            <li>Aventura</li>
-            <li>Comedia</li>
-            <li>Delincuencia</li>
-            <li>Drama</li>
-            <li>La fantasía</li>
-        </ul>
-        <p>
-            Puede ser géneros funcionan bien como categorías para sus clientes. Por otro lado, tal vez sus clientes tengan intereses especiales, y lo siguiente sería más apropiado:
-        </p>
-        <ul>
-            <li>Animado</li>
-            <li>Film Noir</li>
-            <li>Documental</li>
-            <li>Clásicos de culto</li>
-            <li>Películas mudas</li>
-        </ul>
-
-        <p><strong>Atletismo universitario</strong></p>
-        <p>
-            Puede ser que la gran cantidad de categorías en el nivel superior. Por ejemplo, hay 347 escuelas de la División 1 (generalmente grandes). Podría tener la pantalla de inicio de su aplicación lista de todas las 347 escuelas, pero es muy probable que algunos clientes encuentren esa larga lista también desplazarse a través de una mala experiencia de usuario. Puede utilizar subcategorías, o incluso subcategorías de subcategorías para facilitar la búsqueda de un determinado conjunto de vídeos. A continuación se muestra una estructura parcial de las posibles categorías para un sitio de atletismo universitario. Aquí la estructura sigue el modelo organizativo de la <em>Conferencia - &gt; Escuela - &gt; Deporte</em> :
-        </p>
-        <ul>
-            <li>
-                Conferencia del Sudeste
-                <ul>
-                    <li>
-                        Florida
-                        <ul>
-                            <li>Fútbol</li>
-                            <li>Baloncesto</li>
-                            <li>Voleibol</li>
-                            <li>...</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Georgia
-                        <ul>
-                            <li>Fútbol</li>
-                            <li>Baloncesto</li>
-                            <li>Voleibol</li>
-                            <li>...</li>
-                        </ul>
-                    </li>
-                    <li>...</li>
-                </ul>
-            </li>
-            <li>
-                Conferencia Pac-12
-                <ul>
-                    <li>
-                        Arizona
-                        <ul>
-                            <li>Fútbol</li>
-                            <li>Baloncesto</li>
-                            <li>Voleibol</li>
-                            <li>...</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Oregon
-                        <ul>
-                            <li>Fútbol</li>
-                            <li>Baloncesto</li>
-                            <li>Voleibol</li>
-                            <li>...</li>
-                        </ul>
-                    </li>
-                    <li>...</li>
-                </ul>
-            </li>
-            <li>...</li>
-        </ul>
-        <p>
-            Si usted cree que el deporte, en lugar de la conferencia, es lo más importante para sus clientes, tal vez podría cambiar la categorización para seguir el patrón organizativo <em>Deporte - &gt; Conferencia - &gt; Escuela</em> .
-        </p>
-        <h3>Tus categorías</h3>
-        <p>
-            A partir de los ejemplos que puede ver decidir sobre las categorías y la estructura de la organización puede ser una tarea sencilla o muy compleja. Necesita tener en cuenta tanto su contenido como sus clientes, para un diseño óptimo. Es imprescindible que te tomes tiempo para pensar en tu estructura organizativa y categorías para tus vídeos.
-        </p>
-        <h3>Registre sus categorías</h3>
-        <p>
-            Ahora que has determinado tus categorías, las introducirás en la hoja de cálculo. Ingrese en el orden en el que desea que aparezcan en la aplicación. En la hoja de cálculo, introduzca las categorías ordenadas comenzando en la celda B1, luego B2, etc. Un ejemplo simple aparece como:
-        </p>
+      </li>
+      <li>
+        Busque el archivo de Excel que acaba de descargar, selecciónelo y haga clic en <strong>Abierto</strong> .
+      </li>
+      <li>
+        Desde el <strong>Importar archivo</strong> cuadro de diálogo que aparece, elija <strong>Reemplazar hoja de cálculo</strong> , luego haga clic en el <strong>Datos de importacion</strong> botón.
         <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/spreadsheet-categories-entered.png" alt=""/>
+          <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/import-file-dialog.png" alt="" />
         </figure>
-        <p>
-            Es posible que desee agrupar algunas de sus listas de reproducción, como se muestra en esta captura de pantalla con pestañas de <strong>Scenic Oregon Coast</strong> , <strong>Travel Show</strong> y <strong>VC Cooking Show</strong> .
-        </p>
+      </li>
+      <li>
+        Después de importar la hoja de cálculo, verá algo similar a lo siguiente:
         <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/tabbed-block.png" alt=""/>
+          <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/imported-info-architecture.png" alt="" />
         </figure>
-        <p>
-            Si desea que las listas de reproducción se muestren de tal manera que solo se muestre una en la aplicación a la vez, y el espectador debe actuar para ver a los demás, represente esto en su hoja de cálculo colocándolas horizontalmente, como se muestra aquí:
-        </p>
-        <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/spreadsheet-categories-horizontal-group.png" alt=""/>
-        </figure>
-    </section>
-
-    <section class="bcls-section">
-        <h2 id="What_Brightcove_Beacon_built_categories_do_you_want">
-            ¿Qué categorías construidas por Brightcove Beacon quieres?
-        </h2>
-        <p>
-            Brightcove Beacon puede proporcionar tres categorías que puede incluir o no. A saber:
-        </p>
+      </li>
+    </ol>
+    <p>
+      En la hoja de cálculo registrará las respuestas a las preguntas de este documento.
+    </p>
+    <p>
+      Al final de este proceso, compartirá su hoja de Google completada con el representante de Brightcove que lo ayudará a configurar su experiencia.
+    </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="How_to_organize_your_content"> Cómo organizar tu contenido
+    </h2>
+    <p>
+      Para una presentación eficaz de sus activos de video, debe considerar categorías para esos activos. Las categorías son grupos de videos donde usted define las reglas de agrupación para cada categoría. Estas categorías se implementarán como listas de reproducción, cuyo uso se mostró en la sección de procedimiento. La fuerza impulsora detrás de las categorías debería ser si sus clientes pueden encontrar los videos que desean de manera lógica y rápida.
+    </p>
+    <h3>Tipos de categorías</h3>
+    <p>Tienes dos tipos de categorías entre las que elegir, son:</p>
+    <ul>
+      <li>
+        <strong>Construido manualmente</strong> : Estas son categorías que usted elige y a las que se asignan videos a través de las listas de reproducción de Video Cloud Studio.
+      </li>
+      <li>
+        <strong>Brightcove Beacon automatizado</strong> : Estas son categorías que Brightcove Beacon crea automáticamente. Los tres son:
+        <em>Visto recientemente</em>
+        ,
+        <em>El más visto</em>
+        y
+        <em>Favoritos</em>. En la siguiente sección de este documento se proporcionan más detalles sobre estos tipos de categorías.
+      </li>
+    </ul>
+    <h3>Ejemplos de</h3>
+    <p>
+      Aquí se muestran algunos ejemplos para ayudar a enfocarse en lo que significa elegir categorías.
+    </p>
+    <p><strong>Primer ejemplo</strong></p>
+    <p>Aquí hay un recordatorio de cómo aparece el ejemplo en la parte superior de la página:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/top-level-example.png" alt="" />
+    </figure>
+    <p>Verá que las categorías son:</p>
+    <ul>
+      <li>Costa escénica de Florida</li>
+      <li>Costa escénica de Oregon</li>
+      <li>Show de viajes</li>
+      <li>Show de cocina VC</li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information"> Las categorías siempre aparecerán en mayúsculas en la interfaz de usuario real. </aside>
+    <p><strong>Categorías de películas</strong></p>
+    <p>
+      A continuación se muestran algunas de las categorías o géneros de películas tomadas de Wikipedia:
+    </p>
+    <ul>
+      <li>Acción</li>
+      <li>Aventuras</li>
+      <li>Comedia</li>
+      <li>Crimen</li>
+      <li>Drama</li>
+      <li>Fantasía</li>
+    </ul>
+    <p>
+      Puede que los géneros funcionen bien como categorías para sus clientes. Por otro lado, quizás sus clientes tengan intereses especiales, y lo siguiente sería más apropiado:
+    </p>
+    <ul>
+      <li>Animado</li>
+      <li>Cine negro</li>
+      <li>Documental</li>
+      <li>Clásicos de culto</li>
+      <li>Películas mudas</li>
+    </ul>
+    <p><strong>Atletismo universitario</strong></p>
+    <p>
+      Puede ser que la gran cantidad de categorías en el nivel superior. Por ejemplo, hay 347 escuelas de la División 1 (generalmente grandes). Puede hacer que la pantalla de inicio de su aplicación enumere las 347 escuelas, pero es muy probable que algunos clientes encuentren que esa lista larga también se desplaza a través de una mala experiencia de usuario. Puede utilizar subcategorías o incluso subcategorías de subcategorías para facilitar la búsqueda de un conjunto particular de videos. A continuación se muestra una estructura parcial de posibles categorías para un sitio de atletismo universitario. Aquí la estructura sigue el <em>Conferencia -&gt; Escuela -&gt; Deporte</em> patrón organizativo:
+    </p>
+    <ul>
+      <li>
+        Conferencia sureste
         <ul>
-            <li>
-                Recientemente visto - Los 20 mejores vídeos con los marcadores más recientes
-            </li>
-            <li>
-                Más visto - Los 20 mejores vídeos basados en marcadores
-            </li>
-            <li>
-                Favoritos - Esta categoría se construye dinámicamente a medida que los clientes marcan los activos de vídeo como favoritos
-            </li>
+          <li>
+            Florida
+            <ul>
+              <li>Fútbol</li>
+              <li>Baloncesto</li>
+              <li>Vóleibol</li>
+              <li>...</li>
+            </ul>
+          </li>
+          <li>
+            Georgia
+            <ul>
+              <li>Fútbol</li>
+              <li>Baloncesto</li>
+              <li>Vóleibol</li>
+              <li>...</li>
+            </ul>
+          </li>
+          <li>...</li>
         </ul>
-        <p>
-            Ahora agregue las categorías de Brightcove Beacon deseadas a su lista, en la posición en la que desee verlas. Tenga en cuenta que es posible que tenga que utilizar los comandos de menú <strong>Insertar &gt; fila arriba</strong> y/o <strong>Insertar &gt; fila a continuación</strong> para dejar espacio para sus adiciones. El ejemplo alterado podría aparecer como:
-        </p>
-        <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/spreadsheet-prebuilt-added.png" alt=""/>
-        </figure>
-    </section>
-
-    <section class="bcls-section">
-        <h2 id="Do_you_want_to_feature_a_video_or_videos">
-            ¿Quieres que aparezca un vídeo o vídeos?
-        </h2>
-        <p>
-            Puede utilizar un vídeo o un conjunto de vídeos. Los vídeos destacados aparecen en la parte superior de la aplicación y la miniatura de los vídeos es más grande. Aquí puedes ver una aplicación con un conjunto de seis vídeos destacados (puedes decir el número de vídeos por los puntos debajo del carrusel):
-        </p>
-        <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/featured-videos.png" alt="vídeos destacados"/>
-        </figure>
-        <p>
-            En la hoja de cálculo, localiza la opción <strong>¿Qué quieres que aparezca, en todo caso?</strong> célula. En la celda a la derecha de esa pregunta detalla lo que le gustaría que se mostrara, en todo caso.
-        </p>
-    </section>
-    <section class="bcls-section">
-        <h2 id="Moving_forward">Avanzando</h2>
-        <p>
-            Ya ha completado esta tarea. Asegúrese de guardar la hoja de cálculo en la que ha estado trabajando para enviarla posteriormente al personal de Brightcove cuando se construya su Brightcove Beacon Experience.
-        </p>
-        <p>
-            Si no lo ha hecho, debe completar la otra parte de la definición del diseño de la aplicación trabajando a través de las opciones <a href="/getting-started/creating-your-app-design-layout-options.html"> Creating Your Application Design - Layout Options para seleccionar sus opciones </a> para diseños específicos de la pantalla de la aplicación.
-        </p>
-    </section>
+      </li>
+      <li>
+        Conferencia Pac-12
+        <ul>
+          <li>
+            Arizona
+            <ul>
+              <li>Fútbol</li>
+              <li>Baloncesto</li>
+              <li>Vóleibol</li>
+              <li>...</li>
+            </ul>
+          </li>
+          <li>
+            Oregón
+            <ul>
+              <li>Fútbol</li>
+              <li>Baloncesto</li>
+              <li>Vóleibol</li>
+              <li>...</li>
+            </ul>
+          </li>
+          <li>...</li>
+        </ul>
+      </li>
+      <li>...</li>
+    </ul>
+    <p>
+      Si cree que el deporte, en lugar de la conferencia, es lo más importante para sus clientes, tal vez debería cambiar la categorización para seguir las <em>Deporte -&gt; Conferencia -&gt; Escuela</em> patrón organizativo.
+    </p>
+    <h3>Tus categorias</h3>
+    <p>
+      A partir de los ejemplos, puede ver que decidir las categorías y la estructura de la organización puede ser una tarea sencilla o muy compleja. Debe considerar tanto su contenido como a sus clientes para un diseño óptimo. Es imperativo que se tome el tiempo para pensar en la estructura organizativa y las categorías de sus videos.
+    </p>
+    <h3>Grabe sus categorías</h3>
+    <p>
+      Ahora que ha determinado sus categorías, las ingresará en la hoja de cálculo. Ingréselos EN EL ORDEN EN QUE QUIERES QUE APARECEN en la aplicación. En la hoja de cálculo, ingrese sus categorías ordenadas comenzando en la celda B1, luego B2, etc. Un ejemplo simple aparece como: </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/spreadsheet-categories-entered.png" alt="" />
+    </figure>
+    <p>
+      Es posible que desee agrupar algunas de sus listas de reproducción, como se muestra en esta captura de pantalla con pestañas para <strong>Costa escénica de Oregon</strong> , <strong>Show de viajes</strong> y <strong>Show de cocina VC</strong> .
+    </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/tabbed-block.png" alt="" />
+    </figure>
+    <p>
+      Si desea que las listas de reproducción se muestren de tal manera que solo se muestre una en la aplicación a la vez, y el espectador debe actuar para ver las demás, represente esto en su hoja de cálculo colocándolas horizontalmente, como se muestra aquí: </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/spreadsheet-categories-horizontal-group.png" alt="" />
+    </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="What_Brightcove_Beacon_built_categories_do_you_want"> ¿Qué categorías creadas por Brightcove Beacon desea?
+    </h2>
+    <p>
+      Brightcove Beacon puede proporcionar tres categorías que puede elegir incluir o no. Ellos son:
+    </p>
+    <ul>
+      <li>
+        Visto recientemente: los 20 videos principales con los marcadores más recientes </li>
+      <li>
+        Más vistos: los 20 videos principales basados en marcadores </li>
+      <li>
+        Favoritos: esta categoría se crea dinámicamente a medida que los clientes marcan los activos de video como favoritos.
+      </li>
+    </ul>
+    <p>
+      Ahora agregue las categorías de Brightcove Beacon que desee a su lista, en la posición en la que desea verlas. Tenga en cuenta que es posible que deba utilizar los comandos del menú <strong>Insertar&gt; Fila arriba</strong> y / o <strong>Insertar&gt; Fila debajo</strong> para hacer espacio para sus adiciones. El ejemplo modificado podría aparecer como:
+    </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/spreadsheet-prebuilt-added.png" alt="" />
+    </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Do_you_want_to_feature_a_video_or_videos"> ¿Quieres presentar un video o videos?
+    </h2>
+    <p>
+      Puede presentar un video o un conjunto de videos. Los videos destacados aparecen en la parte superior de su aplicación y la miniatura de los videos es más grande. Aquí puede ver una aplicación con un conjunto de seis videos destacados (puede saber la cantidad de videos por los puntos debajo del carrusel): </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/featured-videos.png" alt="featured videos" />
+    </figure>
+    <p>
+      En la hoja de cálculo, ubique el <strong>¿Qué quieres que aparezca, en todo caso?</strong> célula. En la celda a la derecha de esa pregunta, detalle lo que le gustaría que apareciera, en todo caso.
+    </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Moving_forward">Avanzando</h2>
+    <p>
+      Ahora ha completado esta tarea. Asegúrese de guardar la hoja de cálculo en la que ha estado trabajando para enviarla posteriormente al personal de Brightcove cuando se cree Brightcove Beacon Experience.
+    </p>
+    <p>
+      Si no lo ha hecho, debe completar la otra parte de la definición del diseño de su aplicación trabajando a través del <a href="/getting-started/creating-your-app-design-layout-options.html"> Creación del diseño de su aplicación: opciones de diseño </a> para seleccionar sus opciones para diseños de pantalla de aplicaciones específicas.
+    </p>
+    <h3>Diseño de página</h3>
+    <p>También debería empezar a pensar en cómo le gustaría que se vieran las páginas individuales. Por ejemplo, aquí hay una página de inicio de ejemplo:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/using-bcb/introducing-pages/home-page-example.png" alt="home page example">
+    </figure>
+    <p>Para obtener detalles sobre las opciones de diseño de página, consulte el <a href="/using-brightcove-beacon/introducing-pages.html">Presentación de páginas</a> documento. Aquí se detallan los diferentes tipos de página que puede usar, junto con el diseño del contenido de video en esas páginas.</p>
+  </section>
 </article>
-
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@1.2.5/dist/js/splide.min.js"></script>
-
 <script>
-    var mySplide = new Splide('.splide', {
-        width: '60%',
-        perPage: 2,
-        perMove: 1,
-    })
-    mySplide.mount()
-
-    var mySplide2 = new Splide('.splide2', {
-        width: '60%',
-        perPage: 2,
-        perMove: 1,
-    })
-    mySplide2.mount()
-
-    var mySplide3 = new Splide('.splide3', {
-        width: '90%',
-        perPage: 2,
-        perMove: 1,
-        arrows: false,
-    })
-    mySplide3.mount()
-
-    var mySplide4 = new Splide('.splide4', {
-        width: '90%',
-        perPage: 2,
-        perMove: 1,
-    })
-    mySplide4.mount()
-
-    var mySplide5 = new Splide('.splide5', {
-        width: '90%',
-        perPage: 2,
-        perMove: 1,
-    })
-    mySplide5.mount()
-
-    var mySplide6 = new Splide('.splide6', {
-        width: '60%',
-        perPage: 2,
-        perMove: 1,
-    })
-    mySplide6.mount()
-
-    var mySplide7 = new Splide('.splide7', {
-        width: '60%',
-        perPage: 2,
-        perMove: 1,
-        arrows: false,
-    })
-    mySplide7.mount()
+  var mySplide = new Splide ('. splide', { width: '60%', perPage: 2, perMove: 1, } ) mySplide.mount () var mySplide2 = new Splide ('. splide2', { width: '60%', perPage: 2, perMove: 1, } ) mySplide2.mount () var mySplide3 = new Splide ('. splide3', { width: '90%', perPage: 2, perMove: 1, arrows: false, } ) mySplide3.mount () var mySplide4 = new Splide ('. splide4', { width: '90%', perPage: 2, perMove: 1, } ) mySplide4.mount () var mySplide5 = new Splide ('. splide5', { width: '90%', perPage: 2, perMove: 1, } ) mySplide5.mount () var mySplide6 = new Splide ('. splide6', { width: '60%', perPage: 2, perMove: 1, } ) mySplide6.mount () var mySplide7 = new Splide ('. splide7', { width: '60%', perPage: 2, perMove: 1, arrows: false, } ) mySplide7.mount ()
 </script>
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Contenido de la página</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
-    </div>
-  </div>
-</div>
-
-<hr>
-<div class="last-updated">
-  Última actualización de la página el 29 oct 2020
-</div>
-
-
-
-<footer class="bcls-footer" role="contentinfo">
-  <div class="row">
-    <div class="region region-footer-top-center col-md-12">
-      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-
-        <h2>Asistencia técnica de Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            Estado del sistema<a href="https://status.brightcove.com"></a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
-          </li>
-          <li>
-            <a href="https://support.brightcove.com/">Documentación</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-
-        <h2>Formación</h2>
-
-        <ul class="menu">
-          <li>
-            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
-          </li>
-          <li>
-            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
-          </li>
-          <li>
-            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-
-        <h2>Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://www.brightcove.com">BrightCove.com</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="region region-footer-bottom-center col-md-12">
-      <div class="bcls-copyright footer-menu">
-        <table>
-          <tr>
-            <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
-            </td>
-            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
-            <td>
-              <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</footer>
-<div id="talla_wrapper">
-  <p style="text-align: right;position: relative;"><button style="background:rgb(2, 28, 146);color:Snow;padding:.3rem;position:fixed;right:0;bottom:1em;z-index:9999999" onclick="javascript:displayChat()">¿Tiene alguna pregunta? </button> </p>
-  <div id="talla_chat">
-</div>
-</div>
-<script>
-      
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
-  
-
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
-  <script src="/assets/js/sites_nav.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
-  <script src="/assets/js/feedback.js"></script>
-  
-  <script src="/assets/js/sajari-search-foot.js"></script>
-  
-  <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <script src="https://assets.talla.com/latest/embeddedjs/talla.js"></script>
-  <script src="/assets/js/talla-init.js"></script>
-  <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
-    </style>
-
-</body>
-
-</html>

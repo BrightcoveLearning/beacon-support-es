@@ -1,0 +1,17 @@
+---
+title: Beacon Web Store
+description: Beacon Web Store es un servicio que permite a los licenciatarios de Beacon implementar suscripciones en tiendas web Bring Your Own (BYO).
+parent: home
+---
+ <h1>{{ page.title }}</h1>
+<article class="landing-page-wrapper">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-topic-list">
+    <h2 id="Topics_in_this_section">Temas en {{ page.title }}</h2>
+    <ul>
+      {% for item in site.data.navigation %} {% if item.name == page.title %} {% for doc in item.docs %}
+      <li><a href="{{ doc.url }}">{{ doc.name }}</a></li>
+      {% endfor %} {% endif %} {% endfor %}
+    </ul>
+  </section>
+</article>

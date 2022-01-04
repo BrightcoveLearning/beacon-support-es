@@ -1,1100 +1,357 @@
-﻿<!DOCTYPE html>
-<html lang="es-es">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
+---
+title: "Creación de su diseño de aplicación - Opciones de diseño"
+description: "En este tema, responderá una serie de preguntas, registrando las respuestas en una hoja de cálculo, que lo llevarán al aspecto del diseño de su aplicación Brightcove Beacon Experience".
 
-    <title>Creación de su diseño de aplicación - Opciones de diseño</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
-      <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://support.brightcove.com/site-assets/css/site/prism.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://support.brightcove.com/site-assets/css/site/styles.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://support.brightcove.com/site-assets/css/site/landing-page.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://support.brightcove.com/site-assets/css/site/tabs.css"
-    />
-    <link rel="stylesheet" href="/assets/css/local.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/381443caa8.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-    <script src="/assets/js/sajari-head.js"></script>
-  </head>
-
-  <body class="body"></body>
-</html>
-
-<header>
-  <div class="div-header">
-    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Beacon_Logo.svg" alt="logotipo del producto" style="max-height: 100px;max-width: 232px;"/></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-    
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
-    
-  </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
-      
-      
-      
-      <li class="breadcrumb-item"><a href="/getting-started/">Introducción</a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">Creación de su diseño de aplicación - Opciones de diseño</li>
-    </ol>
-  </nav>
-</header>
-<div class="container">
-  <div class="row">
-          <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Otros documentos de Brightcove</option>
-          
-            
-              <option value="https://support.brightcove.com">Documentación Inicio</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove Live</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove Social</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
-      <nav class="sidenav" id="side_nav">
-        
-        
-        <h5><a href="/index.html">Inicio</a></h5>
-        
-        
-        
-        <h5 class="submenu-header"><a href="/getting-started/index.html">Empezar <strong>+</strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          <li>Guía de aprendizaje<a href="/getting-started/learning-guide-bc-beacon.html"></a></li>
-          
-          
-          
-          <li><a href="/getting-started/implementation-phases.html">Fases de implementación</a></li>
-          
-          
-          
-          <li><a href="/getting-started/app-design-considerations.html">Consideraciones de diseño de aplicaciones</a></li>
-          
-          
-          
-          <li><a href="/getting-started/creating-your-app-design-info-architecture.html">Diseño de aplicaciones - Info Architecture</a></li>
-          
-          
-          
-          <li><a href="/getting-started/creating-your-app-design-layout-options.html">Diseño de aplicaciones - Opciones de diseño</a></li>
-          
-          
-          
-          <li><a href="/getting-started/design-best-practices.html">Prácticas recomendadas de diseño</a></li>
-          
-          
-        </ul>
-        
-        
-        
-        <h5 class="submenu-header">Sincronización con Video Cloud +<a href="/syncing-with-video-cloud/index.html"><strong></strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          <li><a href="/syncing-with-video-cloud/vc-custom-fields.html">Creación de campos personalizados de Video Cloud</a></li>
-          
-          
-          
-          <li><a href="/syncing-with-video-cloud/forcing-a-sync.html">Forzar una sincronización</a></li>
-          
-          
-        </ul>
-        
-        
-        
-        <h5 class="submenu-header">Uso de Brightcove Beacon +<a href="/using-brightcove-beacon/index.html"><strong></strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          <li><a href="/using-brightcove-beacon/adding-to-page.html">Agregar un carrusel a una página</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/creating-a-channel.html">Creación de un canal</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/electronic-program-guides.html">Creación de una Guía Electrónica de Programas (EPG)</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/creating-a-page.html">Creación de una nueva página</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/creating-a-playlist.html">Creación de una lista de reproducción</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/creating-subscription-package.html">Creación de un paquete de suscripción</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/promo-codes.html">Creación de Códigos Promocionales</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/series-seasons-episodes.html">Creación de serie/Temporadas/Episodios</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/configuring-server-side-ad-settings.html">Configuración de la configuración de anuncios del lado del servidor</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/implementing-authvod.html">Implementación de AuthVoD</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/live-ssai.html">Implementación de SSAI en vivo</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/vod-ssai.html">Implementación de VOD SSAI</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/including-non-configurable-pages.html">Incluyendo páginas no configurables</a></li>
-          
-          
-          
-          <li><a href="/using-brightcove-beacon/introducing-pages.html">Presentando páginas</a></li>
-          
-          
-          
-          <li>Transmisión de un evento en directo<a href="/using-brightcove-beacon/streaming-live-event.html"></a></li>
-          
-          
-          
-          <li>Transmisión de VOD a un canal<a href="/using-brightcove-beacon/streaming-vods-to-a-channel.html"></a></li>
-          
-          
-          
-          <li>Descripción de las opciones de monetización<a href="/using-brightcove-beacon/monetization-options.html"></a></li>
-          
-          
-          
-          <li>Uso de un paquete de suscripción<a href="/using-brightcove-beacon/using-subscription-package.html"></a></li>
-          
-          
-          
-          <li>Uso de las herramientas<a href="/using-brightcove-beacon/tools.html"></a></li>
-          
-          
-          
-          <li>Visualización de datos de análisis<a href="/using-brightcove-beacon/viewing-analytics-data.html"></a></li>
-          
-          
-        </ul>
-        
-        
-        
-        <h5 class="submenu-header"><a href="/creating-your-apps/index.html">Creación de aplicaciones <strong>+</strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          <li class="submenu-header">
-            <a href="/creating-your-apps/android/index.html"> <strong>Android+</strong></a>
-            <ul class="sidenav-subsubmenu" style="display:none;">
-              
-              <li>Envío de nuevas aplicaciones a la Tienda Android<a href="/creating-your-apps/android/submitting-to-android.html"></a></li>
-              
-              <li>Actualización de aplicaciones de Android a Brightcove Beacon<a href="/creating-your-apps/android/updating-android-apps-to-bcb.html"></a></li>
-              
-              <li><a href="/creating-your-apps/android/adding-subscriptions-in-android.html">Agregar suscripciones a Android</a></li>
-              
-              <li><a href="/creating-your-apps/android/improving-relevance-android.html">Mejorar la relevancia de la búsqueda en Android Play Store</a></li>
-              
-              <li><a href="/creating-your-apps/android/installing-android-test-build.html">Instalación de una compilación de prueba de Android</a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li class="submenu-header">
-            <a href="/creating-your-apps/fire-tv/index.html">Fire TV <strong>+</strong></a>
-            <ul class="sidenav-subsubmenu" style="display:none;">
-              
-              <li><a href="/creating-your-apps/fire-tv/installing-fire-tv-test-build.html">Instalación de una compilación de prueba de Fire TV</a></li>
-              
-              <li>Enviar a la Tienda Amazon<a href="/creating-your-apps/fire-tv/submitting-to-amazon.html"></a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li class="submenu-header">
-            <a href="/creating-your-apps/ios-tvos/index.html">IOS/tvOS <strong>+</strong></a>
-            <ul class="sidenav-subsubmenu" style="display:none;">
-              
-              <li><a href="/creating-your-apps/ios-tvos/installing-ios-test-build.html">Instalación de una compilación de pruebas de iOS/tvOS</a></li>
-              
-              <li>Enviar a la Apple Store<a href="/creating-your-apps/ios-tvos/submitting-to-apple.html"></a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li class="submenu-header">
-            Panasonic +<a href="/creating-your-apps/panasonic/index.html"><strong></strong></a>
-            <ul class="sidenav-subsubmenu" style="display:none;">
-              
-              <li>Envío a la Tienda Panasonic<a href="/creating-your-apps/panasonic/submitting-to-panasonic.html"></a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li class="submenu-header">
-            Roku +<a href="/creating-your-apps/roku/index.html"><strong></strong></a>
-            <ul class="sidenav-subsubmenu" style="display:none;">
-              
-              <li><a href="/creating-your-apps/roku/configuring-inchannel-products.html">Configuración de Productos In-Channel en Roku</a></li>
-              
-              <li><a href="/creating-your-apps/roku/installing-roku-test-build.html">Instalación de una compilación de prueba de Roku</a></li>
-              
-              <li>Envío a la tienda Roku<a href="/creating-your-apps/roku/submitting-to-roku.html"></a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li class="submenu-header">
-            Samsung +<a href="/creating-your-apps/samsung/index.html"><strong></strong></a>
-            <ul class="sidenav-subsubmenu" style="display:none;">
-              
-              <li><a href="/creating-your-apps/samsung/samsung-partner.html">Convertirse en un socio de Samsung</a></li>
-              
-              <li>Envío a la Tienda Samsung<a href="/creating-your-apps/samsung/submitting-to-samsung.html"></a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li><a href="/creating-your-apps/common-required-info.html">Información común requerida</a></li>
-          
-          
-          
-          <li><a href="/creating-your-apps/device-apps-validation-guide.html">Guía de validación de aplicaciones de dispositivo</a></li>
-          
-          
-        </ul>
-        
-        
-        
-        <h5 class="submenu-header">Referencias +<a href="/references/index.html"><strong></strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          <li><a href="/references/common-configuration-settings.html">Parámetros de configuración comunes</a></li>
-          
-          
-          
-          <li><a href="/references/creating-stripe-account.html">Creación de una cuenta de Stripe</a></li>
-          
-          
-          
-          <li><a href="/references/glossary.html">Glosario</a></li>
-          
-          
-          
-          <li><a href="/references/image-requirements.html">Imágenes y sus especificaciones</a></li>
-          
-          
-          
-          <li>Problemas conocidos<a href="/references/known-issues.html"></a></li>
-          
-          
-          
-          <li>Actualizaciones de productos<a href="/references/product-updates.html"></a></li>
-          
-          
-        </ul>
-        
-        
-        
-        <h5 class="submenu-header">Entrenamiento +<a href="/training/index.html"><strong></strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          <li>Uso de vídeos de Video Cloud o Campos personalizados<a href="/training/training-demand-custom-fields.html"></a></li>
-          
-          
-          
-          <li><a href="/training/training-demand-design-layout.html">Diseño del diseño de la aplicación</a></li>
-          
-          
-          
-          <li><a href="/training/training-demand-playlists.html">Creación y uso de listas de reproducción</a></li>
-          
-          
-          
-          <li><a href="/training/training-demand-series-seasons-episodes.html">Creación de series, temporadas y episodios</a></li>
-          
-          
-          
-          <li><a href="/training/training-demand-vod-ssai.html">Implementación de anuncios VOD del lado del servidor</a></li>
-          
-          
-          
-          <li>Publicación de la aplicación Android en Play Store<a href="/training/training-demand-publish-android-app.html"></a></li>
-          
-          
-          
-          <li>Visualización de datos de análisis<a href="/training/training-demand-viewing-analytics.html"></a></li>
-          
-          
-        </ul>
-        
-        
-        
-        <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
-        <ul class="sidenav-submenu" style="display:none;">
-          
-          
-          
-          
-          
-          
-          <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
-          
-          
-          
-          <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
-          
-          
-          
-          <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
-          
-          
-        </ul>
-        
-        
-      </nav>
-    </div>
-    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
-      <!-- bootstrap layout -->
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">Contenido de la página</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
+parent: "getting-started"
+---
 
 
 <style media="screen">
-    .small_image p {
-        color: red;
-    }
+  .small_image p { color: red; }
 </style>
-
 <link href="/assets/css/splide.min.css" rel="stylesheet" />
-
 <style media="screen">
-    .splide {
-        background-color: #dcf3fb;
-        padding: 1em;
-    }
+  .splide { background-color: #dcf3fb; padding: 1em; }
 </style>
 
+<h1>{{ page.title }}</h1>
 <article class="bcls-article">
-    <h1>Creación de su diseño de aplicación - Opciones de diseño</h1>
-    <summary>
-        En este tema, contestará una serie de preguntas, grabando respuestas en una hoja de cálculo, que le guiarán al aspecto del diseño de su aplicación Brightcove Beacon Experience.
-    </summary>
-    <section class="bcls-section">
-        <h2 id="Introduction">Introducción</h2>
-        <p>
-            Este documento le llevará a través de una serie de preguntas sobre cómo desea que aparezca el diseño de Brightcove Beacon Experience. El resultado de responder a estas preguntas le ayudará a crear el diseño de su aplicación para Brightcove Beacon Experience. Un ejemplo muy simple de lo que desea definir para su aplicación se muestra aquí:
-        </p>
+  <summary>{{ page.description }}</summary>
+
+  <section class="bcls-section">
+    <h2 id="Introduction">Introducción</h2>
+    <p>
+      Este documento lo guiará a través de una serie de preguntas sobre cómo desea que aparezca el diseño de su Brightcove Beacon Experience. El resultado de responder estas preguntas le ayudará a crear el diseño de su aplicación para Brightcove Beacon Experience. Aquí se muestra un ejemplo muy simple de lo que desea tener definido para su aplicación: </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/top-level-example.png" alt="" />
+    </figure>
+    <p>
+      Es posible que no tenga experiencia en el diseño de una UX para una aplicación OTT. En la última sección de este documento, <a href="#Is_guidance_available">¿Hay orientación disponible?</a> , una lista de proveedores' se muestra un consejo. Es posible que desee leer y considerar su orientación antes de diseñar su interfaz de usuario.
+    </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Recording_your_categories/selections"> Grabación de sus categorías / selecciones </h2>
+    <p>
+      Registrará sus decisiones mientras trabaja con este documento en una hoja de cálculo. Para preparar la hoja de cálculo, siga estos pasos: </p>
+    <ol class="bcls-tasklist">
+      <li>
+        Descargue una plantilla haciendo clic en este enlace: <a href="https://solutions.brightcove.com/bcls/bcbeacon/app-design-layout-options.xlsx"> app-design-layout-options.xlsx </a>. Asegúrese de recordar dónde se guarda.
+      </li>
+      <li>Abra una hoja de cálculo en blanco desde la aplicación Hojas de cálculo de Google.</li>
+      <li>
+        En el menú de Hojas de cálculo de Google, seleccione <strong>Archivo&gt; Importar</strong> .
+      </li>
+      <li>
+        En el cuadro de diálogo que aparece, primero elija <strong>Subir</strong> luego haga clic en el <strong>Seleccione un archivo de su dispositivo</strong> botón, como se muestra aquí:
         <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/top-level-example.png" alt=""/>
+          <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/import-upload.png" alt="" />
         </figure>
-        <p>
-            Es posible que no tenga experiencia en el diseño de una UX para una aplicación OTT. En la última sección de este documento, <a href="#Is_guidance_available">¿está disponible orientación?</a> , se muestra una lista de consejos de los proveedores. Es posible que desee leer y considerar su orientación antes de diseñar su interfaz de usuario.
-        </p>
-    </section>
-
-    <section class="bcls-section">
-        <h2 id="Recording_your_categories/selections">
-            Grabar sus categorías/selecciones
-        </h2>
-        <p>
-            Registrará sus decisiones a medida que trabaje en este documento en una hoja de cálculo. Para preparar la hoja de cálculo siga estos pasos:
-        </p>
-        <ol class="bcls-tasklist">
-            <li>
-                Descargue una plantilla haciendo clic en este enlace: <a href="https://solutions.brightcove.com/bcls/bcbeacon/app-design-layout-options.xlsx"> app-design-layout-options.xlsx </a>. Asegúrese de recordar dónde se guarda.
-            </li>
-            <li>Abre una hoja de cálculo en blanco desde la aplicación Hojas de cálculo de Google.</li>
-            <li>
-                En el menú Hojas de cálculo de Google, selecciona <strong>&gt; Importar archivos</strong> .
-            </li>
-            <li>
-                En el cuadro de diálogo que aparece, primero elija <strong>Cargar</strong> y luego haga clic en el botón <strong>Seleccionar un archivo de su dispositivo</strong> , como se muestra aquí:
-                <figure class="bcls-figure">
-                    <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/import-upload.png" alt=""/>
-                </figure>
-            </li>
-            <li>
-                Busque el archivo Excel que acaba de descargar, selecciónelo y, a continuación, haga clic en <strong>Abrir</strong> .
-            </li>
-            <li>
-                En el cuadro de diálogo <strong>Importar archivo</strong> que aparece, elija <strong>Reemplazar hoja de cálculo y, a continuación,</strong> haga clic en el botón <strong>Importar datos</strong> .
-                <figure class="bcls-figure">
-                    <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/import-file-dialog.png" alt=""/>
-                </figure>
-            </li>
-            <li>
-                Después de importar la hoja de cálculo, verá algo similar a lo siguiente:
-                <figure class="bcls-figure">
-                    <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/imported-layout-options.png" alt=""/>
-                </figure>
-            </li>
-        </ol>
-        <p>
-            En la hoja de cálculo registrará las respuestas a las preguntas de este documento. Hará selecciones de las listas desplegables indicando su elección de diseño para una pantalla.
-        </p>
-        <p>
-            Al final de este proceso, compartirá la hoja de cálculo de Google completada con el representante de Brightcove, lo que le ayudará a configurar su experiencia.
-        </p>
-    </section>
-
-    <section class="bcls-section">
-        <h2 id="Choosing_site_layout_options">Elegir opciones de diseño del sitio</h2>
-        <p>
-            A continuación se proporcionan opciones de diseño para diferentes partes de la aplicación. Las imágenes mostradas, y de las que elegirá su preferencia, provienen de una aplicación móvil. Por supuesto, las pantallas para televisión o web se verán ligeramente diferentes. Por ejemplo, primero se muestra a continuación una pantalla de detalles de película de una aplicación móvil, seguida de la misma pantalla de detalles de película de la aplicación Apple TV.
-        </p>
-
+      </li>
+      <li>
+        Busque el archivo de Excel que acaba de descargar, selecciónelo y haga clic en <strong>Abierto</strong> .
+      </li>
+      <li>
+        Desde el <strong>Importar archivo</strong> cuadro de diálogo que aparece, elija <strong>Reemplazar hoja de cálculo,</strong> luego haga clic en el <strong>Datos de importacion</strong> botón.
         <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/movie-details-a-mobile.png" alt="detalles de la película un móvil"/>
+          <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/import-file-dialog.png" alt="" />
         </figure>
+      </li>
+      <li>
+        Después de importar la hoja de cálculo, verá algo similar a lo siguiente:
         <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/movie-details-a-appletv.png" alt="detalles de la película un Apple TV"/>
+          <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/imported-layout-options.png" alt="" />
         </figure>
-
-        <p>
-            Ahora es su momento de comenzar a elegir opciones. A continuación se proporcionan opciones de diseño para diferentes partes de la aplicación. Revise las opciones para el diseño concreto y, a continuación, grabe su selección en la hoja de cálculo.
-        </p>
-
-        <h3>Página de destino</h3>
-        <p>
-            La página de destino es opcional. Si desea que una página de destino elija su diseño, de lo contrario elija <strong>Ninguno.</strong> Tenga en cuenta que no hay página de destino en la aplicación web. Hay dos opciones entre las que elegir.<strong></strong>
-        </p>
-        <div class="splide7">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Desembarco A</p>
-                            <img src="/assets/images/getting-started/creating-app-design/landing_A.png" alt="aterrizaje_a"/>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Carrusel de aterrizaje</p>
-                            <img src="/assets/images/getting-started/creating-app-design/landing_carousel.png" alt="aterrizaj_carrusel"/>
-                        </div>
-                    </li>
-                </ul>
+      </li>
+    </ol>
+    <p>
+      En la hoja de cálculo registrará las respuestas a las preguntas de este documento. Hará selecciones de listas desplegables indicando su elección de diseño para una pantalla.
+    </p>
+    <p>
+      Al final de este proceso, compartirá su hoja de Google completada con el representante de Brightcove que lo ayudará a configurar su experiencia.
+    </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Choosing_site_layout_options">Elegir opciones de diseño del sitio</h2>
+    <p>
+      A continuación, se proporcionan opciones de diseño para diferentes partes de su aplicación. Las imágenes que se muestran, y entre las que elegirá su preferencia, son de una aplicación móvil. Por supuesto, las pantallas de TV o web se verán ligeramente diferentes. Por ejemplo, lo primero que se muestra a continuación es una pantalla de detalles de película de una aplicación móvil, seguida de la misma pantalla de detalles de película de la aplicación Apple TV.
+    </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/movie-details-a-mobile.png" alt="movie details a mobile" />
+    </figure>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/movie-details-a-appletv.png" alt="movie details a apple tv" />
+    </figure>
+    <p>
+      Ahora es el momento de empezar a elegir opciones. A continuación, se proporcionan opciones de diseño para diferentes partes de su aplicación. Revise las opciones para el diseño en particular, luego registre su selección en la hoja de cálculo.
+    </p>
+    <h3>Página de destino</h3>
+    <p>
+      La página de destino es opcional. Si desea tener una página de destino, elija su diseño; de lo contrario, elija <strong>Ninguno</strong>. Tenga en cuenta que no hay una página de destino en la aplicación web. Existen <strong>dos</strong> opciones entre las que elegir.
+    </p>
+    <div class="splide7">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Aterrizaje A</p>
+              <img src="/assets/images/getting-started/creating-app-design/landing_A.png" alt="landing_A" />
             </div>
-        </div>
-
-        <h3>Página de detalles de la película</h3>
-        <p>
-            La página de detalles de la película muestra detalles de una película concreta y una lista de películas relacionadas. Hay cuatro opciones entre las que elegir.<strong></strong>
-        </p>
-        <div class="splide">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Detalles de la película A</p>
-                            <img src="/assets/images/getting-started/creating-app-design/movies_details_A.png" alt="Películas_Details_A"/>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Detalles de la película F</p>
-                            <img src="/assets/images/getting-started/creating-app-design/movies_details_F.png" alt="Películas_Details_F"/>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Detalles de la película G</p>
-                            <img src="/assets/images/getting-started/creating-app-design/movie_details_G.png" alt="Movie_Details_G"/>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Detalles de la película H</p>
-                            <img src="/assets/images/getting-started/creating-app-design/movie_details_H.png" alt="Movie_Details_H"/>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <h3>Página de detalles de la serie</h3>
-        <p>
-            La página de detalles de la serie muestra detalles de una serie concreta y una lista de películas relacionadas. Hay cuatro opciones entre las que elegir.<strong></strong>
-        </p>
-
-        <div class="splide2">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Detalles de la serie A</p>
-                            <img src="/assets/images/getting-started/creating-app-design/series_details_A.png" alt="series_Details_A"/>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Detalles de la serie F</p>
-                            <img src="/assets/images/getting-started/creating-app-design/series_details_F.png" alt="Series_Details_F"/>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Detalles de la serie G</p>
-                            <img src="/assets/images/getting-started/creating-app-design/series_details_G.png" alt="Series_Details_G"/>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Detalles de la serie H</p>
-                            <img src="/assets/images/getting-started/creating-app-design/series_details_H.png" alt="Series_Details_H"/>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <h3>TV en directo</h3>
-        <p>
-            El cliente puede comprobar lo que se está reproduciendo ahora y qué se reproducirá a continuación en el canal seleccionado. Hay dos opciones entre las que elegir.<strong></strong>
-        </p>
-        <div class="splide3">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>TV en directo D</p>
-                            <img src="/assets/images/getting-started/creating-app-design/live_tv_D.png" alt="Live_TV_d"/>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>TV en directo E</p>
-                            <img src="/assets/images/getting-started/creating-app-design/live_tv_E.png" alt="Live_TV_E"/>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <h3>Reproductor</h3>
-        <p>
-            Los controles del reproductor aparecen diferentes, así como otros vídeos de la serie, si los hay. Hay cuatro opciones entre las que elegir.<strong></strong>
-        </p>
-        <div class="splide4">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Jugador A</p>
-                            <img src="/assets/images/getting-started/creating-app-design/player_A.png" alt="Jugador_a"/>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Jugador B</p>
-                            <img src="/assets/images/getting-started/creating-app-design/player_B.png" alt="Jugador_B"/>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Jugador C</p>
-                            <img src="/assets/images/getting-started/creating-app-design/player_C.png" alt="Jugador_c"/>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Jugador D</p>
-                            <img src="/assets/images/getting-started/creating-app-design/player_D.png" alt="Jugador_d"/>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <h3>Reproductor de TV en vivo</h3>
-        <p>
-            Reproductor utilizado cuando se está reproduciendo TV en directo. Hay tres opciones entre las que elegir.<strong></strong>
-        </p>
-        <div class="splide5">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Jugador en vivo A</p>
-                            <img src="/assets/images/getting-started/creating-app-design/live_player_A.png" alt="Live_Player_a"/>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Jugador en vivo B</p>
-                            <img src="/assets/images/getting-started/creating-app-design/live_player_B.png" alt="Live_Player_B"/>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Jugador en vivo D</p>
-                            <img src="/assets/images/getting-started/creating-app-design/live_player_D.png" alt="Live_player_d"/>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <h3>Configuración del cliente</h3>
-        <p>
-            Muestra las opciones de configuración de los clientes. Hay tres opciones entre las que elegir.<strong></strong>
-        </p>
-        <div class="splide6">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Configuración A</p>
-                            <img src="/assets/images/getting-started/creating-app-design/settings_A.png" alt="Configuraciones_a"/>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Configuración Carrusel</p>
-                            <img src="/assets/images/getting-started/creating-app-design/settings_carousel.png" alt="configuraciones_carrusel"/>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="small_image">
-                            <p>Cuadrícula</p>
-                            <img src="/assets/images/getting-started/creating-app-design/settings_grid.png" alt="configuraciones_grid"/>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="bcls-section">
-        <h2 id="Optional_items">Artículos opcionales</h2>
-        <p>
-            En esta sección usted decidirá si desea incluir algunos elementos opcionales. En la hoja de cálculo responderás con <strong>Sí/No</strong> .
-        </p>
-
-        <h3>Ventana emergente de clasificación</h3>
-        <p>Determine si desea utilizar una ventana emergente de clasificación.</p>
-
-        <div class="small_image">
-            <img src="/assets/images/getting-started/creating-app-design/rating_popup.png" alt="popup rating_"/>
-        </div>
-
-        <h3>Más información emergente</h3>
-        <p>Determine si desea utilizar una ventana emergente Más información.</p>
-
-        <div class="small_image">
-            <img src="/assets/images/getting-started/creating-app-design/more_info_popup.png" alt="more_info_popup"/>
-        </div>
-
-        <h3>Acerca de la pantalla</h3>
-        <p>Determine si desea utilizar una pantalla Acerca de.</p>
-
-        <div class="small_image">
-            <img src="/assets/images/getting-started/creating-app-design/about.png" alt="sobre"/>
-        </div>
-    </section>
-
-    <section class="bcls-section">
-        <h2 id="Moving_forward">Avanzando</h2>
-        <p>
-            Has completado esta tarea. Asegúrese de guardar la hoja de cálculo en la que ha estado trabajando para enviarla posteriormente al personal de Brightcove cuando se construya su Brightcove Beacon Experience.
-        </p>
-        <p>
-            Si no lo ha hecho, debe completar la otra parte de la definición del diseño de la aplicación trabajando a través de <a href="/getting-started/creating-your-app-design-info-architecture.html"> Creating Your Application Design - Information Architecture </a> para determinar qué vídeos desea que se muestren y cómo agruparlos y ordenarlos.
-        </p>
-    </section>
-
-    <!-- TEMPLATE
-        <h3>Title</h3>
-        <p></p>
-
-        <div class="image_display">
-          <p>img</p>
-          <img src="//learning-services-media.brightcove.com/doc-assets/beacon/site-map/.png" alt="">
-        </div>
-        END TEMPLATE -->
-
-    <section class="bcls-section">
-        <h2 id="Is_guidance_available">¿Está disponible orientación?</h2>
-        <p>
-            El diseño UX es un asunto complicado, y es posible que desee ver lo que otros consideran al construir un diseño. Los siguientes son enlaces a algunos de los principales consejos de los actores OTT sobre diseño y mejores prácticas.
-        </p>
-        <ul>
-            <li>
-                Roku: <a href="https://developer.roku.com/docs/developer-program/design/best-practices.md"> Prácticas recomendadas de diseño </a>
-            </li>
-            <li>
-                Apple TV: <a href="https://developer.apple.com/design/human-interface-guidelines/tvos/overview/themes/"> Pautas de interfaz humana </a>
-            </li>
-            <li>
-                Fire TV: <a href="https://developer.amazon.com/docs/fire-tv/design-and-user-experience-guidelines.html"> Pautas de diseño y experiencia de usuario </a>
-            </li>
-            <li>
-                Android TV: <a href="https://developer.android.com/design/tv"> Diseño para Android TV </a>
-            </li>
-        </ul>
-    </section>
-</article>
-
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@1.2.5/dist/js/splide.min.js"></script>
-
-<script>
-    var mySplide = new Splide('.splide', {
-        width: '60%',
-        perPage: 2,
-        perMove: 1,
-    })
-    mySplide.mount()
-
-    var mySplide2 = new Splide('.splide2', {
-        width: '60%',
-        perPage: 2,
-        perMove: 1,
-    })
-    mySplide2.mount()
-
-    var mySplide3 = new Splide('.splide3', {
-        width: '90%',
-        perPage: 2,
-        perMove: 1,
-        arrows: false,
-    })
-    mySplide3.mount()
-
-    var mySplide4 = new Splide('.splide4', {
-        width: '90%',
-        perPage: 2,
-        perMove: 1,
-    })
-    mySplide4.mount()
-
-    var mySplide5 = new Splide('.splide5', {
-        width: '90%',
-        perPage: 2,
-        perMove: 1,
-    })
-    mySplide5.mount()
-
-    var mySplide6 = new Splide('.splide6', {
-        width: '60%',
-        perPage: 2,
-        perMove: 1,
-    })
-    mySplide6.mount()
-
-    var mySplide7 = new Splide('.splide7', {
-        width: '60%',
-        perPage: 2,
-        perMove: 1,
-        arrows: false,
-    })
-    mySplide7.mount()
-</script>
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Contenido de la página</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
-    </div>
-  </div>
-</div>
-
-<hr>
-<div class="last-updated">
-  Última actualización de la página el 29 oct 2020
-</div>
-
-
-
-<footer class="bcls-footer" role="contentinfo">
-  <div class="row">
-    <div class="region region-footer-top-center col-md-12">
-      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-
-        <h2>Asistencia técnica de Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            Estado del sistema<a href="https://status.brightcove.com"></a>
           </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
-          </li>
-          <li>
-            <a href="https://support.brightcove.com/">Documentación</a>
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Carrusel de aterrizaje</p>
+              <img src="/assets/images/getting-started/creating-app-design/landing_carousel.png" alt="landing_carousel" />
+            </div>
           </li>
         </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-
-        <h2>Formación</h2>
-
-        <ul class="menu">
-          <li>
-            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
-          </li>
-          <li>
-            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
-          </li>
-          <li>
-            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-
-        <h2>Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://www.brightcove.com">BrightCove.com</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="region region-footer-bottom-center col-md-12">
-      <div class="bcls-copyright footer-menu">
-        <table>
-          <tr>
-            <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
-            </td>
-            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
-            <td>
-              <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
       </div>
     </div>
-  </div>
-</footer>
-<div id="talla_wrapper">
-  <p style="text-align: right;position: relative;"><button style="background:rgb(2, 28, 146);color:Snow;padding:.3rem;position:fixed;right:0;bottom:1em;z-index:9999999" onclick="javascript:displayChat()">¿Tiene alguna pregunta? </button> </p>
-  <div id="talla_chat">
-</div>
-</div>
+    <h3>Página de detalles de la película</h3>
+    <p>
+      La página de detalles de la película muestra los detalles de una película en particular y una lista de películas relacionadas. Existen <strong>cuatro</strong> opciones entre las que elegir.
+    </p>
+    <div class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Detalles de la película A</p>
+              <img src="/assets/images/getting-started/creating-app-design/movies_details_A.png" alt="movies_details_A" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Detalles de la película F</p>
+              <img src="/assets/images/getting-started/creating-app-design/movies_details_F.png" alt="movies_details_F" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Detalles de la película G</p>
+              <img src="/assets/images/getting-started/creating-app-design/movie_details_G.png" alt="movie_details_G" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Detalles de la película H</p>
+              <img src="/assets/images/getting-started/creating-app-design/movie_details_H.png" alt="movie_details_H" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <h3>Página de detalles de la serie</h3>
+    <p>
+      La página de detalles de la serie muestra los detalles de una serie en particular y una lista de películas relacionadas. Existen <strong>dos</strong> opciones entre las que elegir.
+    </p>
+    <div class="splide2">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Detalles de la serie A</p>
+              <img src="/assets/images/getting-started/creating-app-design/series_details_A.png" alt="series_details_A" />
+            </div>
+          </li>
+          <!--           <li class="splide__slide">
+            <div class="small_image">
+              <p>Series Details F</p>
+              <img src="/assets/images/getting-started/creating-app-design/series_details_F.png" alt="series_details_F" />
+            </div>
+          </li> -->
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Detalles de la serie G</p>
+              <img src="/assets/images/getting-started/creating-app-design/series_details_G.png" alt="series_details_G" />
+            </div>
+          </li>
+          <!--           <li class="splide__slide">
+            <div class="small_image">
+              <p>Series Details H</p>
+              <img src="/assets/images/getting-started/creating-app-design/series_details_H.png" alt="series_details_H" />
+            </div>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+    <h3>Televisión en vivo</h3>
+    <p>
+      El cliente puede comprobar qué se está reproduciendo ahora y qué se reproducirá a continuación en el canal seleccionado. Hay <strong>uno</strong> opción, y se muestra aquí.
+    </p>
+    <div class="splide3">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>TV en vivo D</p>
+              <img src="/assets/images/getting-started/creating-app-design/live_tv_D.png" alt="live_tv_D" />
+            </div>
+          </li>
+          <!--           <li class="splide__slide">
+            <div class="small_image">
+              <p>Live TV E</p>
+              <img src="/assets/images/getting-started/creating-app-design/live_tv_E.png" alt="live_tv_E" />
+            </div>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+    <h3>Jugador</h3>
+    <p>
+      Los controles del reproductor parecen diferentes, así como otros videos de la serie, si los hay. Existen <strong>Tres</strong> opciones entre las que elegir.
+    </p>
+    <div class="splide4">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Jugador A</p>
+              <img src="/assets/images/getting-started/creating-app-design/player_A.png" alt="player_A" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Jugador B</p>
+              <img src="/assets/images/getting-started/creating-app-design/player_B.png" alt="player_B" />
+            </div>
+          </li>
+          <!--           <li class="splide__slide">
+            <div class="small_image">
+              <p>Player C</p>
+              <img src="/assets/images/getting-started/creating-app-design/player_C.png" alt="player_C" />
+            </div>
+          </li> -->
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Jugador D</p>
+              <img src="/assets/images/getting-started/creating-app-design/player_D.png" alt="player_D" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <h3>Reproductor de TV en vivo</h3>
+    <p>
+      Reproductor utilizado cuando se reproduce TV en vivo. Existen <strong>Tres</strong> opciones entre las que elegir.
+    </p>
+    <div class="splide5">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Jugador en vivo A</p>
+              <img src="/assets/images/getting-started/creating-app-design/live_player_A.png" alt="live_player_A" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Jugador en vivo B</p>
+              <img src="/assets/images/getting-started/creating-app-design/live_player_B.png" alt="live_player_B" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Jugador en vivo D</p>
+              <img src="/assets/images/getting-started/creating-app-design/live_player_D.png" alt="live_player_D" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <h3>Configuración del cliente</h3>
+    <p>
+      Muestra a los clientes' opciones de configuración. Existen <strong>Tres</strong> opciones entre las que elegir.
+    </p>
+    <div class="splide6">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Configuración A</p>
+              <img src="/assets/images/getting-started/creating-app-design/settings_A.png" alt="settings_A" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Carrusel de configuración</p>
+              <img src="/assets/images/getting-started/creating-app-design/settings_carousel.png" alt="settings_carousel" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Cuadrícula de configuración</p>
+              <img src="/assets/images/getting-started/creating-app-design/settings_grid.png" alt="settings_grid" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Optional_items">Elementos opcionales</h2>
+    <p>
+      En esta sección decidirá si desea incluir algunos elementos opcionales. En la hoja de cálculo responderás con <strong>Sí No</strong> .
+    </p>
+    <h3>Ventana emergente de calificación</h3>
+    <p>Determina si deseas utilizar una ventana emergente de calificación.</p>
+    <div class="small_image">
+      <img src="/assets/images/getting-started/creating-app-design/rating_popup.png" alt="rating_popup" />
+    </div>
+    <h3>Más información emergente</h3>
+    <p>Determina si deseas utilizar una ventana emergente de Más información.</p>
+    <div class="small_image">
+      <img src="/assets/images/getting-started/creating-app-design/more_info_popup.png" alt="more_info_popup" />
+    </div>
+    <h3>Acerca de la pantalla</h3>
+    <p>Determina si deseas utilizar una pantalla Acerca de.</p>
+    <div class="small_image">
+      <img src="/assets/images/getting-started/creating-app-design/about.png" alt="about" />
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Moving_forward">Avanzando</h2>
+    <p>
+      Has completado esta tarea. Asegúrese de guardar la hoja de cálculo en la que ha estado trabajando para enviarla posteriormente al personal de Brightcove cuando se cree Brightcove Beacon Experience.
+    </p>
+    <p>
+      Si no lo ha hecho, debe completar la otra parte de la definición del diseño de su aplicación trabajando a través del <a href="/getting-started/creating-your-app-design-info-architecture.html"> Creación del diseño de su aplicación: arquitectura de la información </a> para determinar qué videos desea que se muestren y cómo agruparlos y ordenarlos.
+    </p>
+    <h3>Diseño de página</h3>
+    <p>También debería empezar a pensar en cómo le gustaría que se vieran las páginas individuales. Por ejemplo, aquí hay una página de inicio de ejemplo:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/using-bcb/introducing-pages/home-page-example.png" alt="home page example">
+    </figure>
+    <p>Para obtener detalles sobre las opciones de diseño de página, consulte el <a href="/using-brightcove-beacon/introducing-pages.html">Presentación de páginas</a> documento. Aquí se detallan los diferentes tipos de página que puede usar, junto con el diseño del contenido de video en esas páginas.</p>
+  </section>
+  <!-- TEMPLATE
+ <h3>Title</h3>
+ <p></p>
+ <div class="image_display">
+ <p>img</p>
+ <img src="//learning-services-media.brightcove.com/doc-assets/beacon/site-map/.png" alt=""> </div>
+ END TEMPLATE -->
+  <section class="bcls-section">
+    <h2 id="Is_guidance_available">¿Hay orientación disponible?</h2>
+    <p>
+      El diseño de UX es un asunto complicado, y es posible que desee ver lo que otros consideran al construir un diseño. Los siguientes son enlaces a algunos de los principales consejos de los jugadores de OTT sobre diseño y mejores prácticas.
+    </p>
+    <ul>
+      <li>
+        Roku: <a href="https://developer.roku.com/docs/developer-program/design/best-practices.md"> Mejores prácticas de diseño </a>
+      </li>
+      <li>
+        Apple TV: <a href="https://developer.apple.com/design/human-interface-guidelines/tvos/overview/themes/"> Directrices de interfaz humana </a>
+      </li>
+      <li>
+        Fire TV: <a href="https://developer.amazon.com/docs/fire-tv/design-and-user-experience-guidelines.html"> Directrices de diseño y experiencia del usuario </a>
+      </li>
+      <li>
+        Android TV: <a href="https://developer.android.com/design/tv"> Diseño para Android TV </a>
+      </li>
+    </ul>
+  </section>
+</article>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@1.2.5/dist/js/splide.min.js"></script>
 <script>
-      
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
-  
-
+  var mySplide = new Splide ('. splide', { width: '60%', perPage: 2, perMove: 1, } ) mySplide.mount () var mySplide2 = new Splide ('. splide2', { width: '60%', perPage: 2, perMove: 1, } ) mySplide2.mount () var mySplide3 = new Splide ('. splide3', { width: '90%', perPage: 2, perMove: 1, arrows: false, } ) mySplide3.mount () var mySplide4 = new Splide ('. splide4', { width: '90%', perPage: 2, perMove: 1, } ) mySplide4.mount () var mySplide5 = new Splide ('. splide5', { width: '90%', perPage: 2, perMove: 1, } ) mySplide5.mount () var mySplide6 = new Splide ('. splide6', { width: '60%', perPage: 2, perMove: 1, } ) mySplide6.mount () var mySplide7 = new Splide ('. splide7', { width: '60%', perPage: 2, perMove: 1, arrows: false, } ) mySplide7.mount ()
 </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
-  <script src="/assets/js/sites_nav.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
-  <script src="/assets/js/feedback.js"></script>
-  
-  <script src="/assets/js/sajari-search-foot.js"></script>
-  
-  <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <script src="https://assets.talla.com/latest/embeddedjs/talla.js"></script>
-  <script src="/assets/js/talla-init.js"></script>
-  <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
-    </style>
-
-</body>
-
-</html>

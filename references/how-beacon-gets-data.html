@@ -1,0 +1,42 @@
+---
+title: "Cómo Brightcove Beacon obtiene datos"
+description: "En este tema, aprenderá cómo Brightcove Beacon obtiene los distintos tipos de datos utilizados en la creación de sus aplicaciones. También se incluye información que cubre los detalles de la autenticación ".
+
+parent: "references"
+layout: "staging"
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+    <summary>{{ page.description }}</summary>
+
+    <section class="bcls-section">
+        <h2 id="Introduction">Introducción</h2>
+        <p>La primera parte de este documento describe cómo Brightcove Beacon obtiene datos comunes, como videos, listas de reproducción y eventos en vivo. La última sección explica con gran detalle cómo se utilizan Open ID Connect (OIDC) y los derechos para autorizar a Brightcove Beacon a obtener datos.</p>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Ingestion_and_custom_fields">Ingestión de video y campos personalizados</h2>
+        <p>Los activos de video deben ingerirse primero en Video Cloud antes de que Brightcove Beacon pueda usarlos. Dependiendo de cómo se usarán los videos, por ejemplo, en una serie o que requieran publicidad, Video Cloud <strong>Campos Personalizados</strong> se puede utilizar para asociar el video con esos requisitos especiales. La <a href="/syncing-with-video-cloud/vc-custom-fields.html">Creación de campos personalizados de Video Cloud</a> El documento detalla cómo crear campos personalizados obligatorios y cómo asignar valores a esos campos.</p>
+        <p>Una vez que los videos están en Video Cloud, Brightcove Beacon puede obtener información asociada a los videos, como metadatos, imágenes y ubicación del catálogo de Video Cloud. Los videos realmente permanecen en Video Cloud y serán servidos por la infraestructura de entrega de reproducción de Video Cloud. En la interfaz de usuario de Brightcove Beacon, puede ingerir manualmente los videos de Video Cloud' información o espere a que se realice un proceso en segundo plano.</p>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Playlists">Listas de reproducción</h2>
+        <p>Además de los activos de video que se crean en Video Cloud, también se recomienda que cree sus listas de reproducción de video en Video Cloud. Puede crear dos tipos de listas de reproducción en Video Cloud, <strong>Manual</strong> y <strong>Inteligente</strong>. Para obtener detalles completos sobre la implementación de listas de reproducción en Video Cloud, consulte la <a href="https://studio.support.brightcove.com/media/creating-and-managing-playlists.html">Creación y gestión de listas de reproducción</a> documento.</p>
+        <p>Si desea crear una lista de reproducción que contenga recursos que no sean videos, como la inclusión de series o eventos en vivo, esa lista de reproducción debe crearse en Brightcove Beacon.</p>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Channels_and_live_events">Canales y eventos en vivo</h2>
+        <p>Para canales y eventos en vivo, los trabajos en vivo deben crearse en la nube de video y luego configurarse manualmente en Brightcove Beacon. Para obtener más detalles, consulte la <a href="/using-brightcove-beacon/streaming-live-event.html">Transmisión de un evento en vivo</a> y <a href="/using-brightcove-beacon/creating-a-channel.html">Crear un canal</a> documentos.</p>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Series, seasons and episodes">Series, temporadas y episodios</h2>
+        <p>Para datos episódicos, debe utilizar Brightcove Beacon y Video Cloud. Primero debe crear la serie y las temporadas correspondientes en Brightcove Beacon. El episodio de video real se ingiere en Video Cloud y luego se utilizan campos personalizados para asignar el video a la serie / temporada correcta.</p>
+        <p>Para obtener detalles completos, consulte el <a href="/using-brightcove-beacon/series-seasons-episodes.html">Creación de series / temporadas / episodios</a> documento.</p>
+    </section>
+
+
+
+</article>
